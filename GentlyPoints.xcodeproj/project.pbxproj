@@ -1005,7 +1005,6 @@
 		4A2FF78B225D7206003587E0 /* MovieDetailController */ = {
 			isa = PBXGroup;
 			children = (
-				4A23A50E225F156D00192A2D /* Base */,
 				4A2FF78F225D72EA003587E0 /* Cell */,
 				4A2FF78C225D7227003587E0 /* GGGMovieDetailViewController.h */,
 				4A2FF78D225D7227003587E0 /* GGGMovieDetailViewController.m */,
@@ -1025,6 +1024,7 @@
 		75D91585225F7391003721F4 /* 电影 */ = {
 			isa = PBXGroup;
 			children = (
+				4A23A50E225F156D00192A2D /* Base */,
 				4A23A516225F278800192A2D /* MovieContainerController */,
 				4A23A512225F22CA00192A2D /* MovieController */,
 				4A2FF78B225D7206003587E0 /* MovieDetailController */,

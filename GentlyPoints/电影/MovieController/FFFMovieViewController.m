@@ -11,6 +11,7 @@
 #import "FFFMovieModel.h"
 #import <MJRefresh/MJRefresh.h>
 #import "FFFMovieTableViewCell.h"
+#import "GGGMovieDetailViewController.h"
 
 @interface FFFMovieViewController ()
 <
@@ -141,6 +142,7 @@ UITableViewDataSource
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    NSLog(@"%@", @(self.movies.count));
     return self.movies.count;
 }
 
@@ -157,7 +159,7 @@ UITableViewDataSource
     [cell.poster yy_setImageWithURL:[NSURL URLWithString:movie.poster] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
     
     cell.nameLabel.text = movie.name;
-    cell.introLabel.text = movie.introduction;
+    cell.introLabel.text = [NSString stringWithFormat:@"%@ | %@", movie.region, movie.duration];
     cell.dateLabel.text = movie.release_info;
     cell.actorLabel.text = [movie.type componentsJoinedByString:@" | "];
     cell.scoreLabel.text = [movie.score isEqualToString:@"暂无评分"] || [movie.score isEqualToString:@"0"] ? @"暂无": movie.score;
@@ -165,7 +167,7 @@ UITableViewDataSource
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 190;
+    return 140;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -178,6 +180,13 @@ UITableViewDataSource
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     return nil;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    FFFMovieModel *movie = self.movies[indexPath.section];
+    GGGMovieDetailViewController *detail = [GGGMovieDetailViewController new];
+    detail.movie = movie;
+    [self.naviController pushViewController:detail animated:YES];
 }
 
 #pragma mark - JXCategoryListContentViewDelegate
