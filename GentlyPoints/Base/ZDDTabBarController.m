@@ -16,7 +16,7 @@
 //#import "ZDDSecondController.h"
 //#import "ZDDFirstController.h"
 
-#import "GGGMovieDetailViewController.h"
+#import "FFFMovieContainerViewController.h"
 
 @interface ZDDTabBarController ()
 <
@@ -32,8 +32,8 @@ UITabBarControllerDelegate
     self = [super init];
     if (self) {
         ZDDThemeConfiguration *theme = [ZDDThemeConfiguration defaultConfiguration];
-        [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.selectTabColor} forState:UIControlStateSelected];
-        [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.normalTabColor} forState:UIControlStateNormal];
+//        [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.selectTabColor} forState:UIControlStateSelected];
+//        [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.normalTabColor} forState:UIControlStateNormal];
     }
     return self;
 }
@@ -76,7 +76,7 @@ UITabBarControllerDelegate
 //    
 //    ZDDThridController *four = [[ZDDThridController alloc] init];
 //    [self addChileVcWithTitle:@"我的" vc:four imageName:@"mine_unSelected" selImageName:@"mine_selected"];
-    GGGMovieDetailViewController *movie = [GGGMovieDetailViewController new];
+    FFFMovieContainerViewController *movie = [FFFMovieContainerViewController new];
     [self addChileVcWithTitle:@"Movie" vc:movie imageName:@"ico_tab_friend_40x40_" selImageName:@"ico_tab_friend_pressed-white_40x40_"];
 }
 
@@ -84,8 +84,8 @@ UITabBarControllerDelegate
     [vc.tabBarItem setTitle:title];
     if (title.length) {
         vc.title = title;
-        [vc.tabBarItem setImage:[[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-        [vc.tabBarItem setSelectedImage:[[UIImage imageNamed:selImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        [vc.tabBarItem setImage:[UIImage imageNamed:imageName]];
+        [vc.tabBarItem setSelectedImage:[UIImage imageNamed:selImageName]];
     }
     ZDDNavController *navVc = [[ZDDNavController alloc] initWithRootViewController:vc];
     [self addChildViewController:navVc];
