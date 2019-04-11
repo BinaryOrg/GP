@@ -17,7 +17,8 @@ typedef void(^ErrorViewClickBlock)(void);
 - (void)showLoading;
 - (void)hideLoading;
 
-
+- (void)sendRequest;
+- (void)setNaviTitle;
 @property (nonatomic, copy) ErrorViewClickBlock errorViewClickBlock;
 @end
 

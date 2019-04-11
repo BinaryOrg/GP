@@ -8,6 +8,7 @@
 
 #import "TEMPLaunchManager.h"
 #import "UIColor+ZDDColor.h"
+#import "UIColor+ZTWColor.h"
 
 #import "ZDDThemeConfiguration.h"
 #import "ZDDTabBarController.h"
@@ -33,9 +34,9 @@
 //    只需要在这里修改如下5个主题颜色即可，注意颜色搭配和理性:
     theme.naviTitleColor = [UIColor colorWithRed:51 green:51 blue:51];
 ////    theme.naviTintColor =
-    theme.themeColor = [UIColor colorWithRed:250 green:227 blue:79];
-    theme.normalTabColor = [UIColor colorWithRed:151 green:151 blue:151];
-    theme.selectTabColor = theme.naviTitleColor;
+    theme.themeColor = [UIColor whiteColor];
+//    theme.normalTabColor = [UIColor colorWithRed:151 green:151 blue:151];
+//    theme.selectTabColor = theme.naviTitleColor;
     theme.addButtonColor = [UIColor whiteColor];
     //NavigationBar 和 TabBar 偏好设置
     NSDictionary *dict = [NSDictionary dictionaryWithObject:theme.naviTitleColor forKey:NSForegroundColorAttributeName];
@@ -44,9 +45,9 @@
     [[UINavigationBar appearance] setBarTintColor:theme.themeColor];
     [[UITabBar appearance] setBarTintColor:theme.themeColor];
     
-    [[UITabBar appearance] setTintColor:theme.selectTabColor];
+//    [[UITabBar appearance] setTintColor:theme.selectTabColor];
     if (@available(iOS 10.0, *)) {
-        [[UITabBar appearance] setUnselectedItemTintColor:theme.normalTabColor];
+//        [[UITabBar appearance] setUnselectedItemTintColor:theme.normalTabColor];
     } else {
         // Fallback on earlier versions
     }

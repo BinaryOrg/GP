@@ -39,7 +39,7 @@
         _emptyView.backgroundColor = [UIColor whiteColor];
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 250, 156)];
         imageView.image = [UIImage imageNamed:@"illustration_tutorial_network_error_250x156_"];
-        imageView.center = CGPointMake(SCREENWIDTH/2, (SCREENHEIGHT-STATUSBARANDNAVIGATIONBARHEIGHT)/2);
+        imageView.center = CGPointMake(SCREENWIDTH/2, (SCREENHEIGHT-STATUSBARANDNAVIGATIONBARHEIGHT)/2 - 44);
         [_emptyView addSubview:imageView];
         
         UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -56,7 +56,7 @@
         _netErrorView.backgroundColor = [UIColor whiteColor];
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 250, 156)];
         imageView.image = [UIImage imageNamed:@"illustration_tutorial_network_error_250x156_"];
-        imageView.center = CGPointMake(SCREENWIDTH/2, (SCREENHEIGHT-STATUSBARANDNAVIGATIONBARHEIGHT)/2);
+        imageView.center = CGPointMake(SCREENWIDTH/2, (SCREENHEIGHT-STATUSBARANDNAVIGATIONBARHEIGHT)/2 - 44);
         [_netErrorView addSubview:imageView];
         
         UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -91,11 +91,27 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.loadingImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
-    self.loadingImageView.center = CGPointMake(SCREENWIDTH/2, (SCREENHEIGHT-STATUSBARANDNAVIGATIONBARHEIGHT)/2);
+    self.loadingImageView.center = CGPointMake(SCREENWIDTH/2, (SCREENHEIGHT-STATUSBARANDNAVIGATIONBARHEIGHT )/2 - 44);
     self.loadingImageView.animationImages = self.loadings;
     self.loadingImageView.animationDuration = 1.;
-    [self.loadingImageView startAnimating];
+    
     [self.view addSubview:self.loadingImageView];
+    [self setNaviTitle];
 }
 
+- (void)showLoading {
+    [self.loadingImageView startAnimating];
+}
+
+- (void)hideLoading {
+    [self.loadingImageView stopAnimating];
+}
+
+- (void)sendRequest {
+    
+}
+
+- (void)setNaviTitle {
+    
+}
 @end

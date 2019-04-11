@@ -134,6 +134,13 @@
 		37E8260F2259A893004BE9CE /* GODUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E8260D2259A893004BE9CE /* GODUserModel.m */; };
 		37E826102259A893004BE9CE /* GODUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E8260E2259A893004BE9CE /* GODUserTool.m */; };
 		4A23A511225F158100192A2D /* FFFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A510225F158100192A2D /* FFFBaseViewController.m */; };
+		4A23A515225F22F200192A2D /* FFFMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A514225F22F200192A2D /* FFFMovieViewController.m */; };
+		4A23A519225F27D200192A2D /* FFFMovieContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A518225F27D200192A2D /* FFFMovieContainerViewController.m */; };
+		4A23A51D225F285A00192A2D /* UIColor+ZTWColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A51C225F285A00192A2D /* UIColor+ZTWColor.m */; };
+		4A23A521225F298A00192A2D /* UIFont+ZTWFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A520225F298A00192A2D /* UIFont+ZTWFont.m */; };
+		4A23A525225F2D8A00192A2D /* FFFMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A524225F2D8A00192A2D /* FFFMovieModel.m */; };
+		4A23A529225F2F6B00192A2D /* FFFActorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A528225F2F6B00192A2D /* FFFActorModel.m */; };
+		4A23A52D225F32ED00192A2D /* FFFMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A52C225F32ED00192A2D /* FFFMovieTableViewCell.m */; };
 		4A2FF78E225D7227003587E0 /* GGGMovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2FF78D225D7227003587E0 /* GGGMovieDetailViewController.m */; };
 		4A2FF792225D72FF003587E0 /* GGGMovieDetailHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2FF791225D72FF003587E0 /* GGGMovieDetailHeaderTableViewCell.m */; };
 		E9DCC7170218A1960A5DFF0B /* libPods-GentlyPoints.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC9FC3732CB0F67647AB184 /* libPods-GentlyPoints.a */; };
@@ -422,6 +429,20 @@
 		37E8260E2259A893004BE9CE /* GODUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODUserTool.m; sourceTree = "<group>"; };
 		4A23A50F225F158100192A2D /* FFFBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFBaseViewController.h; sourceTree = "<group>"; };
 		4A23A510225F158100192A2D /* FFFBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFBaseViewController.m; sourceTree = "<group>"; };
+		4A23A513225F22F200192A2D /* FFFMovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMovieViewController.h; sourceTree = "<group>"; };
+		4A23A514225F22F200192A2D /* FFFMovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFMovieViewController.m; sourceTree = "<group>"; };
+		4A23A517225F27D200192A2D /* FFFMovieContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMovieContainerViewController.h; sourceTree = "<group>"; };
+		4A23A518225F27D200192A2D /* FFFMovieContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFMovieContainerViewController.m; sourceTree = "<group>"; };
+		4A23A51B225F285A00192A2D /* UIColor+ZTWColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZTWColor.h"; sourceTree = "<group>"; };
+		4A23A51C225F285A00192A2D /* UIColor+ZTWColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZTWColor.m"; sourceTree = "<group>"; };
+		4A23A51F225F298A00192A2D /* UIFont+ZTWFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ZTWFont.h"; sourceTree = "<group>"; };
+		4A23A520225F298A00192A2D /* UIFont+ZTWFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ZTWFont.m"; sourceTree = "<group>"; };
+		4A23A523225F2D8A00192A2D /* FFFMovieModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMovieModel.h; sourceTree = "<group>"; };
+		4A23A524225F2D8A00192A2D /* FFFMovieModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFMovieModel.m; sourceTree = "<group>"; };
+		4A23A527225F2F6B00192A2D /* FFFActorModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFActorModel.h; sourceTree = "<group>"; };
+		4A23A528225F2F6B00192A2D /* FFFActorModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFActorModel.m; sourceTree = "<group>"; };
+		4A23A52B225F32ED00192A2D /* FFFMovieTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMovieTableViewCell.h; sourceTree = "<group>"; };
+		4A23A52C225F32ED00192A2D /* FFFMovieTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFMovieTableViewCell.m; sourceTree = "<group>"; };
 		4A2FF78C225D7227003587E0 /* GGGMovieDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GGGMovieDetailViewController.h; sourceTree = "<group>"; };
 		4A2FF78D225D7227003587E0 /* GGGMovieDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GGGMovieDetailViewController.m; sourceTree = "<group>"; };
 		4A2FF790225D72FF003587E0 /* GGGMovieDetailHeaderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GGGMovieDetailHeaderTableViewCell.h; sourceTree = "<group>"; };
@@ -532,6 +553,7 @@
 				379546982259A3A80050CB02 /* Utils */,
 				379546952259A3A60050CB02 /* WebView */,
 				379546822259A3950050CB02 /* Base */,
+				75D91585225F7391003721F4 /* 电影 */,
 				379546562259A3330050CB02 /* Main.storyboard */,
 				379546592259A3340050CB02 /* Assets.xcassets */,
 				3795465B2259A3340050CB02 /* LaunchScreen.storyboard */,
@@ -609,6 +631,8 @@
 		379546982259A3A80050CB02 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4A23A51E225F297800192A2D /* UIFont */,
+				4A23A51A225F283400192A2D /* UIColor */,
 				379546992259A3A80050CB02 /* PB */,
 				3795469A2259A3A80050CB02 /* pop */,
 				379546D32259A3A80050CB02 /* Category */,
@@ -978,10 +1002,67 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		4A23A512225F22CA00192A2D /* MovieController */ = {
+			isa = PBXGroup;
+			children = (
+				4A23A52A225F32DE00192A2D /* Cell */,
+				4A23A522225F2D6500192A2D /* Model */,
+				4A23A513225F22F200192A2D /* FFFMovieViewController.h */,
+				4A23A514225F22F200192A2D /* FFFMovieViewController.m */,
+			);
+			path = MovieController;
+			sourceTree = "<group>";
+		};
+		4A23A516225F278800192A2D /* MovieContainerController */ = {
+			isa = PBXGroup;
+			children = (
+				4A23A517225F27D200192A2D /* FFFMovieContainerViewController.h */,
+				4A23A518225F27D200192A2D /* FFFMovieContainerViewController.m */,
+			);
+			path = MovieContainerController;
+			sourceTree = "<group>";
+		};
+		4A23A51A225F283400192A2D /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				4A23A51B225F285A00192A2D /* UIColor+ZTWColor.h */,
+				4A23A51C225F285A00192A2D /* UIColor+ZTWColor.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		4A23A51E225F297800192A2D /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				4A23A51F225F298A00192A2D /* UIFont+ZTWFont.h */,
+				4A23A520225F298A00192A2D /* UIFont+ZTWFont.m */,
+			);
+			path = UIFont;
+			sourceTree = "<group>";
+		};
+		4A23A522225F2D6500192A2D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A23A523225F2D8A00192A2D /* FFFMovieModel.h */,
+				4A23A524225F2D8A00192A2D /* FFFMovieModel.m */,
+				4A23A527225F2F6B00192A2D /* FFFActorModel.h */,
+				4A23A528225F2F6B00192A2D /* FFFActorModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4A23A52A225F32DE00192A2D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4A23A52B225F32ED00192A2D /* FFFMovieTableViewCell.h */,
+				4A23A52C225F32ED00192A2D /* FFFMovieTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		4A2FF78B225D7206003587E0 /* MovieDetailController */ = {
 			isa = PBXGroup;
 			children = (
-				4A23A50E225F156D00192A2D /* Base */,
 				4A2FF78F225D72EA003587E0 /* Cell */,
 				4A2FF78C225D7227003587E0 /* GGGMovieDetailViewController.h */,
 				4A2FF78D225D7227003587E0 /* GGGMovieDetailViewController.m */,
@@ -996,6 +1077,17 @@
 				4A2FF791225D72FF003587E0 /* GGGMovieDetailHeaderTableViewCell.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		75D91585225F7391003721F4 /* 电影 */ = {
+			isa = PBXGroup;
+			children = (
+				4A23A50E225F156D00192A2D /* Base */,
+				4A23A516225F278800192A2D /* MovieContainerController */,
+				4A23A512225F22CA00192A2D /* MovieController */,
+				4A2FF78B225D7206003587E0 /* MovieDetailController */,
+			);
+			path = "电影";
 			sourceTree = "<group>";
 		};
 		9992125971CC48D4ED118841 /* Frameworks */ = {
@@ -1232,7 +1324,10 @@
 				3795468D2259A3950050CB02 /* ZDDRetryView.m in Sources */,
 				379547CC2259A3AA0050CB02 /* HXCustomCollectionReusableView.m in Sources */,
 				379547D92259A3AA0050CB02 /* HXVideoEditViewController.m in Sources */,
+				4A23A525225F2D8A00192A2D /* FFFMovieModel.m in Sources */,
 				379547C02259A3AA0050CB02 /* UILabel+HXExtension.m in Sources */,
+				4A23A519225F27D200192A2D /* FFFMovieContainerViewController.m in Sources */,
+				4A23A529225F2F6B00192A2D /* FFFActorModel.m in Sources */,
 				379547B52259A3AA0050CB02 /* NSString+HXExtension.m in Sources */,
 				379547B82259A3AA0050CB02 /* NSBundle+HXPhotoPicker.m in Sources */,
 				379547B42259A3AA0050CB02 /* HXPhotoViewTransition.m in Sources */,
@@ -1268,6 +1363,7 @@
 				379547A32259A3AA0050CB02 /* TEMPAppDelegate+OpenURL.m in Sources */,
 				379547C92259A3AA0050CB02 /* HXPhotoViewFlowLayout.m in Sources */,
 				379547C32259A3AA0050CB02 /* HXPhotoCommon.m in Sources */,
+				4A23A51D225F285A00192A2D /* UIColor+ZTWColor.m in Sources */,
 				379547B62259A3AA0050CB02 /* UIViewController+HXExtension.m in Sources */,
 				379547952259A3AA0050CB02 /* POPGeometry.mm in Sources */,
 				379547AB2259A3AA0050CB02 /* HXCustomCameraViewController.m in Sources */,
@@ -1315,6 +1411,7 @@
 				379547D72259A3AA0050CB02 /* HXPhotoEditViewController.m in Sources */,
 				379547BE2259A3AA0050CB02 /* NSTimer+HXExtension.m in Sources */,
 				37763ED2225F2A0800F364CC /* GPTopicListController.m in Sources */,
+				4A23A521225F298A00192A2D /* UIFont+ZTWFont.m in Sources */,
 				379547EA2259A3AA0050CB02 /* UIColor+ZDDColor.m in Sources */,
 				379547A22259A3AA0050CB02 /* TEMPAppDelegate+BackgroundTask.m in Sources */,
 				379547DA2259A3AA0050CB02 /* XJEmojePreView.m in Sources */,
@@ -1328,6 +1425,8 @@
 				379547C62259A3AA0050CB02 /* HXPhotoPreviewViewController.m in Sources */,
 				3795468C2259A3950050CB02 /* ZDDTabBarController.m in Sources */,
 				379547E52259A3AA0050CB02 /* XJFaceEmojeView.m in Sources */,
+				4A23A52D225F32ED00192A2D /* FFFMovieTableViewCell.m in Sources */,
+				4A23A515225F22F200192A2D /* FFFMovieViewController.m in Sources */,
 				379547C42259A3AA0050CB02 /* HXAlbumListViewController.m in Sources */,
 				379547E22259A3AA0050CB02 /* XJInputView.m in Sources */,
 				379547A52259A3AA0050CB02 /* NSString+YMHLAdditions.m in Sources */,
