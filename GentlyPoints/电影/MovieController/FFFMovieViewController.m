@@ -19,7 +19,6 @@ UITableViewDelegate,
 UITableViewDataSource
 >
 @property (nonatomic, strong) NSString *movieId;
-@property (nonatomic, assign) CGFloat height;
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray<FFFMovieModel *> *movies;
@@ -29,7 +28,7 @@ UITableViewDataSource
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, self.height) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT - STATUSBARANDNAVIGATIONBARHEIGHT - TABBARHEIGHT - 45) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [[UIView alloc] init];
@@ -90,12 +89,11 @@ UITableViewDataSource
     return _movies;
 }
 
-- (instancetype)initWithMovieId:(NSString *)movieId height:(CGFloat)height
+- (instancetype)initWithMovieId:(NSString *)movieId
 {
     self = [super init];
     if (self) {
         _movieId = movieId;
-        _height = height;
     }
     return self;
 }

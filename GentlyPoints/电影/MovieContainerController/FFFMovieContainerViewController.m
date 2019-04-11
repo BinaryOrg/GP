@@ -105,7 +105,8 @@ JXCategoryViewDelegate
 }
 
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
-    FFFMovieViewController *movie = [[FFFMovieViewController alloc] initWithMovieId:self.categories[index] height:HEIGHT(self.listContainerView)];
+    
+    FFFMovieViewController *movie = [[FFFMovieViewController alloc] initWithMovieId:self.categories[index]];
     movie.naviController = self.navigationController;
     return movie;
 }

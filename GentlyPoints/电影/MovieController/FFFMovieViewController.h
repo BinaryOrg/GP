@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 JXCategoryListContentViewDelegate
 >
 @property (nonatomic, strong) UINavigationController *naviController;
-- (instancetype)initWithMovieId:(NSString *)movieId height:(CGFloat)height;
+- (instancetype)initWithMovieId:(NSString *)movieId;
 @end
 
 NS_ASSUME_NONNULL_END
