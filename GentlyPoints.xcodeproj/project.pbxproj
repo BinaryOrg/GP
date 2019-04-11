@@ -490,14 +490,12 @@
 			children = (
 				379547F32259A3B80050CB02 /* TEMPAppDelegate.h */,
 				379547F22259A3B80050CB02 /* TEMPAppDelegate.m */,
-				4A23A516225F278800192A2D /* MovieContainerController */,
-				4A23A512225F22CA00192A2D /* MovieController */,
-				4A2FF78B225D7206003587E0 /* MovieDetailController */,
 				379546922259A3A60050CB02 /* Launch */,
 				3795468F2259A3A60050CB02 /* SDK */,
 				379546982259A3A80050CB02 /* Utils */,
 				379546952259A3A60050CB02 /* WebView */,
 				379546822259A3950050CB02 /* Base */,
+				75D91585225F7391003721F4 /* 电影 */,
 				379546562259A3330050CB02 /* Main.storyboard */,
 				379546592259A3340050CB02 /* Assets.xcassets */,
 				3795465B2259A3340050CB02 /* LaunchScreen.storyboard */,
@@ -1022,6 +1020,16 @@
 				4A2FF791225D72FF003587E0 /* GGGMovieDetailHeaderTableViewCell.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		75D91585225F7391003721F4 /* 电影 */ = {
+			isa = PBXGroup;
+			children = (
+				4A23A516225F278800192A2D /* MovieContainerController */,
+				4A23A512225F22CA00192A2D /* MovieController */,
+				4A2FF78B225D7206003587E0 /* MovieDetailController */,
+			);
+			path = "电影";
 			sourceTree = "<group>";
 		};
 		9992125971CC48D4ED118841 /* Frameworks */ = {
