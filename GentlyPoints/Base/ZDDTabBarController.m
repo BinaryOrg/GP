@@ -30,7 +30,7 @@ UITabBarControllerDelegate
     _hasCenterButton = hasCenterButton;
     self = [super init];
     if (self) {
-        ZDDThemeConfiguration *theme = [ZDDThemeConfiguration defaultConfiguration];
+//        ZDDThemeConfiguration *theme = [ZDDThemeConfiguration defaultConfiguration];
 //        [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.selectTabColor} forState:UIControlStateSelected];
 //        [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.normalTabColor} forState:UIControlStateNormal];
     }
@@ -87,8 +87,10 @@ UITabBarControllerDelegate
     [vc.tabBarItem setTitle:title];
     if (title.length) {
         vc.title = title;
-        [vc.tabBarItem setImage:[UIImage imageNamed:imageName]];
-        [vc.tabBarItem setSelectedImage:[UIImage imageNamed:selImageName]];
+        UIImage *image = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIImage *selectedImage = [[UIImage imageNamed:selImageName] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+        [vc.tabBarItem setImage:image];
+        [vc.tabBarItem setSelectedImage:selectedImage];
     }
     ZDDNavController *navVc = [[ZDDNavController alloc] initWithRootViewController:vc];
     [self addChildViewController:navVc];

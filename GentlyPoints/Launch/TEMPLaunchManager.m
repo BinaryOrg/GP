@@ -45,7 +45,7 @@
     [[UINavigationBar appearance] setBarTintColor:theme.themeColor];
     [[UITabBar appearance] setBarTintColor:theme.themeColor];
     
-//    [[UITabBar appearance] setTintColor:theme.selectTabColor];
+    [[UITabBar appearance] setTintColor:[UIColor ztw_blueColor]];
     if (@available(iOS 10.0, *)) {
 //        [[UITabBar appearance] setUnselectedItemTintColor:theme.normalTabColor];
     } else {
