@@ -54,7 +54,7 @@
     
     
     [XHLaunchAd setLaunchSourceType:SourceTypeLaunchScreen];
-    [XHLaunchAd setWaitDataDuration:5];
+    [XHLaunchAd setWaitDataDuration:1];
     
     XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
     imageAdconfiguration.imageNameOrURLString = @"gg.jpg";

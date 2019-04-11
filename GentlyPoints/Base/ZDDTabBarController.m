@@ -12,9 +12,8 @@
 
 #import "ZDDNavController.h"
 
-//#import "ZDDThridController.h"
-//#import "ZDDSecondController.h"
-//#import "ZDDFirstController.h"
+#import "GPTopicListController.h"
+
 
 #import "GGGMovieDetailViewController.h"
 
@@ -78,6 +77,10 @@ UITabBarControllerDelegate
 //    [self addChileVcWithTitle:@"我的" vc:four imageName:@"mine_unSelected" selImageName:@"mine_selected"];
     GGGMovieDetailViewController *movie = [GGGMovieDetailViewController new];
     [self addChileVcWithTitle:@"Movie" vc:movie imageName:@"ico_tab_friend_40x40_" selImageName:@"ico_tab_friend_pressed-white_40x40_"];
+    
+    GPTopicListController *topic = [GPTopicListController new];
+    [self addChileVcWithTitle:@"话题" vc:topic imageName:@"ico_tab_timeline_40x40_" selImageName:@"ico_tab_timeline_pressed_40x40_"];
+
 }
 
 - (void)addChileVcWithTitle:(NSString *)title vc:(UIViewController *)vc imageName:(NSString *)imageName selImageName:(NSString *)selImageName {

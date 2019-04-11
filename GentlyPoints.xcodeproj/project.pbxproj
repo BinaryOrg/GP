@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37763ED2225F2A0800F364CC /* GPTopicListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763ED1225F2A0800F364CC /* GPTopicListController.m */; };
+		37763ED5225F335300F364CC /* GPTopicListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763ED4225F335300F364CC /* GPTopicListCellNode.m */; };
+		37763ED8225F34D600F364CC /* GPTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763ED7225F34D600F364CC /* GPTopicModel.m */; };
+		37763EDB225F58FE00F364CC /* GPTopickDetailCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763EDA225F58FE00F364CC /* GPTopickDetailCellNode.m */; };
+		37763EDE225F6FCD00F364CC /* GPResponseCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763EDD225F6FCD00F364CC /* GPResponseCellNode.m */; };
 		379546582259A3330050CB02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379546562259A3330050CB02 /* Main.storyboard */; };
 		3795465A2259A3340050CB02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 379546592259A3340050CB02 /* Assets.xcassets */; };
 		3795465D2259A3340050CB02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3795465B2259A3340050CB02 /* LaunchScreen.storyboard */; };
@@ -152,6 +157,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37763ED0225F2A0800F364CC /* GPTopicListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopicListController.h; sourceTree = "<group>"; };
+		37763ED1225F2A0800F364CC /* GPTopicListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTopicListController.m; sourceTree = "<group>"; };
+		37763ED3225F335300F364CC /* GPTopicListCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopicListCellNode.h; sourceTree = "<group>"; };
+		37763ED4225F335300F364CC /* GPTopicListCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTopicListCellNode.m; sourceTree = "<group>"; };
+		37763ED6225F34D600F364CC /* GPTopicModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopicModel.h; sourceTree = "<group>"; };
+		37763ED7225F34D600F364CC /* GPTopicModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTopicModel.m; sourceTree = "<group>"; };
+		37763ED9225F58FE00F364CC /* GPTopickDetailCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopickDetailCellNode.h; sourceTree = "<group>"; };
+		37763EDA225F58FE00F364CC /* GPTopickDetailCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTopickDetailCellNode.m; sourceTree = "<group>"; };
+		37763EDC225F6FCD00F364CC /* GPResponseCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPResponseCellNode.h; sourceTree = "<group>"; };
+		37763EDD225F6FCD00F364CC /* GPResponseCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPResponseCellNode.m; sourceTree = "<group>"; };
 		3795464D2259A3330050CB02 /* GentlyPoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GentlyPoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379546572259A3330050CB02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		379546592259A3340050CB02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -442,6 +457,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37763ECC225F28DC00F364CC /* Topic */ = {
+			isa = PBXGroup;
+			children = (
+				37763ECD225F28DC00F364CC /* Controller */,
+				37763ECE225F28DC00F364CC /* Model */,
+				37763ECF225F28DC00F364CC /* view */,
+			);
+			path = Topic;
+			sourceTree = "<group>";
+		};
+		37763ECD225F28DC00F364CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				37763ED0225F2A0800F364CC /* GPTopicListController.h */,
+				37763ED1225F2A0800F364CC /* GPTopicListController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		37763ECE225F28DC00F364CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37763ED6225F34D600F364CC /* GPTopicModel.h */,
+				37763ED7225F34D600F364CC /* GPTopicModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		37763ECF225F28DC00F364CC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				37763ED3225F335300F364CC /* GPTopicListCellNode.h */,
+				37763ED4225F335300F364CC /* GPTopicListCellNode.m */,
+				37763ED9225F58FE00F364CC /* GPTopickDetailCellNode.h */,
+				37763EDA225F58FE00F364CC /* GPTopickDetailCellNode.m */,
+				37763EDC225F6FCD00F364CC /* GPResponseCellNode.h */,
+				37763EDD225F6FCD00F364CC /* GPResponseCellNode.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		379546442259A3330050CB02 = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +525,7 @@
 			children = (
 				379547F32259A3B80050CB02 /* TEMPAppDelegate.h */,
 				379547F22259A3B80050CB02 /* TEMPAppDelegate.m */,
+				37763ECC225F28DC00F364CC /* Topic */,
 				4A2FF78B225D7206003587E0 /* MovieDetailController */,
 				379546922259A3A60050CB02 /* Launch */,
 				3795468F2259A3A60050CB02 /* SDK */,
@@ -1195,8 +1252,10 @@
 				379547AD2259A3AA0050CB02 /* HXPhotoConfiguration.m in Sources */,
 				37E826102259A893004BE9CE /* GODUserTool.m in Sources */,
 				379547CF2259A3AA0050CB02 /* HXFullScreenCameraPlayView.m in Sources */,
+				37763EDB225F58FE00F364CC /* GPTopickDetailCellNode.m in Sources */,
 				379547B32259A3AA0050CB02 /* HXPhotoPersentInteractiveTransition.m in Sources */,
 				379547E42259A3AA0050CB02 /* UIColor+ZS.m in Sources */,
+				37763ED8225F34D600F364CC /* GPTopicModel.m in Sources */,
 				379547CA2259A3AA0050CB02 /* HXPhotoManager.m in Sources */,
 				379547E72259A3AA0050CB02 /* ZDDNotificationName.m in Sources */,
 				379547BD2259A3AA0050CB02 /* NSDate+HXExtension.m in Sources */,
@@ -1216,6 +1275,7 @@
 				379547912259A3AA0050CB02 /* POPDecayAnimation.mm in Sources */,
 				379547A12259A3AA0050CB02 /* NSMutableAttributedString+Chain.m in Sources */,
 				379547ED2259A3AA0050CB02 /* NSSet+HYBUnicodeReadable.m in Sources */,
+				37763ED5225F335300F364CC /* GPTopicListCellNode.m in Sources */,
 				4A2FF78E225D7227003587E0 /* GGGMovieDetailViewController.m in Sources */,
 				3795478C2259A3AA0050CB02 /* POPSpringAnimation.mm in Sources */,
 				3795478D2259A3AA0050CB02 /* POPCustomAnimation.mm in Sources */,
@@ -1246,6 +1306,7 @@
 				3795479B2259A3AA0050CB02 /* POPAnimationEvent.mm in Sources */,
 				379547CD2259A3AA0050CB02 /* HXCustomAssetModel.m in Sources */,
 				379547D02259A3AA0050CB02 /* HXCustomNavigationController.m in Sources */,
+				37763EDE225F6FCD00F364CC /* GPResponseCellNode.m in Sources */,
 				4A2FF792225D72FF003587E0 /* GGGMovieDetailHeaderTableViewCell.m in Sources */,
 				379547BB2259A3AA0050CB02 /* UIView+HXExtension.m in Sources */,
 				3795479C2259A3AA0050CB02 /* POPLayerExtras.mm in Sources */,
@@ -1253,6 +1314,7 @@
 				379547C52259A3AA0050CB02 /* HXPhotoCustomNavigationBar.m in Sources */,
 				379547D72259A3AA0050CB02 /* HXPhotoEditViewController.m in Sources */,
 				379547BE2259A3AA0050CB02 /* NSTimer+HXExtension.m in Sources */,
+				37763ED2225F2A0800F364CC /* GPTopicListController.m in Sources */,
 				379547EA2259A3AA0050CB02 /* UIColor+ZDDColor.m in Sources */,
 				379547A22259A3AA0050CB02 /* TEMPAppDelegate+BackgroundTask.m in Sources */,
 				379547DA2259A3AA0050CB02 /* XJEmojePreView.m in Sources */,
