@@ -16,6 +16,7 @@
 
 
 #import "FFFMovieContainerViewController.h"
+#import "FFFYDListViewController.h"
 
 @interface ZDDTabBarController ()
 <
@@ -76,7 +77,10 @@ UITabBarControllerDelegate
 //    ZDDThridController *four = [[ZDDThridController alloc] init];
 //    [self addChileVcWithTitle:@"我的" vc:four imageName:@"mine_unSelected" selImageName:@"mine_selected"];
     FFFMovieContainerViewController *movie = [FFFMovieContainerViewController new];
-    [self addChileVcWithTitle:@"Movie" vc:movie imageName:@"ico_tab_friend_40x40_" selImageName:@"ico_tab_friend_pressed-white_40x40_"];
+    [self addChileVcWithTitle:@"影音" vc:movie imageName:@"ico_tab_friend_40x40_" selImageName:@"ico_tab_friend_pressed-white_40x40_"];
+    
+    FFFYDListViewController *yd = [FFFYDListViewController new];
+    [self addChileVcWithTitle:@"影单" vc:yd imageName:@"ico_tab_diary_40x40_" selImageName:@"ico_tab_diary_pressed_40x40_"];
     
     GPTopicListController *topic = [GPTopicListController new];
     [self addChileVcWithTitle:@"话题" vc:topic imageName:@"ico_tab_timeline_40x40_" selImageName:@"ico_tab_timeline_pressed_40x40_"];

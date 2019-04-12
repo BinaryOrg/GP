@@ -23,9 +23,14 @@
         [self.contentView addSubview:self.bgImageView];
         self.bgImageView.layer.masksToBounds = YES;
         
-        UIView *alphaView = [[UIView alloc] initWithFrame:self.bgImageView.bounds];
-        alphaView.backgroundColor = [UIColor colorWithWhite:0. alpha:0.7];
-        [self.bgImageView addSubview:alphaView];
+//        UIView *alphaView = [[UIView alloc] initWithFrame:self.bgImageView.bounds];
+//        alphaView.backgroundColor = [UIColor colorWithWhite:0. alpha:0.7];
+//        [self.bgImageView addSubview:alphaView];
+
+        UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        UIVisualEffectView *vis = [[UIVisualEffectView alloc] initWithEffect:blur];
+        vis.frame = self.bgImageView.bounds;
+        [self.bgImageView addSubview:vis];
         
         self.posterImageView = [[YYAnimatedImageView alloc] initWithFrame:CGRectMake((SCREENWIDTH - 100)/2, 40, 100, 150)];
         self.posterImageView.contentMode = UIViewContentModeScaleAspectFill;

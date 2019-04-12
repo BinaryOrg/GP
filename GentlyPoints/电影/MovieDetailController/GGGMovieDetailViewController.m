@@ -153,7 +153,37 @@ UICollectionViewDataSource
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.fd_prefersNavigationBarHidden = YES;
-    [self.view addSubview:self.tableView];
+    [self sendRequest];
+    __weak __typeof(self)weakSelf = self;
+    self.errorViewClickBlock = ^{
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        [strongSelf sendRequest];
+    };
+}
+
+- (void)sendRequest {
+    //影评和话题
+    [self showLoading];
+    [self removeErrorView];
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
+    [MFNETWROK post:@"http://120.78.124.36:10020/WP/Movie/ListCategoryMovies"
+             params:@{@"category": @"is_playing"}
+            success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                NSLog(@"%@", result);
+                [self hideLoading];
+                if (![result[@"resultCode"] integerValue]) {
+                    
+                    [self.view addSubview:self.tableView];
+                    [self.tableView reloadData];
+                }else {
+                    [self addEmptyView];
+                }
+            }
+            failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                NSLog(@"%@", error.userInfo);
+                [self hideLoading];
+                [self addEmptyView];
+            }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

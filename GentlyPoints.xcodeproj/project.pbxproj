@@ -138,6 +138,10 @@
 		4A15FBED2260175E005F2C71 /* FFFMovieDetailStillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A15FBEC2260175E005F2C71 /* FFFMovieDetailStillTableViewCell.m */; };
 		4A15FBF0226017D0005F2C71 /* FFFIntroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A15FBEF226017D0005F2C71 /* FFFIntroTableViewCell.m */; };
 		4A15FBF322603495005F2C71 /* FFFPictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A15FBF222603495005F2C71 /* FFFPictureCollectionViewCell.m */; };
+		4A15FBF8226054C4005F2C71 /* FFFYDListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A15FBF7226054C4005F2C71 /* FFFYDListViewController.m */; };
+		4A15FBFC226054DA005F2C71 /* FFFYDTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A15FBFB226054DA005F2C71 /* FFFYDTableViewCell.m */; };
+		4A15FBFF226056FC005F2C71 /* FFFYDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A15FBFE226056FC005F2C71 /* FFFYDCollectionViewCell.m */; };
+		4A15FC032260619C005F2C71 /* FFFYDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A15FC022260619C005F2C71 /* FFFYDDetailViewController.m */; };
 		4A23A511225F158100192A2D /* FFFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A510225F158100192A2D /* FFFBaseViewController.m */; };
 		4A23A515225F22F200192A2D /* FFFMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A514225F22F200192A2D /* FFFMovieViewController.m */; };
 		4A23A519225F27D200192A2D /* FFFMovieContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A518225F27D200192A2D /* FFFMovieContainerViewController.m */; };
@@ -442,6 +446,14 @@
 		4A15FBEF226017D0005F2C71 /* FFFIntroTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFIntroTableViewCell.m; sourceTree = "<group>"; };
 		4A15FBF122603495005F2C71 /* FFFPictureCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFPictureCollectionViewCell.h; sourceTree = "<group>"; };
 		4A15FBF222603495005F2C71 /* FFFPictureCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFPictureCollectionViewCell.m; sourceTree = "<group>"; };
+		4A15FBF6226054C4005F2C71 /* FFFYDListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFYDListViewController.h; sourceTree = "<group>"; };
+		4A15FBF7226054C4005F2C71 /* FFFYDListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFYDListViewController.m; sourceTree = "<group>"; };
+		4A15FBFA226054DA005F2C71 /* FFFYDTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFYDTableViewCell.h; sourceTree = "<group>"; };
+		4A15FBFB226054DA005F2C71 /* FFFYDTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFYDTableViewCell.m; sourceTree = "<group>"; };
+		4A15FBFD226056FC005F2C71 /* FFFYDCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFYDCollectionViewCell.h; sourceTree = "<group>"; };
+		4A15FBFE226056FC005F2C71 /* FFFYDCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFYDCollectionViewCell.m; sourceTree = "<group>"; };
+		4A15FC012260619C005F2C71 /* FFFYDDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFYDDetailViewController.h; sourceTree = "<group>"; };
+		4A15FC022260619C005F2C71 /* FFFYDDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFYDDetailViewController.m; sourceTree = "<group>"; };
 		4A23A50F225F158100192A2D /* FFFBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFBaseViewController.h; sourceTree = "<group>"; };
 		4A23A510225F158100192A2D /* FFFBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFBaseViewController.m; sourceTree = "<group>"; };
 		4A23A513225F22F200192A2D /* FFFMovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMovieViewController.h; sourceTree = "<group>"; };
@@ -568,6 +580,7 @@
 				379546952259A3A60050CB02 /* WebView */,
 				379546822259A3950050CB02 /* Base */,
 				75D91585225F7391003721F4 /* 电影 */,
+				4A15FBF422603F1E005F2C71 /* 影单 */,
 				379546562259A3330050CB02 /* Main.storyboard */,
 				379546592259A3340050CB02 /* Assets.xcassets */,
 				3795465B2259A3340050CB02 /* LaunchScreen.storyboard */,
@@ -1016,6 +1029,37 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		4A15FBF422603F1E005F2C71 /* 影单 */ = {
+			isa = PBXGroup;
+			children = (
+				4A15FC0022606189005F2C71 /* Detail */,
+				4A15FBF9226054CA005F2C71 /* Cell */,
+				4A15FBF6226054C4005F2C71 /* FFFYDListViewController.h */,
+				4A15FBF7226054C4005F2C71 /* FFFYDListViewController.m */,
+			);
+			path = "影单";
+			sourceTree = "<group>";
+		};
+		4A15FBF9226054CA005F2C71 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4A15FBFA226054DA005F2C71 /* FFFYDTableViewCell.h */,
+				4A15FBFB226054DA005F2C71 /* FFFYDTableViewCell.m */,
+				4A15FBFD226056FC005F2C71 /* FFFYDCollectionViewCell.h */,
+				4A15FBFE226056FC005F2C71 /* FFFYDCollectionViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4A15FC0022606189005F2C71 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				4A15FC012260619C005F2C71 /* FFFYDDetailViewController.h */,
+				4A15FC022260619C005F2C71 /* FFFYDDetailViewController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		4A23A50E225F156D00192A2D /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -1359,9 +1403,11 @@
 				379547D92259A3AA0050CB02 /* HXVideoEditViewController.m in Sources */,
 				4A23A525225F2D8A00192A2D /* FFFMovieModel.m in Sources */,
 				379547C02259A3AA0050CB02 /* UILabel+HXExtension.m in Sources */,
+				4A15FBFF226056FC005F2C71 /* FFFYDCollectionViewCell.m in Sources */,
 				4A23A519225F27D200192A2D /* FFFMovieContainerViewController.m in Sources */,
 				4A23A529225F2F6B00192A2D /* FFFActorModel.m in Sources */,
 				379547B52259A3AA0050CB02 /* NSString+HXExtension.m in Sources */,
+				4A15FBFC226054DA005F2C71 /* FFFYDTableViewCell.m in Sources */,
 				379547B82259A3AA0050CB02 /* NSBundle+HXPhotoPicker.m in Sources */,
 				379547B42259A3AA0050CB02 /* HXPhotoViewTransition.m in Sources */,
 				379547A62259A3AA0050CB02 /* TEMPAppDelegate+PushService.m in Sources */,
@@ -1373,6 +1419,7 @@
 				379547EE2259A3AA0050CB02 /* Foundation+Log.m in Sources */,
 				379547AA2259A3AA0050CB02 /* ZTWButton.m in Sources */,
 				379547B72259A3AA0050CB02 /* NSArray+HXExtension.m in Sources */,
+				4A15FC032260619C005F2C71 /* FFFYDDetailViewController.m in Sources */,
 				379547942259A3AA0050CB02 /* POPAnimation.mm in Sources */,
 				379547CE2259A3AA0050CB02 /* HXPhotoView.m in Sources */,
 				379547A72259A3AA0050CB02 /* UIColor+CustomColors.m in Sources */,
@@ -1467,6 +1514,7 @@
 				379547C42259A3AA0050CB02 /* HXAlbumListViewController.m in Sources */,
 				379547E22259A3AA0050CB02 /* XJInputView.m in Sources */,
 				379547A52259A3AA0050CB02 /* NSString+YMHLAdditions.m in Sources */,
+				4A15FBF8226054C4005F2C71 /* FFFYDListViewController.m in Sources */,
 				379547D32259A3AA0050CB02 /* HXAlbumlistView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
