@@ -144,6 +144,7 @@
 		379547F42259A3B80050CB02 /* TEMPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 379547F22259A3B80050CB02 /* TEMPAppDelegate.m */; };
 		37E8260F2259A893004BE9CE /* GODUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E8260D2259A893004BE9CE /* GODUserModel.m */; };
 		37E826102259A893004BE9CE /* GODUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E8260E2259A893004BE9CE /* GODUserTool.m */; };
+		4A15E34D2260937F009525B2 /* ad.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4A15E34C2260937F009525B2 /* ad.jpeg */; };
 		4A23A511225F158100192A2D /* FFFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A510225F158100192A2D /* FFFBaseViewController.m */; };
 		4A23A515225F22F200192A2D /* FFFMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A514225F22F200192A2D /* FFFMovieViewController.m */; };
 		4A23A519225F27D200192A2D /* FFFMovieContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A518225F27D200192A2D /* FFFMovieContainerViewController.m */; };
@@ -458,6 +459,7 @@
 		37E8260C2259A892004BE9CE /* GODUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODUserModel.h; sourceTree = "<group>"; };
 		37E8260D2259A893004BE9CE /* GODUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODUserModel.m; sourceTree = "<group>"; };
 		37E8260E2259A893004BE9CE /* GODUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODUserTool.m; sourceTree = "<group>"; };
+		4A15E34C2260937F009525B2 /* ad.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad.jpeg; sourceTree = "<group>"; };
 		4A23A50F225F158100192A2D /* FFFBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFBaseViewController.h; sourceTree = "<group>"; };
 		4A23A510225F158100192A2D /* FFFBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFBaseViewController.m; sourceTree = "<group>"; };
 		4A23A513225F22F200192A2D /* FFFMovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMovieViewController.h; sourceTree = "<group>"; };
@@ -518,9 +520,9 @@
 			isa = PBXGroup;
 			children = (
 				371DD81B2260850600F1335D /* FFFYDListViewController.h */,
+				371DD8242260850600F1335D /* FFFYDListViewController.m */,
 				371DD81C2260850600F1335D /* Cell */,
 				371DD8212260850600F1335D /* Detail */,
-				371DD8242260850600F1335D /* FFFYDListViewController.m */,
 			);
 			path = "影单";
 			sourceTree = "<group>";
@@ -652,6 +654,7 @@
 				3795465E2259A3340050CB02 /* Info.plist */,
 				37E8260A2259A754004BE9CE /* PrefixHeader.pch */,
 				3795465F2259A3340050CB02 /* main.m */,
+				4A15E34C2260937F009525B2 /* ad.jpeg */,
 			);
 			path = GentlyPoints;
 			sourceTree = "<group>";
@@ -1300,6 +1303,7 @@
 				379546582259A3330050CB02 /* Main.storyboard in Resources */,
 				379547A82259A3AA0050CB02 /* gg.jpg in Resources */,
 				379547F12259A3AA0050CB02 /* mook.json in Resources */,
+				4A15E34D2260937F009525B2 /* ad.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
