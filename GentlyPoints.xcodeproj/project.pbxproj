@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371DD8112260796200F1335D /* FFFMovieDetailActorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD8072260796100F1335D /* FFFMovieDetailActorTableViewCell.m */; };
+		371DD8122260796200F1335D /* FFFIntroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD8082260796100F1335D /* FFFIntroTableViewCell.m */; };
+		371DD8132260796200F1335D /* FFFPictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD80C2260796100F1335D /* FFFPictureCollectionViewCell.m */; };
+		371DD8142260796200F1335D /* FFFMovieDetailStillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD80D2260796100F1335D /* FFFMovieDetailStillTableViewCell.m */; };
+		371DD8152260796200F1335D /* GGGMovieDetailHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD8102260796100F1335D /* GGGMovieDetailHeaderTableViewCell.m */; };
+		371DD8192260845900F1335D /* FFFCalcHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD8182260845900F1335D /* FFFCalcHeight.m */; };
 		37763ED2225F2A0800F364CC /* GPTopicListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763ED1225F2A0800F364CC /* GPTopicListController.m */; };
 		37763ED5225F335300F364CC /* GPTopicListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763ED4225F335300F364CC /* GPTopicListCellNode.m */; };
 		37763ED8225F34D600F364CC /* GPTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763ED7225F34D600F364CC /* GPTopicModel.m */; };
@@ -164,6 +170,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		371DD8072260796100F1335D /* FFFMovieDetailActorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFMovieDetailActorTableViewCell.m; sourceTree = "<group>"; };
+		371DD8082260796100F1335D /* FFFIntroTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFIntroTableViewCell.m; sourceTree = "<group>"; };
+		371DD8092260796100F1335D /* FFFMovieDetailActorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFMovieDetailActorTableViewCell.h; sourceTree = "<group>"; };
+		371DD80A2260796100F1335D /* FFFIntroTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFIntroTableViewCell.h; sourceTree = "<group>"; };
+		371DD80B2260796100F1335D /* FFFPictureCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFPictureCollectionViewCell.h; sourceTree = "<group>"; };
+		371DD80C2260796100F1335D /* FFFPictureCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFPictureCollectionViewCell.m; sourceTree = "<group>"; };
+		371DD80D2260796100F1335D /* FFFMovieDetailStillTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFMovieDetailStillTableViewCell.m; sourceTree = "<group>"; };
+		371DD80E2260796100F1335D /* GGGMovieDetailHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGGMovieDetailHeaderTableViewCell.h; sourceTree = "<group>"; };
+		371DD80F2260796100F1335D /* FFFMovieDetailStillTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFMovieDetailStillTableViewCell.h; sourceTree = "<group>"; };
+		371DD8102260796100F1335D /* GGGMovieDetailHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGGMovieDetailHeaderTableViewCell.m; sourceTree = "<group>"; };
+		371DD8172260845900F1335D /* FFFCalcHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFCalcHeight.h; sourceTree = "<group>"; };
+		371DD8182260845900F1335D /* FFFCalcHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFCalcHeight.m; sourceTree = "<group>"; };
 		37763ED0225F2A0800F364CC /* GPTopicListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopicListController.h; sourceTree = "<group>"; };
 		37763ED1225F2A0800F364CC /* GPTopicListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTopicListController.m; sourceTree = "<group>"; };
 		37763ED3225F335300F364CC /* GPTopicListCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopicListCellNode.h; sourceTree = "<group>"; };
@@ -478,6 +496,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		371DD8162260845900F1335D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				371DD8172260845900F1335D /* FFFCalcHeight.h */,
+				371DD8182260845900F1335D /* FFFCalcHeight.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		37763ECC225F28DC00F364CC /* Topic */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +559,16 @@
 		37763EE1225F810500F364CC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				371DD80A2260796100F1335D /* FFFIntroTableViewCell.h */,
+				371DD8082260796100F1335D /* FFFIntroTableViewCell.m */,
+				371DD8092260796100F1335D /* FFFMovieDetailActorTableViewCell.h */,
+				371DD8072260796100F1335D /* FFFMovieDetailActorTableViewCell.m */,
+				371DD80F2260796100F1335D /* FFFMovieDetailStillTableViewCell.h */,
+				371DD80D2260796100F1335D /* FFFMovieDetailStillTableViewCell.m */,
+				371DD80B2260796100F1335D /* FFFPictureCollectionViewCell.h */,
+				371DD80C2260796100F1335D /* FFFPictureCollectionViewCell.m */,
+				371DD80E2260796100F1335D /* GGGMovieDetailHeaderTableViewCell.h */,
+				371DD8102260796100F1335D /* GGGMovieDetailHeaderTableViewCell.m */,
 				37763EE2225F810500F364CC /* GGGMovieDetailHeaderTableViewCell.h */,
 				37763EE3225F810500F364CC /* GGGMovieDetailHeaderTableViewCell.m */,
 			);
@@ -1081,6 +1118,7 @@
 		75D91585225F7391003721F4 /* 电影 */ = {
 			isa = PBXGroup;
 			children = (
+				371DD8162260845900F1335D /* Util */,
 				37763EDF225F810500F364CC /* MovieDetailController */,
 				4A23A50E225F156D00192A2D /* Base */,
 				4A23A516225F278800192A2D /* MovieContainerController */,
@@ -1313,6 +1351,7 @@
 				3795468E2259A3950050CB02 /* ZDDNavController.m in Sources */,
 				379547992259A3AA0050CB02 /* POPAnimatableProperty.mm in Sources */,
 				379547D12259A3AA0050CB02 /* HXPhotoSubViewCell.m in Sources */,
+				371DD8142260796200F1335D /* FFFMovieDetailStillTableViewCell.m in Sources */,
 				379547CB2259A3AA0050CB02 /* HXCustomCameraController.m in Sources */,
 				379547AE2259A3AA0050CB02 /* HXDownloadProgressView.m in Sources */,
 				379547C22259A3AA0050CB02 /* HXPhotoModel.m in Sources */,
@@ -1379,6 +1418,7 @@
 				3795479D2259A3AA0050CB02 /* POPVector.mm in Sources */,
 				379547892259A3AA0050CB02 /* POPCGUtils.mm in Sources */,
 				379547EB2259A3AA0050CB02 /* NSArray+HYBUnicodeReadable.m in Sources */,
+				371DD8192260845900F1335D /* FFFCalcHeight.m in Sources */,
 				3795479F2259A3AA0050CB02 /* UIView+LH.m in Sources */,
 				379547B12259A3AA0050CB02 /* HXPhotoInteractiveTransition.m in Sources */,
 				379547882259A3AA0050CB02 /* GODWebViewController.m in Sources */,
@@ -1393,11 +1433,13 @@
 				4A23A511225F158100192A2D /* FFFBaseViewController.m in Sources */,
 				3795468B2259A3950050CB02 /* ZDDBaseViewController.m in Sources */,
 				379547D22259A3AA0050CB02 /* HXAlbumModel.m in Sources */,
+				371DD8112260796200F1335D /* FFFMovieDetailActorTableViewCell.m in Sources */,
 				379547EC2259A3AA0050CB02 /* NSDictionary+HYBUnicodeReadable.m in Sources */,
 				379547D42259A3AA0050CB02 /* HXCustomPreviewView.m in Sources */,
 				379547972259A3AA0050CB02 /* TransformationMatrix.mm in Sources */,
 				379547AF2259A3AA0050CB02 /* HXPhoto3DTouchViewController.m in Sources */,
 				379547DC2259A3AA0050CB02 /* UIView+FrameUtilty.m in Sources */,
+				371DD8152260796200F1335D /* GGGMovieDetailHeaderTableViewCell.m in Sources */,
 				379547E32259A3AA0050CB02 /* XJMulitFuctionView.m in Sources */,
 				3795479B2259A3AA0050CB02 /* POPAnimationEvent.mm in Sources */,
 				379547CD2259A3AA0050CB02 /* HXCustomAssetModel.m in Sources */,
@@ -1422,6 +1464,7 @@
 				379547862259A3AA0050CB02 /* TEMPSDKManager.m in Sources */,
 				379547B02259A3AA0050CB02 /* HXPhotoEditTransition.m in Sources */,
 				379547C62259A3AA0050CB02 /* HXPhotoPreviewViewController.m in Sources */,
+				371DD8122260796200F1335D /* FFFIntroTableViewCell.m in Sources */,
 				3795468C2259A3950050CB02 /* ZDDTabBarController.m in Sources */,
 				379547E52259A3AA0050CB02 /* XJFaceEmojeView.m in Sources */,
 				4A23A52D225F32ED00192A2D /* FFFMovieTableViewCell.m in Sources */,
@@ -1429,6 +1472,7 @@
 				379547C42259A3AA0050CB02 /* HXAlbumListViewController.m in Sources */,
 				379547E22259A3AA0050CB02 /* XJInputView.m in Sources */,
 				379547A52259A3AA0050CB02 /* NSString+YMHLAdditions.m in Sources */,
+				371DD8132260796200F1335D /* FFFPictureCollectionViewCell.m in Sources */,
 				379547D32259A3AA0050CB02 /* HXAlbumlistView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
