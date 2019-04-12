@@ -58,7 +58,7 @@
     [XHLaunchAd setWaitDataDuration:1];
     
     XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
-    imageAdconfiguration.imageNameOrURLString = @"gg.jpg";
+    imageAdconfiguration.imageNameOrURLString = @"ad.jpeg";
     [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
     
     ZDDTabBarController *tabBarController = [[ZDDTabBarController alloc] initWithCenterButton:NO];
