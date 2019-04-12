@@ -17,7 +17,8 @@
 #import "TEMPMacro.h"
 #import "NSMutableAttributedString+Chain.h"
 #import "GODUserTool.h"
-
+#import "UIColor+ZTWColor.h"
+#import "UIFont+ZTWFont.h"
 
 #import <Masonry.h>
 #import <UIColor+QMUI.h>

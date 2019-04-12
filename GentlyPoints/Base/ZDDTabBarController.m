@@ -16,6 +16,7 @@
 
 
 #import "FFFMovieContainerViewController.h"
+#import "FFFYDListViewController.h"
 
 @interface ZDDTabBarController ()
 <
@@ -30,7 +31,7 @@ UITabBarControllerDelegate
     _hasCenterButton = hasCenterButton;
     self = [super init];
     if (self) {
-        ZDDThemeConfiguration *theme = [ZDDThemeConfiguration defaultConfiguration];
+//        ZDDThemeConfiguration *theme = [ZDDThemeConfiguration defaultConfiguration];
 //        [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.selectTabColor} forState:UIControlStateSelected];
 //        [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.normalTabColor} forState:UIControlStateNormal];
     }
@@ -76,7 +77,10 @@ UITabBarControllerDelegate
 //    ZDDThridController *four = [[ZDDThridController alloc] init];
 //    [self addChileVcWithTitle:@"我的" vc:four imageName:@"mine_unSelected" selImageName:@"mine_selected"];
     FFFMovieContainerViewController *movie = [FFFMovieContainerViewController new];
-    [self addChileVcWithTitle:@"Movie" vc:movie imageName:@"ico_tab_friend_40x40_" selImageName:@"ico_tab_friend_pressed-white_40x40_"];
+    [self addChileVcWithTitle:@"影音" vc:movie imageName:@"ico_tab_friend_40x40_" selImageName:@"ico_tab_friend_pressed-white_40x40_"];
+    
+    FFFYDListViewController *yd = [FFFYDListViewController new];
+    [self addChileVcWithTitle:@"影单" vc:yd imageName:@"ico_tab_diary_40x40_" selImageName:@"ico_tab_diary_pressed_40x40_"];
     
     GPTopicListController *topic = [GPTopicListController new];
     [self addChileVcWithTitle:@"话题" vc:topic imageName:@"ico_tab_timeline_40x40_" selImageName:@"ico_tab_timeline_pressed_40x40_"];
@@ -87,8 +91,10 @@ UITabBarControllerDelegate
     [vc.tabBarItem setTitle:title];
     if (title.length) {
         vc.title = title;
-        [vc.tabBarItem setImage:[UIImage imageNamed:imageName]];
-        [vc.tabBarItem setSelectedImage:[UIImage imageNamed:selImageName]];
+        UIImage *image = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIImage *selectedImage = [[UIImage imageNamed:selImageName] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+        [vc.tabBarItem setImage:image];
+        [vc.tabBarItem setSelectedImage:selectedImage];
     }
     ZDDNavController *navVc = [[ZDDNavController alloc] initWithRootViewController:vc];
     [self addChildViewController:navVc];

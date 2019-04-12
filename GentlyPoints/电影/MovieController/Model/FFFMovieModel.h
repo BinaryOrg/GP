@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *release_info;
 @property (nonatomic, strong) NSArray<FFFActorModel *> *actor_list;
 @property (nonatomic, strong) NSArray<NSString *> *stills;
+@property (nonatomic, assign) CGFloat content_height;
 @end
 
 /*

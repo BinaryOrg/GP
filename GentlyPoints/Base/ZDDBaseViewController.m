@@ -102,10 +102,43 @@
       
         if (showRefrehHeader) {
             __weak typeof(self) weakSelf = self;
-            
             MJRefreshGifHeader *gifHeader = [MJRefreshGifHeader headerWithRefreshingBlock:^{
                 [weakSelf headerRefresh];
             }];
+    
+            NSMutableArray *idleImages = [NSMutableArray array];
+            for (NSUInteger i = 0; i <= 78; i++) {
+                NSString *imgName = [NSString stringWithFormat:@"iCityLoading2_000%02ld_74x50_", (unsigned long)i];
+                UIImage *image = [UIImage imageNamed:imgName];
+                if (image) {
+                    [idleImages addObject:image];
+                }
+            }
+    
+            [gifHeader setImages:idleImages forState:MJRefreshStateIdle];
+    
+            // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
+            NSMutableArray *refreshingImages = [NSMutableArray array];
+            for (NSUInteger i = 4; i <= 78; i++) {
+                NSString *imgName = [NSString stringWithFormat:@"iCityLoading2_000%02ld_74x50_", (unsigned long)i];
+                UIImage *image = [UIImage imageNamed:imgName];
+                if (image) {
+                    [refreshingImages addObject:image];
+                }
+            }
+            [gifHeader setImages:refreshingImages forState:MJRefreshStatePulling];
+    
+            // 设置正在刷新状态的动画图片
+            [gifHeader setImages:refreshingImages forState:MJRefreshStateRefreshing];
+    
+            //隐藏时间
+            gifHeader.lastUpdatedTimeLabel.hidden = YES;
+            //隐藏状态
+            gifHeader.stateLabel.hidden = YES;
+            //        _tableView.mj_header = gifHeader;
+//            MJRefreshGifHeader *gifHeader = [MJRefreshGifHeader headerWithRefreshingBlock:^{
+//                [weakSelf headerRefresh];
+//            }];
             
 //            NSMutableArray *idleImages = [NSMutableArray array];
 //            for (NSUInteger i = 1; i <= 19; i++) {
