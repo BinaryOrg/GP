@@ -133,6 +133,11 @@
 		379547F42259A3B80050CB02 /* TEMPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 379547F22259A3B80050CB02 /* TEMPAppDelegate.m */; };
 		37E8260F2259A893004BE9CE /* GODUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E8260D2259A893004BE9CE /* GODUserModel.m */; };
 		37E826102259A893004BE9CE /* GODUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E8260E2259A893004BE9CE /* GODUserTool.m */; };
+		4A15FBE72260146D005F2C71 /* FFFCalcHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A15FBE62260146D005F2C71 /* FFFCalcHeight.m */; };
+		4A15FBEA2260171A005F2C71 /* FFFMovieDetailActorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A15FBE92260171A005F2C71 /* FFFMovieDetailActorTableViewCell.m */; };
+		4A15FBED2260175E005F2C71 /* FFFMovieDetailStillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A15FBEC2260175E005F2C71 /* FFFMovieDetailStillTableViewCell.m */; };
+		4A15FBF0226017D0005F2C71 /* FFFIntroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A15FBEF226017D0005F2C71 /* FFFIntroTableViewCell.m */; };
+		4A15FBF322603495005F2C71 /* FFFPictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A15FBF222603495005F2C71 /* FFFPictureCollectionViewCell.m */; };
 		4A23A511225F158100192A2D /* FFFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A510225F158100192A2D /* FFFBaseViewController.m */; };
 		4A23A515225F22F200192A2D /* FFFMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A514225F22F200192A2D /* FFFMovieViewController.m */; };
 		4A23A519225F27D200192A2D /* FFFMovieContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A518225F27D200192A2D /* FFFMovieContainerViewController.m */; };
@@ -427,6 +432,16 @@
 		37E8260C2259A892004BE9CE /* GODUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODUserModel.h; sourceTree = "<group>"; };
 		37E8260D2259A893004BE9CE /* GODUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODUserModel.m; sourceTree = "<group>"; };
 		37E8260E2259A893004BE9CE /* GODUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODUserTool.m; sourceTree = "<group>"; };
+		4A15FBE52260146D005F2C71 /* FFFCalcHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFCalcHeight.h; sourceTree = "<group>"; };
+		4A15FBE62260146D005F2C71 /* FFFCalcHeight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFCalcHeight.m; sourceTree = "<group>"; };
+		4A15FBE82260171A005F2C71 /* FFFMovieDetailActorTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMovieDetailActorTableViewCell.h; sourceTree = "<group>"; };
+		4A15FBE92260171A005F2C71 /* FFFMovieDetailActorTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFMovieDetailActorTableViewCell.m; sourceTree = "<group>"; };
+		4A15FBEB2260175E005F2C71 /* FFFMovieDetailStillTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMovieDetailStillTableViewCell.h; sourceTree = "<group>"; };
+		4A15FBEC2260175E005F2C71 /* FFFMovieDetailStillTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFMovieDetailStillTableViewCell.m; sourceTree = "<group>"; };
+		4A15FBEE226017D0005F2C71 /* FFFIntroTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFIntroTableViewCell.h; sourceTree = "<group>"; };
+		4A15FBEF226017D0005F2C71 /* FFFIntroTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFIntroTableViewCell.m; sourceTree = "<group>"; };
+		4A15FBF122603495005F2C71 /* FFFPictureCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFPictureCollectionViewCell.h; sourceTree = "<group>"; };
+		4A15FBF222603495005F2C71 /* FFFPictureCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFPictureCollectionViewCell.m; sourceTree = "<group>"; };
 		4A23A50F225F158100192A2D /* FFFBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFBaseViewController.h; sourceTree = "<group>"; };
 		4A23A510225F158100192A2D /* FFFBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFBaseViewController.m; sourceTree = "<group>"; };
 		4A23A513225F22F200192A2D /* FFFMovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMovieViewController.h; sourceTree = "<group>"; };
@@ -992,6 +1007,15 @@
 			path = ZDDPhotoBrowse;
 			sourceTree = "<group>";
 		};
+		4A15FBE422601456005F2C71 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4A15FBE52260146D005F2C71 /* FFFCalcHeight.h */,
+				4A15FBE62260146D005F2C71 /* FFFCalcHeight.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		4A23A50E225F156D00192A2D /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -1062,6 +1086,7 @@
 		75D91585225F7391003721F4 /* 电影 */ = {
 			isa = PBXGroup;
 			children = (
+				4A15FBE422601456005F2C71 /* Util */,
 				4A23A50E225F156D00192A2D /* Base */,
 				4A23A516225F278800192A2D /* MovieContainerController */,
 				4A23A512225F22CA00192A2D /* MovieController */,
@@ -1085,6 +1110,14 @@
 			children = (
 				75D9158D225F81E4003721F4 /* GGGMovieDetailHeaderTableViewCell.h */,
 				75D9158C225F81E4003721F4 /* GGGMovieDetailHeaderTableViewCell.m */,
+				4A15FBEE226017D0005F2C71 /* FFFIntroTableViewCell.h */,
+				4A15FBEF226017D0005F2C71 /* FFFIntroTableViewCell.m */,
+				4A15FBE82260171A005F2C71 /* FFFMovieDetailActorTableViewCell.h */,
+				4A15FBE92260171A005F2C71 /* FFFMovieDetailActorTableViewCell.m */,
+				4A15FBEB2260175E005F2C71 /* FFFMovieDetailStillTableViewCell.h */,
+				4A15FBEC2260175E005F2C71 /* FFFMovieDetailStillTableViewCell.m */,
+				4A15FBF122603495005F2C71 /* FFFPictureCollectionViewCell.h */,
+				4A15FBF222603495005F2C71 /* FFFPictureCollectionViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1317,6 +1350,7 @@
 				379547C22259A3AA0050CB02 /* HXPhotoModel.m in Sources */,
 				379547BA2259A3AA0050CB02 /* UIFont+HXExtension.m in Sources */,
 				379547E12259A3AA0050CB02 /* XJItemSelView.m in Sources */,
+				4A15FBF0226017D0005F2C71 /* FFFIntroTableViewCell.m in Sources */,
 				379547BC2259A3AA0050CB02 /* UIImage+HXExtension.m in Sources */,
 				379547962259A3AA0050CB02 /* POPBasicAnimation.mm in Sources */,
 				379547EF2259A3AA0050CB02 /* TEMPKeyConfiguration.m in Sources */,
@@ -1334,6 +1368,7 @@
 				379547A42259A3AA0050CB02 /* NSString+Regex.m in Sources */,
 				379547DF2259A3AA0050CB02 /* XJChatInputView.m in Sources */,
 				379547AC2259A3AA0050CB02 /* HXPhotoPreviewBottomView.m in Sources */,
+				4A15FBF322603495005F2C71 /* FFFPictureCollectionViewCell.m in Sources */,
 				379547E82259A3AA0050CB02 /* UIImage+Blur.m in Sources */,
 				379547EE2259A3AA0050CB02 /* Foundation+Log.m in Sources */,
 				379547AA2259A3AA0050CB02 /* ZTWButton.m in Sources */,
@@ -1375,6 +1410,7 @@
 				3795478D2259A3AA0050CB02 /* POPCustomAnimation.mm in Sources */,
 				37E8260F2259A893004BE9CE /* GODUserModel.m in Sources */,
 				3795479D2259A3AA0050CB02 /* POPVector.mm in Sources */,
+				4A15FBE72260146D005F2C71 /* FFFCalcHeight.m in Sources */,
 				379547892259A3AA0050CB02 /* POPCGUtils.mm in Sources */,
 				379547EB2259A3AA0050CB02 /* NSArray+HYBUnicodeReadable.m in Sources */,
 				3795479F2259A3AA0050CB02 /* UIView+LH.m in Sources */,
@@ -1401,6 +1437,7 @@
 				379547CD2259A3AA0050CB02 /* HXCustomAssetModel.m in Sources */,
 				379547D02259A3AA0050CB02 /* HXCustomNavigationController.m in Sources */,
 				37763EDE225F6FCD00F364CC /* GPResponseCellNode.m in Sources */,
+				4A15FBED2260175E005F2C71 /* FFFMovieDetailStillTableViewCell.m in Sources */,
 				379547BB2259A3AA0050CB02 /* UIView+HXExtension.m in Sources */,
 				3795479C2259A3AA0050CB02 /* POPLayerExtras.mm in Sources */,
 				379547F42259A3B80050CB02 /* TEMPAppDelegate.m in Sources */,
@@ -1413,6 +1450,7 @@
 				379547A22259A3AA0050CB02 /* TEMPAppDelegate+BackgroundTask.m in Sources */,
 				379547DA2259A3AA0050CB02 /* XJEmojePreView.m in Sources */,
 				75D9158E225F81E4003721F4 /* GGGMovieDetailHeaderTableViewCell.m in Sources */,
+				4A15FBEA2260171A005F2C71 /* FFFMovieDetailActorTableViewCell.m in Sources */,
 				379547DE2259A3AA0050CB02 /* XJFaceInputHelper.m in Sources */,
 				379547D62259A3AA0050CB02 /* HXCircleProgressView.m in Sources */,
 				379547B22259A3AA0050CB02 /* HXPhotoViewPresentTransition.m in Sources */,

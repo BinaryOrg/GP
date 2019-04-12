@@ -12,11 +12,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GGGMovieDetailHeaderTableViewCell : UITableViewCell
 @property (nonatomic, strong) YYAnimatedImageView *bgImageView;
-@property (nonatomic, strong) YYAnimatedImageView *coverImageView;
+@property (nonatomic, strong) YYAnimatedImageView *posterImageView;
 
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *typeLabel;
 @property (nonatomic, strong) UILabel *regionLabel;
+@property (nonatomic, strong) UILabel *dateLabel;
 @property (nonatomic, strong) UILabel *durationLabel;
+
+@property (nonatomic, strong) UILabel *scoreLabel;
+
+
 
 @end
 
