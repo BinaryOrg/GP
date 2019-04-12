@@ -95,7 +95,7 @@ UICollectionViewDataSource
             [cell.poster yy_setImageWithURL:[NSURL URLWithString:self.yd[indexPath.row].poster] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
         }else {
             cell.nameLabel.text = @"";
-            [cell.poster yy_setImageWithURL:[NSURL URLWithString:@""] placeholder:[UIImage imageNamed:@"illustration_guoguo_142x163_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+            [cell.poster yy_setImageWithURL:[NSURL URLWithString:@""] placeholder:[UIImage imageNamed:@"custom_all_108x154_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
         }
     }
     
