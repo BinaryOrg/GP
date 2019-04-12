@@ -13,6 +13,10 @@
 		371DD8142260796200F1335D /* FFFMovieDetailStillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD80D2260796100F1335D /* FFFMovieDetailStillTableViewCell.m */; };
 		371DD8152260796200F1335D /* GGGMovieDetailHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD8102260796100F1335D /* GGGMovieDetailHeaderTableViewCell.m */; };
 		371DD8192260845900F1335D /* FFFCalcHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD8182260845900F1335D /* FFFCalcHeight.m */; };
+		371DD8252260850600F1335D /* FFFYDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD81D2260850600F1335D /* FFFYDCollectionViewCell.m */; };
+		371DD8262260850600F1335D /* FFFYDTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD8202260850600F1335D /* FFFYDTableViewCell.m */; };
+		371DD8272260850600F1335D /* FFFYDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD8222260850600F1335D /* FFFYDDetailViewController.m */; };
+		371DD8282260850600F1335D /* FFFYDListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD8242260850600F1335D /* FFFYDListViewController.m */; };
 		37763ED2225F2A0800F364CC /* GPTopicListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763ED1225F2A0800F364CC /* GPTopicListController.m */; };
 		37763ED5225F335300F364CC /* GPTopicListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763ED4225F335300F364CC /* GPTopicListCellNode.m */; };
 		37763ED8225F34D600F364CC /* GPTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763ED7225F34D600F364CC /* GPTopicModel.m */; };
@@ -182,6 +186,14 @@
 		371DD8102260796100F1335D /* GGGMovieDetailHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGGMovieDetailHeaderTableViewCell.m; sourceTree = "<group>"; };
 		371DD8172260845900F1335D /* FFFCalcHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFCalcHeight.h; sourceTree = "<group>"; };
 		371DD8182260845900F1335D /* FFFCalcHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFCalcHeight.m; sourceTree = "<group>"; };
+		371DD81B2260850600F1335D /* FFFYDListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFYDListViewController.h; sourceTree = "<group>"; };
+		371DD81D2260850600F1335D /* FFFYDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFYDCollectionViewCell.m; sourceTree = "<group>"; };
+		371DD81E2260850600F1335D /* FFFYDTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFYDTableViewCell.h; sourceTree = "<group>"; };
+		371DD81F2260850600F1335D /* FFFYDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFYDCollectionViewCell.h; sourceTree = "<group>"; };
+		371DD8202260850600F1335D /* FFFYDTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFYDTableViewCell.m; sourceTree = "<group>"; };
+		371DD8222260850600F1335D /* FFFYDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFYDDetailViewController.m; sourceTree = "<group>"; };
+		371DD8232260850600F1335D /* FFFYDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFYDDetailViewController.h; sourceTree = "<group>"; };
+		371DD8242260850600F1335D /* FFFYDListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFYDListViewController.m; sourceTree = "<group>"; };
 		37763ED0225F2A0800F364CC /* GPTopicListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopicListController.h; sourceTree = "<group>"; };
 		37763ED1225F2A0800F364CC /* GPTopicListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTopicListController.m; sourceTree = "<group>"; };
 		37763ED3225F335300F364CC /* GPTopicListCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopicListCellNode.h; sourceTree = "<group>"; };
@@ -505,6 +517,37 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		371DD81A2260850600F1335D /* 影单 */ = {
+			isa = PBXGroup;
+			children = (
+				371DD81B2260850600F1335D /* FFFYDListViewController.h */,
+				371DD81C2260850600F1335D /* Cell */,
+				371DD8212260850600F1335D /* Detail */,
+				371DD8242260850600F1335D /* FFFYDListViewController.m */,
+			);
+			path = "影单";
+			sourceTree = "<group>";
+		};
+		371DD81C2260850600F1335D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				371DD81D2260850600F1335D /* FFFYDCollectionViewCell.m */,
+				371DD81E2260850600F1335D /* FFFYDTableViewCell.h */,
+				371DD81F2260850600F1335D /* FFFYDCollectionViewCell.h */,
+				371DD8202260850600F1335D /* FFFYDTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		371DD8212260850600F1335D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				371DD8222260850600F1335D /* FFFYDDetailViewController.m */,
+				371DD8232260850600F1335D /* FFFYDDetailViewController.h */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		37763ECC225F28DC00F364CC /* Topic */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,6 +645,7 @@
 			children = (
 				379547F32259A3B80050CB02 /* TEMPAppDelegate.h */,
 				379547F22259A3B80050CB02 /* TEMPAppDelegate.m */,
+				371DD81A2260850600F1335D /* 影单 */,
 				37763ECC225F28DC00F364CC /* Topic */,
 				379546922259A3A60050CB02 /* Launch */,
 				3795468F2259A3A60050CB02 /* SDK */,
@@ -1380,6 +1424,7 @@
 				379547B72259A3AA0050CB02 /* NSArray+HXExtension.m in Sources */,
 				379547942259A3AA0050CB02 /* POPAnimation.mm in Sources */,
 				37763EE5225F810600F364CC /* GGGMovieDetailHeaderTableViewCell.m in Sources */,
+				371DD8272260850600F1335D /* FFFYDDetailViewController.m in Sources */,
 				379547CE2259A3AA0050CB02 /* HXPhotoView.m in Sources */,
 				379547A72259A3AA0050CB02 /* UIColor+CustomColors.m in Sources */,
 				379547A02259A3AA0050CB02 /* NSMutableDictionary+Attributes.m in Sources */,
@@ -1390,6 +1435,7 @@
 				37763EDB225F58FE00F364CC /* GPTopickDetailCellNode.m in Sources */,
 				379547B32259A3AA0050CB02 /* HXPhotoPersentInteractiveTransition.m in Sources */,
 				379547E42259A3AA0050CB02 /* UIColor+ZS.m in Sources */,
+				371DD8252260850600F1335D /* FFFYDCollectionViewCell.m in Sources */,
 				37763ED8225F34D600F364CC /* GPTopicModel.m in Sources */,
 				379547CA2259A3AA0050CB02 /* HXPhotoManager.m in Sources */,
 				379547E72259A3AA0050CB02 /* ZDDNotificationName.m in Sources */,
@@ -1416,6 +1462,7 @@
 				3795478D2259A3AA0050CB02 /* POPCustomAnimation.mm in Sources */,
 				37E8260F2259A893004BE9CE /* GODUserModel.m in Sources */,
 				3795479D2259A3AA0050CB02 /* POPVector.mm in Sources */,
+				371DD8262260850600F1335D /* FFFYDTableViewCell.m in Sources */,
 				379547892259A3AA0050CB02 /* POPCGUtils.mm in Sources */,
 				379547EB2259A3AA0050CB02 /* NSArray+HYBUnicodeReadable.m in Sources */,
 				371DD8192260845900F1335D /* FFFCalcHeight.m in Sources */,
@@ -1449,6 +1496,7 @@
 				3795479C2259A3AA0050CB02 /* POPLayerExtras.mm in Sources */,
 				379547F42259A3B80050CB02 /* TEMPAppDelegate.m in Sources */,
 				379547C52259A3AA0050CB02 /* HXPhotoCustomNavigationBar.m in Sources */,
+				371DD8282260850600F1335D /* FFFYDListViewController.m in Sources */,
 				379547D72259A3AA0050CB02 /* HXPhotoEditViewController.m in Sources */,
 				379547BE2259A3AA0050CB02 /* NSTimer+HXExtension.m in Sources */,
 				37763ED2225F2A0800F364CC /* GPTopicListController.m in Sources */,
