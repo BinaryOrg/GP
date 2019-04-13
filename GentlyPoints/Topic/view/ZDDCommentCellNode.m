@@ -46,7 +46,7 @@
             make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:16]).lh_color(color(53, 64, 72, 1));
         }];
         
-        self.timeNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[self formatFromTS:model.create_date] attributes:^(NSMutableDictionary *make) {
+        self.timeNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[self formatFromTS:model.response_date] attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Regular" size:12]).lh_color(color(137, 137, 137, 1));
         }];
     }
@@ -118,9 +118,9 @@
 }
 
 - (void)addPicturesNodesWithModel:(GPCommentModel *)model {
-    CGSize itemSize = [self pictureSizeWithCount:model.picture_path.count imageSize:CGSizeMake(ScreenWidth/3.0, ScreenWidth/3.0)];
+    CGSize itemSize = [self pictureSizeWithCount:model.picture.count imageSize:CGSizeMake(ScreenWidth/3.0, ScreenWidth/3.0)];
     
-    [model.picture_path enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [model.picture enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         ASNetworkImageNode *pictureNode = [ASNetworkImageNode new];
         pictureNode.style.preferredSize = itemSize;
         pictureNode.cornerRadius = 6;

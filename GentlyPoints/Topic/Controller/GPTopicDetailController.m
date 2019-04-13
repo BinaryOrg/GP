@@ -15,7 +15,7 @@
 @interface GPTopicDetailController ()
 
 @property (nonatomic, strong) NSMutableArray <GPCommentModel *>*dataArr;
-
+@property (nonatomic, assign) NSInteger page;
 
 @end
 
@@ -35,12 +35,37 @@
 }
 
 - (void)headerRefresh {
-    
-    
+    self.page = 1;
+    [self loadData:NO];
 }
 
 - (void)footerRefresh {
-    
+    [self loadData:YES];
+}
+
+- (void)loadData:(BOOL)isAdd {
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
+    [MFNETWROK post:@"Response/ListResponseByTopicId" params:@{@"userId": [GODUserTool shared].user.user_id.length ? [GODUserTool shared].user.user_id : @"", @"topicId" : self.model.id} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        [self endHeaderRefresh];
+        [self endFooterRefresh];
+        if (statusCode == 200) {
+            if (!isAdd) {
+                [self.dataArr removeAllObjects];
+            }
+            NSArray *tempArr = [NSArray yy_modelArrayWithClass:GPCommentModel.class json:result[@"data"]];
+            if (tempArr.count) {
+                [self.dataArr addObjectsFromArray:tempArr];
+                [self.tableNode reloadData];
+                self.page++;
+            }
+        }else {
+            [MFHUDManager showError:@"刷新失败请重试"];
+        }
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        [self endHeaderRefresh];
+        [self endFooterRefresh];
+        [MFHUDManager showError:@"刷新失败请重试"];
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableNode:(ASTableNode *)tableNode {
