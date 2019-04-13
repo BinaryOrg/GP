@@ -6,21 +6,13 @@
 //  Copyright © 2019 MakerYang.com. All rights reserved.
 //
 
-#import "GPCommentModel.h"
+#import "GPTopicResponseModel.h"
 
-@implementation GPCommentModel
+@implementation GPTopicResponseModel
+
 + (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{@"subcomments" : [GPSubCommentModel class]};
+    return @{@"subcomments" : [GPTopicResponseModel class]};
 }
 
-
-
-
 @end
 
-
-@implementation GPSubCommentModel
-
-
-
-@end

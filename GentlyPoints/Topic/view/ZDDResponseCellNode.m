@@ -6,10 +6,11 @@
 //  Copyright © 2019 ZDD. All rights reserved.
 //
 
-#import "ZDDCommentCellNode.h"
+#import "ZDDResponseCellNode.h"
 #import <YYCGUtilities.h>
+#import "ASButtonNode+LHExtension.h"
 
-@interface ZDDCommentCellNode ()
+@interface ZDDResponseCellNode ()
 
 @property (nonatomic, strong) ASLayoutSpec *picturesLayout;
 @property (nonatomic, strong) NSMutableArray *picturesNodes;
@@ -19,12 +20,20 @@
 @property (nonatomic, strong) ASTextNode *timeNode;
 @property (nonatomic, strong) ASDisplayNode *bgvNode;
 
+@property (nonatomic, strong) ASButtonNode *thumbNode;
+@property (nonatomic, strong) ASButtonNode *commentNode;
+
+@property (nonatomic, strong) GPTopicResponseModel *model;
+
+
 @end
 
-@implementation ZDDCommentCellNode
+@implementation ZDDResponseCellNode
 
-- (instancetype)initWithModel:(GPCommentModel *)model {
+- (instancetype)initWithModel:(GPTopicResponseModel *)model {
     if (self = [super init]) {
+        
+        self.model = model;
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -39,7 +48,7 @@
         self.iconNode.URL = [NSURL URLWithString:model.user.avater];
         
         self.nameNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:model.user.user_name attributes:^(NSMutableDictionary *make) {
-            make.lh_font([UIFont fontWithName:@"PingFangSC-Medium" size:13]).lh_color([UIColor blackColor]);
+            make.lh_font([UIFont fontWithName:@"PingFangSC-Medium" size:15]).lh_color([UIColor blackColor]);
         }];
         
         self.contentNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:model.content attributes:^(NSMutableDictionary *make) {
@@ -49,19 +58,79 @@
         self.timeNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[self formatFromTS:model.response_date] attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Regular" size:12]).lh_color(color(137, 137, 137, 1));
         }];
+        
+        void(^attributes)(NSMutableDictionary *make) = ^(NSMutableDictionary *make) {
+            make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:12.0f]).lh_color([UIColor qmui_colorWithHexString:@"354048"]);
+        };
+        _thumbNode = [[ASButtonNode alloc] init];
+        [_thumbNode lh_setEnlargeEdgeWithTop:10.0f right:15.0f bottom:10.0f left:15.0f];
+        [_thumbNode setAttributedTitle:[NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"%ld", model.star_num] attributes:attributes] forState:UIControlStateNormal];
+        [_thumbNode setImage:[UIImage imageNamed:@"disLike"] forState:UIControlStateNormal];
+        [_thumbNode setImage:[UIImage imageNamed:@"like"] forState:UIControlStateSelected];
+        [_thumbNode addTarget:self action:@selector(onTouchThumbNode) forControlEvents:ASControlNodeEventTouchUpInside];
+        _thumbNode.selected = model.is_star;
+        
+        NSString *commentCount = [NSString stringWithFormat:@"%zd", model.comment_num];
+        
+        _commentNode = [[ASButtonNode alloc] init];
+        [_thumbNode lh_setEnlargeEdgeWithTop:10.0f right:15.0f bottom:10.0f left:15.0f];
+        [_commentNode setAttributedTitle:[NSMutableAttributedString lh_makeAttributedString:commentCount attributes:attributes] forState:UIControlStateNormal];
+        [_commentNode setImage:[UIImage imageNamed:@"comment"] forState:UIControlStateNormal];
+        
+        [self addSubnode:_thumbNode];
+        [self addSubnode:_commentNode];
+        
+        [model addObserver:self forKeyPath:@"star_num" options:NSKeyValueObservingOptionNew context:nil];
+        [model addObserver:self forKeyPath:@"comment_num" options:NSKeyValueObservingOptionNew context:nil];
     }
     return self;
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    
+    _thumbNode.selected =  self.model.is_star;
+    void(^attributes)(NSMutableDictionary *make) = ^(NSMutableDictionary *make) {
+        make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:12.0f]).lh_color([UIColor qmui_colorWithHexString:@"354048"]);
+    };
+    [_thumbNode setAttributedTitle:[NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"%ld", self.model.star_num] attributes:attributes] forState:UIControlStateNormal];
+    
+    NSString *commentCount = [NSString stringWithFormat:@"%zd", self.model.comment_num];
+    
+    [_commentNode setAttributedTitle:[NSMutableAttributedString lh_makeAttributedString:commentCount attributes:attributes] forState:UIControlStateNormal];
+}
+
+- (void)dealloc {
+    [self.model removeObserver:self forKeyPath:@"star_num"];
+    [self.model removeObserver:self forKeyPath:@"comment_num"];
+    
+}
+
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
     ASStackLayoutSpec *iconAdnNameSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
-    iconAdnNameSpec.spacing = 15;
+    iconAdnNameSpec.spacing = 12.0f;
     iconAdnNameSpec.alignItems = ASStackLayoutAlignItemsCenter;
     iconAdnNameSpec.children = @[self.iconNode, self.nameNode];
     
+    ASStackLayoutSpec *commentSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
+    commentSpec.spacing = 12;
+    commentSpec.alignItems = ASStackLayoutAlignItemsCenter;
+    commentSpec.children = @[self.commentNode, self.thumbNode];
+    
+    ASStackLayoutSpec *topSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
+    topSpec.spacing = 6;
+//    topSpec.justifyContent = ASStackLayoutJustifyContentSpaceBetween;
+//    topSpec.alignItems = ASStackLayoutAlignItemsEnd;
+    topSpec.justifyContent = ASStackLayoutJustifyContentStart;
+    topSpec.alignItems = ASStackLayoutAlignItemsCenter;
+    topSpec.children = @[iconAdnNameSpec, commentSpec];
+    
     ASStackLayoutSpec *contentSpec = [ASStackLayoutSpec verticalStackLayoutSpec];
     contentSpec.spacing = 15;
-    contentSpec.children = @[iconAdnNameSpec, self.contentNode];
+    if (self.picturesNodes.count) {
+        contentSpec.children = @[topSpec, self.contentNode, self.picturesLayout];
+    }else {
+        contentSpec.children = @[topSpec, self.contentNode];
+    }
     
     ASStackLayoutSpec *timeSpec = [ASStackLayoutSpec verticalStackLayoutSpec];
     timeSpec.spacing = 20;
@@ -80,7 +149,7 @@
 
 - (NSString *)formatFromTS:(NSInteger)ts {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd MMM yyyy"];
+    [formatter setDateFormat:@"yyyy MMM dd HH:ss"];
     [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     NSString *str = [NSString stringWithFormat:@"%@",
                      [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:ts]]];
@@ -89,6 +158,7 @@
 
 - (void)addNameNode {
     self.nameNode = [ASTextNode new];
+    self.nameNode.style.preferredSize = CGSizeMake(ScreenWidth - 35 - 40 - 24 - 100, 20);
     [self addSubnode:self.nameNode];
 }
 
@@ -105,8 +175,9 @@
 
 - (void)addIconNode {
     self.iconNode = [ASNetworkImageNode new];
-    self.iconNode.style.preferredSize = CGSizeMake(25, 25);
-    self.iconNode.cornerRadius = 12.5;
+    self.iconNode.style.preferredSize = CGSizeMake(35, 35);
+    self.iconNode.cornerRadius = 17.5;
+    self.iconNode.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubnode:self.iconNode];
 }
 
@@ -117,7 +188,7 @@
     [self addSubnode:self.bgvNode];
 }
 
-- (void)addPicturesNodesWithModel:(GPCommentModel *)model {
+- (void)addPicturesNodesWithModel:(GPTopicResponseModel *)model {
     CGSize itemSize = [self pictureSizeWithCount:model.picture.count imageSize:CGSizeMake(ScreenWidth/3.0, ScreenWidth/3.0)];
     
     [model.picture enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -164,10 +235,31 @@
 
 
 
-#pragma mark - 懒点击事件
+#pragma mark - 点击事件
 - (void)onTouchPictureNode:(ASNetworkImageNode *)imgNode {
     
     
+}
+
+- (void)onTouchThumbNode {
+    
+    if ([GODUserTool shared].user.user_id.length == 0) {
+        [MFHUDManager showError:@"请先登录"];
+        return;
+    }
+    self.model.is_star = !self.model.is_star;
+    if (self.model.is_star) {
+        self.model.star_num += 1;
+    }else {
+        self.model.star_num -= 1;
+    }
+    
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
+    [MFNETWROK post:@"Star/AddOrCancel" params:@{@"targetId" : self.model.id, @"userId" : [GODUserTool shared].user.user_id} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        
+    }];
 }
 
 

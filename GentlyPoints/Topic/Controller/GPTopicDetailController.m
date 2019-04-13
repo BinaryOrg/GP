@@ -7,15 +7,20 @@
 //
 
 #import "GPTopicDetailController.h"
-#import "GPCommentModel.h"
+
+#import "GPCommentDetailController.h"
+
+
+#import "GPTopicResponseModel.h"
 
 #import "GPTopickDetailCellNode.h"
-#import "ZDDCommentCellNode.h"
+#import "ZDDResponseCellNode.h"
 
 @interface GPTopicDetailController ()
 
-@property (nonatomic, strong) NSMutableArray <GPCommentModel *>*dataArr;
+@property (nonatomic, strong) NSMutableArray <GPTopicResponseModel *>*dataArr;
 @property (nonatomic, assign) NSInteger page;
+@property (nonatomic, strong) UIButton *joinBtn;
 
 @end
 
@@ -25,23 +30,35 @@
     [super viewDidLoad];
 
     [self addTableNode];
-    self.showRefrehHeader = YES;
-    self.showRefrehFooter = YES;
+    
+    [self.view addSubview:self.joinBtn];
+    [self.joinBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(-SafeAreaBottomHeight);
+        make.height.mas_equalTo(50);
+    }];
+    
+    [self.tableNode.view mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(-50 - SafeAreaBottomHeight);
+    }];
+//    self.showRefrehHeader = YES;
+//    self.showRefrehFooter = YES;
 }
-
+//
 - (void)setModel:(GPTopicModel *)model {
     _model = model;
-    [self headerRefresh];
-}
-
-- (void)headerRefresh {
-    self.page = 1;
     [self loadData:NO];
+    self.title = model.title;
 }
-
-- (void)footerRefresh {
-    [self loadData:YES];
-}
+//
+//- (void)headerRefresh {
+//    self.page = 1;
+//    [self loadData:NO];
+//}
+//
+//- (void)footerRefresh {
+//    [self loadData:YES];
+//}
 
 - (void)loadData:(BOOL)isAdd {
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
@@ -52,7 +69,7 @@
             if (!isAdd) {
                 [self.dataArr removeAllObjects];
             }
-            NSArray *tempArr = [NSArray yy_modelArrayWithClass:GPCommentModel.class json:result[@"data"]];
+            NSArray *tempArr = [NSArray yy_modelArrayWithClass:GPTopicResponseModel.class json:result[@"data"]];
             if (tempArr.count) {
                 [self.dataArr addObjectsFromArray:tempArr];
                 [self.tableNode reloadData];
@@ -91,7 +108,7 @@
                 
             default:
             {
-                ZDDCommentCellNode *node = [[ZDDCommentCellNode alloc] initWithModel:self.dataArr[indexPath.row]];
+                ZDDResponseCellNode *node = [[ZDDResponseCellNode alloc] initWithModel:self.dataArr[indexPath.row]];
                 node.bgvEdge = UIEdgeInsetsMake(-20, -10, -30, -10);
                 node.backgroundColor = color(237, 237, 237, 0.5);
                 return node;
@@ -102,13 +119,33 @@
 }
 
 - (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return;
+    }
+    GPCommentDetailController *vc = [GPCommentDetailController new];
+    vc.model = self.dataArr[indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)clickjoinBtn {
     
 }
 
-- (NSMutableArray <GPCommentModel *>*)dataArr {
+- (NSMutableArray <GPTopicResponseModel *>*)dataArr {
     if (!_dataArr) {
         _dataArr = [NSMutableArray array];
     }
     return _dataArr;
+}
+
+-(UIButton *)joinBtn {
+    if (!_joinBtn) {
+        _joinBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _joinBtn.backgroundColor = GODColor(161, 101, 57);
+        [_joinBtn setTitle:@"参与话题" forState:UIControlStateNormal];
+        [_joinBtn addTarget:self action:@selector(clickjoinBtn) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    return _joinBtn;
 }
 @end

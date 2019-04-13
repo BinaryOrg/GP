@@ -8,24 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
+@class GPSubCommentModel;
 @interface GPCommentModel : NSObject
-
 
 @property (nonatomic, strong) NSString *id;
 @property (nonatomic, strong) NSString *target_id;
 @property (nonatomic, strong) NSString *content;
-@property (nonatomic, assign) NSInteger response_date;
-@property (nonatomic, strong) GODUserModel *user;
-@property (nonatomic, strong) NSArray *picture;
-@property (nonatomic, strong) NSArray<GPCommentModel *> *subcomments;
-@property (nonatomic, assign) CGFloat content_height;
+@property (nonatomic, assign) NSInteger create_date;
 @property (nonatomic, assign) BOOL is_star;
-@property (nonatomic, assign) NSInteger star_num;
-@property (nonatomic, assign) NSInteger comment_num;
+@property (nonatomic, strong) GODUserModel *user;
+@property (nonatomic, strong) NSArray <GPSubCommentModel *>*subcomments;
 
 
 @end
 
-NS_ASSUME_NONNULL_END
+@interface GPSubCommentModel :NSObject
+
+@property (nonatomic, strong) NSString *id;
+@property (nonatomic, strong) NSString *content;
+@property (nonatomic, assign) NSInteger create_date;
+@property (nonatomic, strong) GODUserModel *src_user;
+@property (nonatomic, strong) GODUserModel *tar_user;
+@property (nonatomic, strong) NSString *parent_id;
+
+@end

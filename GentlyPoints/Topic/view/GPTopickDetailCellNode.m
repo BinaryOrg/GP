@@ -32,9 +32,18 @@
         [self addCoverImgNodee];
         [self addLineNode];
         [self addCountNode];
-        self.titleNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:model.title attributes:^(NSMutableDictionary *make) {
+        
+        NSMutableAttributedString *titleAtt = [NSMutableAttributedString lh_makeAttributedString:model.title attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Medium" size:18]);
         }];
+        
+        NSMutableAttributedString *pvAtt = [NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"       热度%@", model.pv] attributes:^(NSMutableDictionary *make) {
+            make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:15]).lh_color([UIColor lightGrayColor]);
+        }];
+        
+        [titleAtt appendAttributedString:pvAtt];
+        
+        self.titleNode.attributedText = titleAtt;
         
         self.descNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:model.content attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:15]);
@@ -57,7 +66,7 @@
     ASInsetLayoutSpec *countInset = [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(INFINITY, INFINITY, -10, -10) child:self.countNode];
     ASOverlayLayoutSpec *countSpec = [ASOverlayLayoutSpec overlayLayoutSpecWithChild:self.coverImgNode overlay:countInset];
     
-    ASStackLayoutSpec *imgSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
+    ASStackLayoutSpec *imgSpec = [ASStackLayoutSpec verticalStackLayoutSpec];
     imgSpec.children = @[countSpec, self.titleNode];
     imgSpec.spacing = 12.0f;
     
@@ -78,12 +87,14 @@
 
 - (void)addTitleNode {
     self.titleNode = [ASTextNode new];
+    self.titleNode.textContainerInset = UIEdgeInsetsMake(0, 20, 5, 20);
     [self addSubnode:self.titleNode];
 }
 
 - (void)addDescNode {
     self.descNode = [ASTextNode new];
     self.descNode.maximumNumberOfLines = 4.0f;
+    self.descNode.textContainerInset = UIEdgeInsetsMake(0, 20, 15, 20);
     self.descNode.style.maxWidth = ASDimensionMake(ScreenWidth - 155.0f);
     [self addSubnode:self.descNode];
 }
@@ -97,9 +108,8 @@
 
 - (void)addCoverImgNodee {
     self.coverImgNode = [ASNetworkImageNode new];
-    self.coverImgNode.style.preferredSize = CGSizeMake(100, 100);
+    self.coverImgNode.style.preferredSize = CGSizeMake(ScreenWidth, 220);
     self.coverImgNode.contentMode = UIViewContentModeScaleAspectFill;
-    self.coverImgNode.cornerRadius = 4.0f;
     [self addSubnode:self.coverImgNode];
 }
 
@@ -116,7 +126,7 @@
     [_bgNode setLayerBacked:YES];
     _bgNode.shadowColor = [UIColor blackColor].CGColor;
     _bgNode.shadowOffset = CGSizeMake(1.0f, 1.0);
-    _bgNode.cornerRadius = 8;
+//    _bgNode.cornerRadius = 8;
     _bgNode.shadowOpacity = 0.2f;
     _bgNode.backgroundColor =  [UIColor whiteColor];// GODColor(253, 235, 28);
     [self addSubnode:_bgNode];

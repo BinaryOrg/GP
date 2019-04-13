@@ -6,13 +6,13 @@
 //  Copyright © 2019 ZDD. All rights reserved.
 //
 
-#import "GPCommentModel.h"
+#import "GPTopicResponseModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDDCommentCellNode : ASCellNode
+@interface ZDDResponseCellNode : ASCellNode
 
-- (instancetype)initWithModel:(GPCommentModel *)model;
+- (instancetype)initWithModel:(GPTopicResponseModel *)model;
 
 @property (nonatomic, assign) UIEdgeInsets bgvEdge;
 

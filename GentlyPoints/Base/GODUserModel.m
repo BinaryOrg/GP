@@ -10,4 +10,13 @@
 
 @implementation GODUserModel
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+             @"user_name" : @[@"user_name", @"name"],
+             @"user_id" : @[@"user_id", @"id"],
+             @"avater" : @[@"avater", @"avatar"]
+             };
+}
+
+
 @end

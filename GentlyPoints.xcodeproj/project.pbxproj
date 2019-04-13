@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37067CE922618FF600C929B9 /* ZDDCommentCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CE722618FF500C929B9 /* ZDDCommentCellNode.m */; };
+		37067CE922618FF600C929B9 /* ZDDResponseCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CE722618FF500C929B9 /* ZDDResponseCellNode.m */; };
 		37067CEC2261901100C929B9 /* GPTopicDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CEB2261901100C929B9 /* GPTopicDetailController.m */; };
-		37067CEF2261906E00C929B9 /* GPCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CEE2261906E00C929B9 /* GPCommentModel.m */; };
+		37067CEF2261906E00C929B9 /* GPTopicResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CEE2261906E00C929B9 /* GPTopicResponseModel.m */; };
+		37067CF22261C0C200C929B9 /* ASButtonNode+LHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CF02261C0C100C929B9 /* ASButtonNode+LHExtension.m */; };
+		37067CF52261D33A00C929B9 /* GPCommentDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CF42261D33A00C929B9 /* GPCommentDetailController.m */; };
+		37067CF82261D59400C929B9 /* GPCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CF72261D59400C929B9 /* GPCommentModel.m */; };
+		37067CFB2261E3AC00C929B9 /* ZDDInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CFA2261E3AC00C929B9 /* ZDDInputView.m */; };
 		371DD8112260796200F1335D /* FFFMovieDetailActorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD8072260796100F1335D /* FFFMovieDetailActorTableViewCell.m */; };
 		371DD8122260796200F1335D /* FFFIntroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD8082260796100F1335D /* FFFIntroTableViewCell.m */; };
 		371DD8132260796200F1335D /* FFFPictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD80C2260796100F1335D /* FFFPictureCollectionViewCell.m */; };
@@ -24,7 +28,7 @@
 		37763ED5225F335300F364CC /* GPTopicListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763ED4225F335300F364CC /* GPTopicListCellNode.m */; };
 		37763ED8225F34D600F364CC /* GPTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763ED7225F34D600F364CC /* GPTopicModel.m */; };
 		37763EDB225F58FE00F364CC /* GPTopickDetailCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763EDA225F58FE00F364CC /* GPTopickDetailCellNode.m */; };
-		37763EDE225F6FCD00F364CC /* GPResponseCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763EDD225F6FCD00F364CC /* GPResponseCellNode.m */; };
+		37763EDE225F6FCD00F364CC /* GPCommentCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763EDD225F6FCD00F364CC /* GPCommentCellNode.m */; };
 		37763EE7225F82B300F364CC /* GGGMovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763EE4225F810500F364CC /* GGGMovieDetailViewController.m */; };
 		379546582259A3330050CB02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379546562259A3330050CB02 /* Main.storyboard */; };
 		3795465A2259A3340050CB02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 379546592259A3340050CB02 /* Assets.xcassets */; };
@@ -177,12 +181,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		37067CE722618FF500C929B9 /* ZDDCommentCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentCellNode.m; sourceTree = "<group>"; };
-		37067CE822618FF500C929B9 /* ZDDCommentCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDCommentCellNode.h; sourceTree = "<group>"; };
+		37067CE722618FF500C929B9 /* ZDDResponseCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDResponseCellNode.m; sourceTree = "<group>"; };
+		37067CE822618FF500C929B9 /* ZDDResponseCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDResponseCellNode.h; sourceTree = "<group>"; };
 		37067CEA2261901100C929B9 /* GPTopicDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopicDetailController.h; sourceTree = "<group>"; };
 		37067CEB2261901100C929B9 /* GPTopicDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTopicDetailController.m; sourceTree = "<group>"; };
-		37067CED2261906E00C929B9 /* GPCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPCommentModel.h; sourceTree = "<group>"; };
-		37067CEE2261906E00C929B9 /* GPCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPCommentModel.m; sourceTree = "<group>"; };
+		37067CED2261906E00C929B9 /* GPTopicResponseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopicResponseModel.h; sourceTree = "<group>"; };
+		37067CEE2261906E00C929B9 /* GPTopicResponseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTopicResponseModel.m; sourceTree = "<group>"; };
+		37067CF02261C0C100C929B9 /* ASButtonNode+LHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ASButtonNode+LHExtension.m"; path = "../ASButtonNode+LHExtension.m"; sourceTree = "<group>"; };
+		37067CF12261C0C200C929B9 /* ASButtonNode+LHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ASButtonNode+LHExtension.h"; path = "../ASButtonNode+LHExtension.h"; sourceTree = "<group>"; };
+		37067CF32261D33A00C929B9 /* GPCommentDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPCommentDetailController.h; sourceTree = "<group>"; };
+		37067CF42261D33A00C929B9 /* GPCommentDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPCommentDetailController.m; sourceTree = "<group>"; };
+		37067CF62261D59400C929B9 /* GPCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPCommentModel.h; sourceTree = "<group>"; };
+		37067CF72261D59400C929B9 /* GPCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPCommentModel.m; sourceTree = "<group>"; };
+		37067CF92261E3AB00C929B9 /* ZDDInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDInputView.h; sourceTree = "<group>"; };
+		37067CFA2261E3AC00C929B9 /* ZDDInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDInputView.m; sourceTree = "<group>"; };
 		371DD8072260796100F1335D /* FFFMovieDetailActorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFMovieDetailActorTableViewCell.m; sourceTree = "<group>"; };
 		371DD8082260796100F1335D /* FFFIntroTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFIntroTableViewCell.m; sourceTree = "<group>"; };
 		371DD8092260796100F1335D /* FFFMovieDetailActorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFMovieDetailActorTableViewCell.h; sourceTree = "<group>"; };
@@ -211,8 +223,8 @@
 		37763ED7225F34D600F364CC /* GPTopicModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTopicModel.m; sourceTree = "<group>"; };
 		37763ED9225F58FE00F364CC /* GPTopickDetailCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopickDetailCellNode.h; sourceTree = "<group>"; };
 		37763EDA225F58FE00F364CC /* GPTopickDetailCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTopickDetailCellNode.m; sourceTree = "<group>"; };
-		37763EDC225F6FCD00F364CC /* GPResponseCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPResponseCellNode.h; sourceTree = "<group>"; };
-		37763EDD225F6FCD00F364CC /* GPResponseCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPResponseCellNode.m; sourceTree = "<group>"; };
+		37763EDC225F6FCD00F364CC /* GPCommentCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPCommentCellNode.h; sourceTree = "<group>"; };
+		37763EDD225F6FCD00F364CC /* GPCommentCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPCommentCellNode.m; sourceTree = "<group>"; };
 		37763EE0225F810500F364CC /* GGGMovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGGMovieDetailViewController.h; sourceTree = "<group>"; };
 		37763EE4225F810500F364CC /* GGGMovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGGMovieDetailViewController.m; sourceTree = "<group>"; };
 		3795464D2259A3330050CB02 /* GentlyPoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GentlyPoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -573,6 +585,8 @@
 				37763ED1225F2A0800F364CC /* GPTopicListController.m */,
 				37067CEA2261901100C929B9 /* GPTopicDetailController.h */,
 				37067CEB2261901100C929B9 /* GPTopicDetailController.m */,
+				37067CF32261D33A00C929B9 /* GPCommentDetailController.h */,
+				37067CF42261D33A00C929B9 /* GPCommentDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -582,8 +596,10 @@
 			children = (
 				37763ED6225F34D600F364CC /* GPTopicModel.h */,
 				37763ED7225F34D600F364CC /* GPTopicModel.m */,
-				37067CED2261906E00C929B9 /* GPCommentModel.h */,
-				37067CEE2261906E00C929B9 /* GPCommentModel.m */,
+				37067CED2261906E00C929B9 /* GPTopicResponseModel.h */,
+				37067CEE2261906E00C929B9 /* GPTopicResponseModel.m */,
+				37067CF62261D59400C929B9 /* GPCommentModel.h */,
+				37067CF72261D59400C929B9 /* GPCommentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -591,14 +607,16 @@
 		37763ECF225F28DC00F364CC /* view */ = {
 			isa = PBXGroup;
 			children = (
+				37067CF92261E3AB00C929B9 /* ZDDInputView.h */,
+				37067CFA2261E3AC00C929B9 /* ZDDInputView.m */,
 				37763ED3225F335300F364CC /* GPTopicListCellNode.h */,
 				37763ED4225F335300F364CC /* GPTopicListCellNode.m */,
 				37763ED9225F58FE00F364CC /* GPTopickDetailCellNode.h */,
 				37763EDA225F58FE00F364CC /* GPTopickDetailCellNode.m */,
-				37763EDC225F6FCD00F364CC /* GPResponseCellNode.h */,
-				37763EDD225F6FCD00F364CC /* GPResponseCellNode.m */,
-				37067CE822618FF500C929B9 /* ZDDCommentCellNode.h */,
-				37067CE722618FF500C929B9 /* ZDDCommentCellNode.m */,
+				37763EDC225F6FCD00F364CC /* GPCommentCellNode.h */,
+				37763EDD225F6FCD00F364CC /* GPCommentCellNode.m */,
+				37067CE822618FF500C929B9 /* ZDDResponseCellNode.h */,
+				37067CE722618FF500C929B9 /* ZDDResponseCellNode.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -842,7 +860,9 @@
 		379546D32259A3A80050CB02 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				37067CF12261C0C200C929B9 /* ASButtonNode+LHExtension.h */,
 				379546D42259A3A80050CB02 /* ASButtonNode+LHExtension.m */,
+				37067CF02261C0C100C929B9 /* ASButtonNode+LHExtension.m */,
 				379546D52259A3A80050CB02 /* TEMPAppDelegate+BackgroundTask.h */,
 				379546D62259A3A80050CB02 /* TEMPAppDelegate+OpenURL.h */,
 				379546D72259A3A80050CB02 /* UIView+LH.m */,
@@ -1404,6 +1424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37067CFB2261E3AC00C929B9 /* ZDDInputView.m in Sources */,
 				37763EE7225F82B300F364CC /* GGGMovieDetailViewController.m in Sources */,
 				379547872259A3AA0050CB02 /* TEMPLaunchManager.m in Sources */,
 				3795468E2259A3950050CB02 /* ZDDNavController.m in Sources */,
@@ -1439,6 +1460,7 @@
 				379547942259A3AA0050CB02 /* POPAnimation.mm in Sources */,
 				371DD8272260850600F1335D /* FFFYDDetailViewController.m in Sources */,
 				379547CE2259A3AA0050CB02 /* HXPhotoView.m in Sources */,
+				37067CF82261D59400C929B9 /* GPCommentModel.m in Sources */,
 				379547A72259A3AA0050CB02 /* UIColor+CustomColors.m in Sources */,
 				379547A02259A3AA0050CB02 /* NSMutableDictionary+Attributes.m in Sources */,
 				379547C82259A3AA0050CB02 /* HXPhotoViewController.m in Sources */,
@@ -1497,6 +1519,7 @@
 				371DD8112260796200F1335D /* FFFMovieDetailActorTableViewCell.m in Sources */,
 				379547EC2259A3AA0050CB02 /* NSDictionary+HYBUnicodeReadable.m in Sources */,
 				379547D42259A3AA0050CB02 /* HXCustomPreviewView.m in Sources */,
+				37067CF22261C0C200C929B9 /* ASButtonNode+LHExtension.m in Sources */,
 				379547972259A3AA0050CB02 /* TransformationMatrix.mm in Sources */,
 				379547AF2259A3AA0050CB02 /* HXPhoto3DTouchViewController.m in Sources */,
 				379547DC2259A3AA0050CB02 /* UIView+FrameUtilty.m in Sources */,
@@ -1504,7 +1527,7 @@
 				3795479B2259A3AA0050CB02 /* POPAnimationEvent.mm in Sources */,
 				379547CD2259A3AA0050CB02 /* HXCustomAssetModel.m in Sources */,
 				379547D02259A3AA0050CB02 /* HXCustomNavigationController.m in Sources */,
-				37763EDE225F6FCD00F364CC /* GPResponseCellNode.m in Sources */,
+				37763EDE225F6FCD00F364CC /* GPCommentCellNode.m in Sources */,
 				379547BB2259A3AA0050CB02 /* UIView+HXExtension.m in Sources */,
 				3795479C2259A3AA0050CB02 /* POPLayerExtras.mm in Sources */,
 				379547F42259A3B80050CB02 /* TEMPAppDelegate.m in Sources */,
@@ -1518,10 +1541,11 @@
 				379547A22259A3AA0050CB02 /* TEMPAppDelegate+BackgroundTask.m in Sources */,
 				379547DA2259A3AA0050CB02 /* XJEmojePreView.m in Sources */,
 				379547DE2259A3AA0050CB02 /* XJFaceInputHelper.m in Sources */,
-				37067CE922618FF600C929B9 /* ZDDCommentCellNode.m in Sources */,
+				37067CE922618FF600C929B9 /* ZDDResponseCellNode.m in Sources */,
 				379547D62259A3AA0050CB02 /* HXCircleProgressView.m in Sources */,
 				379547B22259A3AA0050CB02 /* HXPhotoViewPresentTransition.m in Sources */,
 				379547B92259A3AA0050CB02 /* UIImageView+HXExtension.m in Sources */,
+				37067CF52261D33A00C929B9 /* GPCommentDetailController.m in Sources */,
 				3795478E2259A3AA0050CB02 /* POPAnimationTracer.mm in Sources */,
 				37067CEC2261901100C929B9 /* GPTopicDetailController.m in Sources */,
 				379547862259A3AA0050CB02 /* TEMPSDKManager.m in Sources */,
@@ -1530,7 +1554,7 @@
 				371DD8122260796200F1335D /* FFFIntroTableViewCell.m in Sources */,
 				3795468C2259A3950050CB02 /* ZDDTabBarController.m in Sources */,
 				379547E52259A3AA0050CB02 /* XJFaceEmojeView.m in Sources */,
-				37067CEF2261906E00C929B9 /* GPCommentModel.m in Sources */,
+				37067CEF2261906E00C929B9 /* GPTopicResponseModel.m in Sources */,
 				4A23A52D225F32ED00192A2D /* FFFMovieTableViewCell.m in Sources */,
 				4A23A515225F22F200192A2D /* FFFMovieViewController.m in Sources */,
 				379547C42259A3AA0050CB02 /* HXAlbumListViewController.m in Sources */,
