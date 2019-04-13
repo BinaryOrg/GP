@@ -8,6 +8,7 @@
 
 #import "GPTopicListController.h"
 #import "GPTopicListCellNode.h"
+#import "GPTopicDetailController.h"
 
 @interface GPTopicListController ()
 
@@ -65,7 +66,9 @@
 }
 
 - (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    GPTopicDetailController *vc = [GPTopicDetailController new];
+    vc.model = self.dataArr[indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (NSMutableArray <GPTopicModel *>*)dataArr {

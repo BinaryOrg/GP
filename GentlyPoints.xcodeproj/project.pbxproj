@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37067CE922618FF600C929B9 /* ZDDCommentCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CE722618FF500C929B9 /* ZDDCommentCellNode.m */; };
+		37067CEC2261901100C929B9 /* GPTopicDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CEB2261901100C929B9 /* GPTopicDetailController.m */; };
+		37067CEF2261906E00C929B9 /* GPCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CEE2261906E00C929B9 /* GPCommentModel.m */; };
 		371DD8112260796200F1335D /* FFFMovieDetailActorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD8072260796100F1335D /* FFFMovieDetailActorTableViewCell.m */; };
 		371DD8122260796200F1335D /* FFFIntroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD8082260796100F1335D /* FFFIntroTableViewCell.m */; };
 		371DD8132260796200F1335D /* FFFPictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD80C2260796100F1335D /* FFFPictureCollectionViewCell.m */; };
@@ -173,6 +176,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37067CE722618FF500C929B9 /* ZDDCommentCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentCellNode.m; sourceTree = "<group>"; };
+		37067CE822618FF500C929B9 /* ZDDCommentCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDCommentCellNode.h; sourceTree = "<group>"; };
+		37067CEA2261901100C929B9 /* GPTopicDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopicDetailController.h; sourceTree = "<group>"; };
+		37067CEB2261901100C929B9 /* GPTopicDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTopicDetailController.m; sourceTree = "<group>"; };
+		37067CED2261906E00C929B9 /* GPCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPCommentModel.h; sourceTree = "<group>"; };
+		37067CEE2261906E00C929B9 /* GPCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPCommentModel.m; sourceTree = "<group>"; };
 		371DD8072260796100F1335D /* FFFMovieDetailActorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFMovieDetailActorTableViewCell.m; sourceTree = "<group>"; };
 		371DD8082260796100F1335D /* FFFIntroTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFIntroTableViewCell.m; sourceTree = "<group>"; };
 		371DD8092260796100F1335D /* FFFMovieDetailActorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFMovieDetailActorTableViewCell.h; sourceTree = "<group>"; };
@@ -560,6 +569,8 @@
 			children = (
 				37763ED0225F2A0800F364CC /* GPTopicListController.h */,
 				37763ED1225F2A0800F364CC /* GPTopicListController.m */,
+				37067CEA2261901100C929B9 /* GPTopicDetailController.h */,
+				37067CEB2261901100C929B9 /* GPTopicDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -569,6 +580,8 @@
 			children = (
 				37763ED6225F34D600F364CC /* GPTopicModel.h */,
 				37763ED7225F34D600F364CC /* GPTopicModel.m */,
+				37067CED2261906E00C929B9 /* GPCommentModel.h */,
+				37067CEE2261906E00C929B9 /* GPCommentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -582,6 +595,8 @@
 				37763EDA225F58FE00F364CC /* GPTopickDetailCellNode.m */,
 				37763EDC225F6FCD00F364CC /* GPResponseCellNode.h */,
 				37763EDD225F6FCD00F364CC /* GPResponseCellNode.m */,
+				37067CE822618FF500C929B9 /* ZDDCommentCellNode.h */,
+				37067CE722618FF500C929B9 /* ZDDCommentCellNode.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1499,16 +1514,19 @@
 				379547A22259A3AA0050CB02 /* TEMPAppDelegate+BackgroundTask.m in Sources */,
 				379547DA2259A3AA0050CB02 /* XJEmojePreView.m in Sources */,
 				379547DE2259A3AA0050CB02 /* XJFaceInputHelper.m in Sources */,
+				37067CE922618FF600C929B9 /* ZDDCommentCellNode.m in Sources */,
 				379547D62259A3AA0050CB02 /* HXCircleProgressView.m in Sources */,
 				379547B22259A3AA0050CB02 /* HXPhotoViewPresentTransition.m in Sources */,
 				379547B92259A3AA0050CB02 /* UIImageView+HXExtension.m in Sources */,
 				3795478E2259A3AA0050CB02 /* POPAnimationTracer.mm in Sources */,
+				37067CEC2261901100C929B9 /* GPTopicDetailController.m in Sources */,
 				379547862259A3AA0050CB02 /* TEMPSDKManager.m in Sources */,
 				379547B02259A3AA0050CB02 /* HXPhotoEditTransition.m in Sources */,
 				379547C62259A3AA0050CB02 /* HXPhotoPreviewViewController.m in Sources */,
 				371DD8122260796200F1335D /* FFFIntroTableViewCell.m in Sources */,
 				3795468C2259A3950050CB02 /* ZDDTabBarController.m in Sources */,
 				379547E52259A3AA0050CB02 /* XJFaceEmojeView.m in Sources */,
+				37067CEF2261906E00C929B9 /* GPCommentModel.m in Sources */,
 				4A23A52D225F32ED00192A2D /* FFFMovieTableViewCell.m in Sources */,
 				4A23A515225F22F200192A2D /* FFFMovieViewController.m in Sources */,
 				379547C42259A3AA0050CB02 /* HXAlbumListViewController.m in Sources */,
