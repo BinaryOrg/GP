@@ -166,8 +166,8 @@ UICollectionViewDataSource
     [self showLoading];
     [self removeErrorView];
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK post:@"http://120.78.124.36:10020/WP/Movie/ListCategoryMovies"
-             params:@{@"category": @"is_playing"}
+    [MFNETWROK post:@"http://120.78.124.36:10020/WP/Movie/GetMovieDetailInfoByMovieId"
+             params:@{@"movieId": self.movie.id}
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
                 NSLog(@"%@", result);
                 [self hideLoading];

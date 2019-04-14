@@ -113,7 +113,7 @@ UITableViewDataSource
     UILabel *title = [[UILabel alloc] initWithFrame:bg.bounds];
     title.font = [UIFont ztw_mediumFontSize:25];
     title.textColor = [UIColor whiteColor];
-    title.text = self.title;
+    title.text = self.ydTitle;
     [bg addSubview:title];
     title.textAlignment = NSTextAlignmentCenter;
 }
