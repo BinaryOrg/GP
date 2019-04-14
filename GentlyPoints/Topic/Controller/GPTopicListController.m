@@ -24,17 +24,12 @@
 
     [self addTableNode];
     self.showRefrehHeader = YES;
-    self.showRefrehFooter = YES;
     [self headerRefresh];
 }
 
 - (void)headerRefresh {
     self.page = 1;
     [self loadData:NO];
-}
-
-- (void)footerRefresh {
-    [self loadData:YES];
 }
 
 - (void)loadData:(BOOL)isAdd {

@@ -13,6 +13,7 @@
 #import "ZDDNavController.h"
 
 #import "GPTopicListController.h"
+#import "GPMineController.h"
 
 
 #import "FFFMovieContainerViewController.h"
@@ -74,8 +75,7 @@ UITabBarControllerDelegate
 //    [self addChileVcWithTitle:@"动态" vc:three imageName:@"dynamic_unSelected" selImageName:@"dynamic_selected"];
 //    
 //    
-//    ZDDThridController *four = [[ZDDThridController alloc] init];
-//    [self addChileVcWithTitle:@"我的" vc:four imageName:@"mine_unSelected" selImageName:@"mine_selected"];
+    
     FFFMovieContainerViewController *movie = [FFFMovieContainerViewController new];
     [self addChileVcWithTitle:@"影音" vc:movie imageName:@"ico_tab_friend_40x40_" selImageName:@"ico_tab_friend_pressed-white_40x40_"];
     
@@ -84,6 +84,9 @@ UITabBarControllerDelegate
     
     GPTopicListController *topic = [GPTopicListController new];
     [self addChileVcWithTitle:@"话题" vc:topic imageName:@"ico_tab_timeline_40x40_" selImageName:@"ico_tab_timeline_pressed_40x40_"];
+    
+    GPMineController *four = [[GPMineController alloc] init];
+    [self addChileVcWithTitle:@"我的" vc:four imageName:@"ico_tab_profile_pressed-black_40x40_" selImageName:@"ico_tab_profile_pressed-white_40x40_"];
 
 }
 
