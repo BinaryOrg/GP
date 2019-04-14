@@ -115,7 +115,7 @@ UITextFieldDelegate
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
     NSLog(@"%@", self.movieId);
     [MFNETWROK post:@"http://120.78.124.36:10020/WP/Movie/SearchMovies"
-             params:@{@"name": self.b.text}
+             params:@{@"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"",@"name": self.b.text}
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
                 NSLog(@"%@", result);
                 [self hideLoading];

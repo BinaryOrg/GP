@@ -115,7 +115,7 @@ UITableViewDataSource
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
     NSLog(@"%@", self.movieId);
     [MFNETWROK post:@"http://120.78.124.36:10020/WP/Movie/ListRecommendMovie"
-             params:@{@"category": self.movieId}
+             params:@{@"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"", @"category": self.movieId}
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
                 NSLog(@"%@", result);
                 [self hideLoading];

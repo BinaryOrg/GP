@@ -179,7 +179,8 @@ UICollectionViewDataSource
     [self removeErrorView];
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
     [MFNETWROK post:@"http://120.78.124.36:10020/WP/Movie/GetMovieDetailInfoByMovieId"
-             params:@{@"movieId": self.movie.id}
+             params:@{@"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"",
+                      @"movieId": self.movie.id}
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
                 NSLog(@"%@", result);
                 [self hideLoading];
@@ -275,7 +276,7 @@ UICollectionViewDataSource
                 cell = [[FFFHTTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"ht_cell"];
             }
             [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:self.hts[0].picture] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
-            cell.titleLabel.text = self.hts[0].title;
+            cell.titleLabel.text = [NSString stringWithFormat:@"#%@#", self.hts[0].title];
             cell.contentLabel.text = self.hts[0].content;
             cell.collectionClick = ^(NSInteger index) {
                 
@@ -288,10 +289,10 @@ UICollectionViewDataSource
             }
             [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:self.hts[0].picture] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
             [cell.bgImageView1 yy_setImageWithURL:[NSURL URLWithString:self.hts[1].picture] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
-            cell.titleLabel.text = self.hts[0].title;
+            cell.titleLabel.text = [NSString stringWithFormat:@"#%@#", self.hts[0].title];
             cell.contentLabel.text = self.hts[0].content;
-            cell.titleLabel1.text = self.hts[0].title;
-            cell.contentLabel1.text = self.hts[0].content;
+            cell.titleLabel1.text = [NSString stringWithFormat:@"#%@#", self.hts[1].title];
+            cell.contentLabel1.text = self.hts[1].content;
             cell.collectionClick = ^(NSInteger index) {
                 
             };
