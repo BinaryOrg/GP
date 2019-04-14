@@ -12,6 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @interface FFFMovieModel : NSObject
+@property (nonatomic, strong) NSString *id;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *poster;
 @property (nonatomic, strong) NSString *region;

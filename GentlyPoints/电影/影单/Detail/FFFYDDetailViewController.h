@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FFFYDDetailViewController : FFFBaseViewController
-@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *ydTitle;
 @property (nonatomic, strong) NSString *headerUrl;
 @property (nonatomic, strong) NSMutableArray<FFFMovieModel *> *movies;
 @end

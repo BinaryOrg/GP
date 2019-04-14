@@ -7,6 +7,7 @@
 //
 
 #import "FFFYDListViewController.h"
+#import "FFFYDModel.h"
 #import "FFFMovieModel.h"
 #import "FFFYDTableViewCell.h"
 #import "FFFYDDetailViewController.h"
@@ -32,7 +33,7 @@ UITableViewDataSource
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT - NavBarHeight - SafeTabBarHeight - 45) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [[UIView alloc] init];
@@ -64,16 +65,16 @@ UITableViewDataSource
     [self showLoading];
     [self removeErrorView];
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK post:@"http://120.78.124.36:10020/WP/Movie/ListCategoryMovies"
-             params:@{@"category": @"is_playing"}
+    [MFNETWROK post:@"http://120.78.124.36:10020/WP/Movie/ListRecommendFilmList"
+             params:@{}
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
                 NSLog(@"%@", result);
                 [self hideLoading];
                 if (![result[@"resultCode"] integerValue]) {
                     for (NSDictionary *dic in result[@"data"]) {
-                        FFFMovieModel *movie = [FFFMovieModel yy_modelWithJSON:dic];
-                        if (movie) {
-                            [self.yd addObject:movie];
+                        FFFYDModel *yd = [FFFYDModel yy_modelWithJSON:dic];
+                        if (yd) {
+                            [self.yd addObject:yd];
                         }
                     }
                     [self.view addSubview:self.tableView];
@@ -90,7 +91,7 @@ UITableViewDataSource
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return self.yd.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -102,20 +103,24 @@ UITableViewDataSource
     if (!cell) {
         cell = [[FFFYDTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"yd_list_cell"];
     }
-    cell.bgImageView.image = [UIImage imageNamed:@"illustration_open_notification_210x80_"];
-    cell.titleLabel.text = @"90届奥斯卡获奖影片";
-    cell.yd = self.yd;
+//    cell.bgImageView.image = [UIImage imageNamed:@"illustration_open_notification_210x80_"];
+    FFFYDModel *yd = self.yd[indexPath.section];
+    [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:yd.picture] placeholder:[UIImage imageNamed:@"illustration_open_notification_210x80_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+    cell.titleLabel.text = yd.title;
+    cell.yd = [yd.movie_list copy];
     __weak __typeof(self)weakSelf = self;
     cell.collectionClick = ^(NSIndexPath *indexPath) {
         __strong __typeof(weakSelf)strongSelf = weakSelf;
-        if (strongSelf.yd.count > 5 && indexPath.row == 5) {
+        if (yd.movie_list.count > 5 && indexPath.row == 5) {
             FFFYDDetailViewController *detail = [FFFYDDetailViewController new];
-            detail.movies = strongSelf.yd;
-            [strongSelf.navigationController pushViewController:detail animated:YES];
+            detail.movies = [yd.movie_list copy];
+            detail.ydTitle = yd.title;
+            detail.headerUrl = yd.picture;
+            [strongSelf.naviController pushViewController:detail animated:YES];
         }else {
             GGGMovieDetailViewController *detail = [GGGMovieDetailViewController new];
-            detail.movie = strongSelf.yd[indexPath.row];
-            [strongSelf.navigationController pushViewController:detail animated:YES];
+            detail.movie = yd.movie_list[indexPath.row];
+            [strongSelf.naviController pushViewController:detail animated:YES];
         }
     };
     return cell;
@@ -130,7 +135,7 @@ UITableViewDataSource
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    if (section == 1) {
+    if (section == self.yd.count - 1) {
         return CGFLOAT_MIN;
     }
     return 10;
@@ -145,6 +150,12 @@ UITableViewDataSource
         return nil;
     }
     return [UIView new];
+}
+
+#pragma mark - JXCategoryListContentViewDelegate
+
+- (UIView *)listView {
+    return self.view;
 }
 
 @end

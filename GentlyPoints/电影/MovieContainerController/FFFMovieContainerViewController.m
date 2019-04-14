@@ -11,7 +11,7 @@
 #import "UIColor+ZTWColor.h"
 #import "UIFont+ZTWFont.h"
 #import "FFFMovieViewController.h"
-
+#import "FFFYDListViewController.h"
 @interface FFFMovieContainerViewController ()
 <
 JXCategoryListContainerViewDelegate,
@@ -31,6 +31,7 @@ JXCategoryViewDelegate
                     @"影院热映",
                     @"即将上映",
                     @"人气榜单",
+                    @"热门影单"
                     ].mutableCopy;
     }
     return _titles;
@@ -105,7 +106,11 @@ JXCategoryViewDelegate
 }
 
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
-    
+    if (index == 3) {
+        FFFYDListViewController *yd = [[FFFYDListViewController alloc] init];
+        yd.naviController = self.navigationController;
+        return yd;
+    }
     FFFMovieViewController *movie = [[FFFMovieViewController alloc] initWithMovieId:self.categories[index]];
     movie.naviController = self.navigationController;
     return movie;

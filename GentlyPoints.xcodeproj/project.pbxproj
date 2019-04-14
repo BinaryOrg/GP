@@ -162,6 +162,7 @@
 		4A23A525225F2D8A00192A2D /* FFFMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A524225F2D8A00192A2D /* FFFMovieModel.m */; };
 		4A23A529225F2F6B00192A2D /* FFFActorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A528225F2F6B00192A2D /* FFFActorModel.m */; };
 		4A23A52D225F32ED00192A2D /* FFFMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A52C225F32ED00192A2D /* FFFMovieTableViewCell.m */; };
+		7592AE302262CF2400A69907 /* FFFYDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7592AE2F2262CF2400A69907 /* FFFYDModel.m */; };
 		E9DCC7170218A1960A5DFF0B /* libPods-GentlyPoints.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC9FC3732CB0F67647AB184 /* libPods-GentlyPoints.a */; };
 /* End PBXBuildFile section */
 
@@ -504,6 +505,8 @@
 		4A23A52B225F32ED00192A2D /* FFFMovieTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMovieTableViewCell.h; sourceTree = "<group>"; };
 		4A23A52C225F32ED00192A2D /* FFFMovieTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFMovieTableViewCell.m; sourceTree = "<group>"; };
 		5327F10EE0FB86D5203105E0 /* Pods-GentlyPoints.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GentlyPoints.debug.xcconfig"; path = "Target Support Files/Pods-GentlyPoints/Pods-GentlyPoints.debug.xcconfig"; sourceTree = "<group>"; };
+		7592AE2E2262CF2400A69907 /* FFFYDModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFYDModel.h; sourceTree = "<group>"; };
+		7592AE2F2262CF2400A69907 /* FFFYDModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFYDModel.m; sourceTree = "<group>"; };
 		BCC9FC3732CB0F67647AB184 /* libPods-GentlyPoints.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GentlyPoints.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7361AF44B5A7CF52610E36D /* Pods-GentlyPoints.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GentlyPoints.release.xcconfig"; path = "Target Support Files/Pods-GentlyPoints/Pods-GentlyPoints.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -583,6 +586,7 @@
 			children = (
 				371DD81B2260850600F1335D /* FFFYDListViewController.h */,
 				371DD8242260850600F1335D /* FFFYDListViewController.m */,
+				7592AE2D2262CE9D00A69907 /* Model */,
 				371DD81C2260850600F1335D /* Cell */,
 				371DD8212260850600F1335D /* Detail */,
 			);
@@ -722,7 +726,6 @@
 				379546952259A3A60050CB02 /* WebView */,
 				379546822259A3950050CB02 /* Base */,
 				75D91585225F7391003721F4 /* 电影 */,
-				371DD81A2260850600F1335D /* 影单 */,
 				379546562259A3330050CB02 /* Main.storyboard */,
 				379546592259A3340050CB02 /* Assets.xcassets */,
 				3795465B2259A3340050CB02 /* LaunchScreen.storyboard */,
@@ -1234,9 +1237,19 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		7592AE2D2262CE9D00A69907 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7592AE2E2262CF2400A69907 /* FFFYDModel.h */,
+				7592AE2F2262CF2400A69907 /* FFFYDModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		75D91585225F7391003721F4 /* 电影 */ = {
 			isa = PBXGroup;
 			children = (
+				371DD81A2260850600F1335D /* 影单 */,
 				371DD8162260845900F1335D /* Util */,
 				37763EDF225F810500F364CC /* MovieDetailController */,
 				4A23A50E225F156D00192A2D /* Base */,
@@ -1476,6 +1489,7 @@
 				379547CB2259A3AA0050CB02 /* HXCustomCameraController.m in Sources */,
 				37067D022261F15000C929B9 /* GPMineController.m in Sources */,
 				379547AE2259A3AA0050CB02 /* HXDownloadProgressView.m in Sources */,
+				7592AE302262CF2400A69907 /* FFFYDModel.m in Sources */,
 				379547C22259A3AA0050CB02 /* HXPhotoModel.m in Sources */,
 				379547BA2259A3AA0050CB02 /* UIFont+HXExtension.m in Sources */,
 				379547E12259A3AA0050CB02 /* XJItemSelView.m in Sources */,
