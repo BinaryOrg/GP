@@ -12,6 +12,8 @@
 #import "UIFont+ZTWFont.h"
 #import "FFFMovieViewController.h"
 #import "FFFYDListViewController.h"
+#import "FFFSearchViewController.h"
+
 @interface FFFMovieContainerViewController ()
 <
 JXCategoryListContainerViewDelegate,
@@ -90,7 +92,24 @@ JXCategoryViewDelegate
 }
 
 - (void)setNaviTitle {
-    self.navigationItem.title = @"影音";
+    
+    UIView *container = [[UIView alloc] initWithFrame:CGRectMake(0, 30, SCREENWIDTH - 40, 30)];
+    
+    container.backgroundColor = [UIColor ztw_colorWithRGB:245];
+    container.layer.cornerRadius = 4;
+    container.layer.masksToBounds = YES;
+    UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
+    [b setTitle:@"请输入搜索内容" forState:(UIControlStateNormal)];
+    [b setTitleColor:[UIColor ztw_colorWithRGB:153] forState:(UIControlStateNormal)];
+    b.frame = CGRectMake(0, 5, WIDTH(container), 20);
+    [container addSubview:b];
+    [b addTarget:self action:@selector(search) forControlEvents:(UIControlEventTouchUpInside)];
+    self.navigationItem.titleView = container;
+}
+
+- (void)search {
+    FFFSearchViewController *search = [FFFSearchViewController new];
+    [self.navigationController pushViewController:search animated:YES];
 }
 
 - (void)viewDidLayoutSubviews {

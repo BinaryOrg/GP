@@ -1,12 +1,12 @@
 //
-//  FFFYDDetailViewController.m
+//  FFFSearchViewController.m
 //  GentlyPoints
 //
-//  Created by 张冬冬 on 2019/4/12.
+//  Created by ZDD on 2019/4/14.
 //  Copyright © 2019 MakerYang.com. All rights reserved.
 //
 
-#import "FFFYDDetailViewController.h"
+#import "FFFSearchViewController.h"
 #import <MFNetworkManager/MFNetworkManager.h>
 #import "FFFMovieModel.h"
 #import <MJRefresh/MJRefresh.h>
@@ -14,20 +14,24 @@
 #import "GGGMovieDetailViewController.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
-@interface FFFYDDetailViewController ()
+@interface FFFSearchViewController ()
 <
 UITableViewDelegate,
-UITableViewDataSource
+UITableViewDataSource,
+UITextFieldDelegate
 >
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSString *movieId;
 
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UITextField *b;
+@property (nonatomic, strong) NSMutableArray<FFFMovieModel *> *movies;
 @end
 
-@implementation FFFYDDetailViewController
+@implementation FFFSearchViewController
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 180, SCREENWIDTH, SCREENHEIGHT - 180) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT - NavBarHeight) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [[UIView alloc] init];
@@ -88,44 +92,52 @@ UITableViewDataSource
     return _movies;
 }
 
+- (instancetype)initWithMovieId:(NSString *)movieId
+{
+    self = [super init];
+    if (self) {
+        _movieId = movieId;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.fd_prefersNavigationBarHidden = YES;
-    [self setHeader];
-    [self.view addSubview:self.tableView];
+    self.fd_interactivePopDisabled = YES;
+    [self addEmptyView];
+    [self.b becomeFirstResponder];
 }
 
-- (void)setHeader {
-    YYAnimatedImageView *bg = [[YYAnimatedImageView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 180)];
-    bg.contentMode = UIViewContentModeScaleAspectFill;
-    bg.layer.masksToBounds = YES;
-    [self.view addSubview:bg];
-    [bg yy_setImageWithURL:[NSURL URLWithString:self.headerUrl] placeholder:[UIImage imageNamed:@"illustration_open_notification_210x80_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
-    
-    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-    UIVisualEffectView *vis = [[UIVisualEffectView alloc] initWithEffect:blur];
-//    vis.alpha = 0.6;
-    vis.frame = bg.bounds;
-    [bg addSubview:vis];
-    
-    UILabel *title = [[UILabel alloc] initWithFrame:bg.bounds];
-    title.font = [UIFont ztw_mediumFontSize:25];
-    title.textColor = [UIColor whiteColor];
-    title.text = self.ydTitle;
-    [bg addSubview:title];
-    title.textAlignment = NSTextAlignmentCenter;
-    bg.userInteractionEnabled = YES;
-    UIButton *pop = [UIButton buttonWithType:UIButtonTypeCustom];
-    [pop setImage:[UIImage imageNamed:@"dailycard_cancel_32x32_"] forState:(UIControlStateNormal)];
-    pop.frame = CGRectMake(10, 20, 30, 30);
-    [pop addTarget:self action:@selector(pop) forControlEvents:(UIControlEventTouchUpInside)];
-    [bg addSubview:pop];
-}
-
-- (void)pop {
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)sendRequest {
+    [self showLoading];
+    [self removeErrorView];
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
+    NSLog(@"%@", self.movieId);
+    [MFNETWROK post:@"http://120.78.124.36:10020/WP/Movie/SearchMovies"
+             params:@{@"name": self.b.text}
+            success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                NSLog(@"%@", result);
+                [self hideLoading];
+                if (![result[@"resultCode"] integerValue]) {
+                    [self.movies removeAllObjects];
+                    for (NSDictionary *dic in result[@"data"]) {
+                        FFFMovieModel *movie = [FFFMovieModel yy_modelWithJSON:dic];
+                        if (movie) {
+                            [self.movies addObject:movie];
+                        }
+                    }
+                    [self.view addSubview:self.tableView];
+                    [self.tableView reloadData];
+                }else {
+                    [self addEmptyView];
+                }
+            }
+            failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                NSLog(@"%@", error.userInfo);
+                [self hideLoading];
+                [self addEmptyView];
+            }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -185,8 +197,27 @@ UITableViewDataSource
     [self.navigationController pushViewController:detail animated:YES];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+
+- (void)setNaviTitle {
+    
+    UIView *container = [[UIView alloc] initWithFrame:CGRectMake(0, 30, SCREENWIDTH - 80, 30)];
+    
+    container.backgroundColor = [UIColor ztw_colorWithRGB:245];
+    container.layer.cornerRadius = 4;
+    container.layer.masksToBounds = YES;
+    self.b = [[UITextField alloc] init];
+    self.b.frame = CGRectMake(0, 5, WIDTH(container), 20);
+    [container addSubview:self.b];
+    self.b.placeholder = @"请输入搜索内容";
+    self.b.returnKeyType = UIReturnKeySearch;
+    self.navigationItem.titleView = container;
+    self.b.delegate = self;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField endEditing:YES];
+    [self sendRequest];
+    return YES;
 }
 
 @end

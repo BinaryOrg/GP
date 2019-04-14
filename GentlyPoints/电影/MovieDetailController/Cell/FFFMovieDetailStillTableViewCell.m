@@ -14,6 +14,10 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        UIView *bg = [[UIView alloc] initWithFrame:CGRectMake(0, 5, SCREENWIDTH, 5)];;
+        bg.backgroundColor = [UIColor ztw_colorWithRGB:245];
+        [self.contentView addSubview:bg];
+        
         UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 100, 40)];
         l.textColor = [UIColor ztw_colorWithRGB:51];
         l.font = [UIFont ztw_regularFontSize:18];

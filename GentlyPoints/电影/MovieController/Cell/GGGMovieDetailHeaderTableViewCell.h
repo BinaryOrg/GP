@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UILabel *scoreLabel;
 
-
+@property (nonatomic, strong) UIButton *pop;
 
 @end
 

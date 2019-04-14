@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FFFYDTableViewCell : UITableViewCell
 @property (nonatomic, strong) YYAnimatedImageView *bgImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *countLabel;
 @property (nonatomic, strong) NSMutableArray<FFFMovieModel *> *yd;
 @property (nonatomic, copy) CollectionClick collectionClick;
 @end
