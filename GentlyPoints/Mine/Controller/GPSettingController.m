@@ -28,7 +28,7 @@ UITableViewDataSource
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -45,9 +45,6 @@ UITableViewDataSource
         case 1:
             cell.textLabel.text = @"联系我们";
             break;
-        case 2:
-            cell.textLabel.text = @"清楚缓存";
-            break;
         default:
             cell.textLabel.text = @"退出登录";
             break;
@@ -57,6 +54,17 @@ UITableViewDataSource
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 50;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        
+    }else if (indexPath.row == 1) {
+        
+    }else {
+        [[GODUserTool shared] clearUserInfo];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 - (UITableView *)tableView {

@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) UIImageView *bgv;
 @property (nonatomic, strong) UILabel *nameLb;
+@property (nonatomic, strong) UILabel *signLb;
 @property (nonatomic, strong) UILabel *timeLb;
 @property (nonatomic, strong) UIView *whiteIV;
 @property (nonatomic, strong) UIImageView *imgView;
@@ -44,8 +45,19 @@
     self.timeLb.text = [self formatFromTS:model.create_date];
     [self.iconIV yy_setImageWithURL:[NSURL URLWithString:model.avater] placeholder:[UIImage imageNamed:@"cover"]];
     [self.bgv yy_setImageWithURL:[NSURL URLWithString:model.avater] placeholder:[UIImage imageNamed:@"cover"]];
-
+    self.signLb.text = model.sign;
 }
+
+- (void)setIsLoged:(BOOL)isLoged {
+    if (!isLoged) {
+        self.nameLb.text = @"";
+        self.timeLb.text = @"尚未登录，请前去登录";
+        self.iconIV.image = [UIImage imageNamed:@"cover"];
+        self.bgv.image = [UIImage imageNamed:@"cover"];
+        self.signLb.text = @"";
+    }
+}
+
 - (NSString *)formatFromTS:(NSInteger)ts {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd MMM yyyy"];
@@ -60,6 +72,12 @@
     [self.bgv mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.mas_equalTo(0);
         make.height.mas_equalTo(180);
+    }];
+    
+    [self.bgv addSubview:self.signLb];
+    [self.signLb mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(0);
+        make.top.mas_equalTo(40);
     }];
     
     [self addSubview:self.whiteIV];
@@ -79,13 +97,13 @@
     
     [self.whiteIV addSubview:self.nameLb];
     [self.nameLb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(25);
+        make.top.mas_equalTo(30);
         make.left.mas_equalTo(self.iconIV.mas_right).mas_equalTo(10);
     }];
     
     [self.whiteIV addSubview:self.timeLb];
     [self.timeLb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.nameLb.mas_bottom).mas_equalTo((20));
+        make.top.mas_equalTo(self.nameLb.mas_bottom).mas_equalTo((5));
         make.left.mas_equalTo(self.iconIV.mas_right).mas_equalTo(10);
     }];
     
@@ -114,6 +132,8 @@
         _whiteIV.layer.shadowOffset = CGSizeMake(1.0f, 1.0);
         _whiteIV.layer.cornerRadius = 8;
         _whiteIV.layer.shadowOpacity = 0.2f;
+        _whiteIV.userInteractionEnabled = YES;
+        [_whiteIV addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickEditBtn)]];
     }
     return _whiteIV;
 }
@@ -150,8 +170,19 @@
         _timeLb = [[UILabel alloc] init];
         _timeLb.font = [UIFont fontWithName:@"PingFangSC-Light" size:15];
         _timeLb.textAlignment = NSTextAlignmentCenter;
+        _timeLb.text = @"尚未登录，请登录";
     }
     return _timeLb;
+}
+
+- (UILabel *)signLb {
+    if (!_signLb) {
+        _signLb = [[UILabel alloc] init];
+        _signLb.font = [UIFont fontWithName:@"PingFangSC-Light" size:12];
+        _signLb.textAlignment = NSTextAlignmentCenter;
+        _signLb.text = @"";
+    }
+    return _signLb;
 }
 
 -(UIButton *)editBtn {

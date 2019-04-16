@@ -8,9 +8,15 @@
 
 #import "ZDDBaseViewController.h"
 
+typedef void(^GPEditNameBlock)(NSString * _Nullable text);
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GPEditNameOrSingeController : ZDDBaseViewController
+
+/** <#class#> */
+@property (nonatomic, copy) GPEditNameBlock block;
 
 @end
 

@@ -163,7 +163,11 @@
                   if ([result[@"resultCode"] isEqualToString:@"0"]) {
                       dispatch_async(dispatch_get_main_queue(), ^{
                           [MFHUDManager dismiss];
-                          [[NSNotificationCenter defaultCenter] postNotificationName:@"shouldReloadDy" object:nil];
+                          GPTopicResponseModel *model = [GPTopicResponseModel yy_modelWithJSON:result[@"response"]];
+                          if (model) {
+                              [self.dataArr insertObject:model atIndex:0];
+                              [self.tableNode reloadData];
+                          }
                       });
 
                   }else {

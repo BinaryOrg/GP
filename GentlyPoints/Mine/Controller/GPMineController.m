@@ -10,6 +10,7 @@
 #import "GPMineHeaderView.h"
 #import "GPEditUserInfoController.h"
 #import "GPSettingController.h"
+#import "FFFLoginViewController.h"
 
 @interface GPMineController ()
 <
@@ -35,14 +36,31 @@ GPMineHeaderViewDelegate
     [setBtn addTarget:self action:@selector(clickSetBtn) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:setBtn];
     
-    GODUserModel *model = [GODUserModel new];
-    model.user_name = @"Maker";
-    model.create_date = 1653723817;
-    model.avater = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555222909107&di=b7c55a4d0f3b20ccf59b6bf64eb96314&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180810%2Fe59af0ebf1ce443abc083a2c3e9321d2.jpeg";
     self.tableView.tableHeaderView = self.headerView;
-    self.headerView.model = model;
-    self.model = model;
+   
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (![GODUserTool isLogin]) {
+        self.headerView.isLoged = NO;
+        return;
+    };
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
+    [MFNETWROK post:@"User/GetUserInfo" params:@{@"userId": [GODUserTool shared].user.user_id} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        if (statusCode == 200) {
+            GODUserModel *model = [GODUserModel yy_modelWithJSON:result[@"user"]];
+            self.headerView.model = model;
+            self.model = model;
+        }
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+    }];
+}
+
+- (void)jumpToLog {
+    FFFLoginViewController *vc = [FFFLoginViewController new];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)clickSetBtn {
@@ -51,6 +69,10 @@ GPMineHeaderViewDelegate
 }
 
 - (void)clickEditUserInfo {
+    if (![GODUserTool isLogin]) {
+        [self jumpToLog];
+        return;
+    }
     GPEditUserInfoController *vc = [GPEditUserInfoController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -100,6 +122,12 @@ GPMineHeaderViewDelegate
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (![GODUserTool isLogin]) {
+        [self jumpToLog];
+        return;
+    }
+    
     if (indexPath.row == 0) {
         
     }else if (indexPath.section == 1) {

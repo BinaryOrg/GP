@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *mobile_number;
 @property (nonatomic, assign) NSInteger create_date;
 @property (nonatomic, assign) NSInteger last_login_date;
-
+@property (nonatomic, strong) NSString *sign;
 
 
 @end

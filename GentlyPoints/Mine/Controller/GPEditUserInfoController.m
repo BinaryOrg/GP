@@ -8,6 +8,7 @@
 
 #import "GPEditUserInfoController.h"
 #import <QMUIKit/QMUIKit.h>
+#import "GPEditNameOrSingeController.h"
 
 @interface GPEditUserInfoController ()
 <
@@ -31,7 +32,7 @@ QMUIImagePickerViewControllerDelegate
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -62,9 +63,50 @@ QMUIImagePickerViewControllerDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         [self presentAlbumViewControllerWithTitle:@"请选择头像"];
+    }else if (indexPath.row == 1) {
+        GPEditNameOrSingeController *vc = [GPEditNameOrSingeController new];
+        vc.title = @"修改名称";
+        [self.navigationController pushViewController:vc animated:YES];
+        __weak typeof(self)weakSelf = self;
+        vc.block = ^(NSString * _Nullable text) {
+            [weakSelf changeNamer:text];
+        };
+    }else {
+        GPEditNameOrSingeController *vc = [GPEditNameOrSingeController new];
+        vc.title = @"修改个性签名";
+        [self.navigationController pushViewController:vc animated:YES];
+        __weak typeof(self)weakSelf = self;
+        vc.block = ^(NSString * _Nullable text) {
+            [weakSelf chaneSigne:text];
+        };
     }
 }
 
+- (void)changeNamer:(NSString *)newName {
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
+    [MFNETWROK post:@"User/ChangeUserNamec" params:@{@"userId": [GODUserTool shared].user.user_name, @"userName" : newName} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        if (statusCode == 200) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }else {
+            [MFHUDManager showError:@"修改失败请重试"];
+        }
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        [MFHUDManager showError:@"修改失败请重试"];
+    }];
+}
+
+- (void)chaneSigne:(NSString *)newSigne {
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
+    [MFNETWROK post:@"User/ChangeUserSign" params:@{@"userId": [GODUserTool shared].user.user_name, @"sign" : newSigne} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        if (statusCode == 200) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }else {
+            [MFHUDManager showError:@"修改失败请重试"];
+        }
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        [MFHUDManager showError:@"修改失败请重试"];
+    }];
+}
 
 #pragma makr - 修改头像
 - (void)presentAlbumViewControllerWithTitle:(NSString *)title {
@@ -103,7 +145,7 @@ QMUIImagePickerViewControllerDelegate
             [GODUserTool shared].user = user;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self hideLoading];
-                [self.tableView reloadData];
+                [self.navigationController popViewControllerAnimated:YES];
             });
         }else {
             dispatch_async(dispatch_get_main_queue(), ^{
