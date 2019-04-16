@@ -126,6 +126,7 @@
             [tempArr insertObject:addModel atIndex:0];
             self.dataArr = tempArr.copy;
             self.model.comment_num += 1;
+            [self.tableNode reloadData];
         }else {
             [MFHUDManager showError:@"评论失败请重试"];
         }

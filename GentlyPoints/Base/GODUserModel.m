@@ -14,7 +14,8 @@
     return @{
              @"user_name" : @[@"user_name", @"name"],
              @"user_id" : @[@"user_id", @"id"],
-             @"avater" : @[@"avater", @"avatar"]
+             @"avater" : @[@"avater", @"avatar"],
+             @"create_date" : @[@"register_date", @"create_date"]
              };
 }
 

@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** <#class#> */
 @property (nonatomic, weak) id<GPMineHeaderViewDelegate> delegate;
 @property (nonatomic, strong) GODUserModel *model;
+@property (nonatomic, assign) BOOL isLoged;
 
 @end
 
