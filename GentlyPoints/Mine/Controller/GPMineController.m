@@ -140,6 +140,7 @@ GPMineHeaderViewDelegate
     }else if (indexPath.row == 2) {
         FFFYPViewController *vc = [[FFFYPViewController alloc] init];
         vc.isMineVCPush = YES;
+        vc.title = @"我的影评";
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
