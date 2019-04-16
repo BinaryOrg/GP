@@ -296,7 +296,7 @@ UICollectionViewDataSource
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -393,7 +393,7 @@ UICollectionViewDataSource
             };
             return cell;
         }
-    }else if (indexPath.row == 4) {
+    }else if (indexPath.row == 5) {
         if (!self.yps.count) {
             FFFCommonEmptyTableViewCell *cell = [[FFFCommonEmptyTableViewCell alloc] initWithTitle:@"相关影评"];
             return cell;
@@ -405,9 +405,10 @@ UICollectionViewDataSource
                     cell = [[FFFPL2TableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"yp2_cell"];
                 }
                 [cell.avatar yy_setImageWithURL:[NSURL URLWithString:yp.user.avater] placeholder:[UIImage imageNamed:@"illustration_guoguo_142x163_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+                cell.nameLabel.text = yp.user.user_name;
                 cell.title.text = [NSString stringWithFormat:@"%@", yp.title];
                 cell.content.text = yp.content;
-                [cell.avatar yy_setImageWithURL:[NSURL URLWithString:yp.picture.firstObject] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+                [cell.poster yy_setImageWithURL:[NSURL URLWithString:yp.picture.firstObject] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
                 return cell;
             }
             FFFPLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"yp_cell"];
@@ -415,6 +416,7 @@ UICollectionViewDataSource
                 cell = [[FFFPLTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"yp_cell"];
             }
             [cell.avatar yy_setImageWithURL:[NSURL URLWithString:yp.user.avater] placeholder:[UIImage imageNamed:@"illustration_guoguo_142x163_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+            cell.nameLabel.text = yp.user.user_name;
             cell.title.text = [NSString stringWithFormat:@"%@", yp.title];
             cell.content.text = yp.content;
             return cell;
@@ -435,7 +437,17 @@ UICollectionViewDataSource
     }else if (indexPath.row == 4) {
         return 180;
     }else if (indexPath.row == 5) {
-        return 180;
+
+        if (!self.yps.count) {
+            return 180;
+        }else {
+            FFFPLModel *yp = self.yps.firstObject;
+            if (yp.picture.count) {
+                return 290;
+            }else {
+                return 200 + yp.c1_height;
+            }
+        }
     }
     return 0;
 }
