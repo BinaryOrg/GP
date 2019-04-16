@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <YYModel/YYModel.h>
+#import "GODUserModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FFFPLModel : NSObject
@@ -29,6 +30,16 @@ NS_ASSUME_NONNULL_BEGIN
  "avatar": "http://120.78.124.36:10020/user/user-00e5ae20-5d2b-11e9-b049-1dc8d6e40b9b/upload_aa2b2ec54b81c52244c067024dfe36e9.jpg"
  }
  */
+@property (nonatomic, strong) NSString *id;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *content;
+@property (nonatomic, strong) NSArray<NSString *> *picture;
+@property (nonatomic, assign) NSInteger star_num;
+@property (nonatomic, assign) NSInteger comment_num;
+@property (nonatomic, assign) NSInteger pv;
+@property (nonatomic, assign) BOOL is_star;
+@property (nonatomic, strong) GODUserModel *user;
+@property (nonatomic, assign) CGFloat content_height;
 @end
 
 NS_ASSUME_NONNULL_END

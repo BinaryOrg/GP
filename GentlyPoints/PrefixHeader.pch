@@ -19,6 +19,7 @@
 #import "GODUserTool.h"
 #import "UIColor+ZTWColor.h"
 #import "UIFont+ZTWFont.h"
+#import "ZTWVerticallyAlignedLabel.h"
 
 #import <Masonry.h>
 #import <UIColor+QMUI.h>

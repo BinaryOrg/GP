@@ -148,7 +148,7 @@ UICollectionViewDataSource
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT - TabBarHeight) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [[UIView alloc] init];
@@ -194,9 +194,14 @@ UICollectionViewDataSource
                             [self.hts addObject:ht];
                         }
                     }
-                    NSLog(@"--=-----=%@", @(self.hts.count));
                     [self.view addSubview:self.tableView];
                     [self.tableView reloadData];
+                    UIButton *post = [UIButton buttonWithType:UIButtonTypeCustom];
+                    post.frame = CGRectMake(0, SCREENHEIGHT - TabBarHeight, SCREENWIDTH, TabBarHeight);
+                    post.backgroundColor = [UIColor ztw_blueColor];
+                    [post setTitle:@"发布影评" forState:(UIControlStateNormal)];
+                    [post addTarget:self action:@selector(handlePostEvent) forControlEvents:UIControlEventTouchUpInside];
+                    [self.view addSubview:post];
                 }else {
                     [self addEmptyView];
                 }
@@ -206,6 +211,10 @@ UICollectionViewDataSource
                 [self hideLoading];
                 [self addEmptyView];
             }];
+}
+
+- (void)handlePostEvent {
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
