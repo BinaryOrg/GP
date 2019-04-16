@@ -21,6 +21,8 @@
 //#import "FFFHTModel.h"
 #import "GPTopicModel.h"
 #import "GPTopicDetailController.h"
+#import "FFFLoginViewController.h"
+#import "GPPostController.h"
 
 @interface GGGMovieDetailViewController ()
 <
@@ -169,6 +171,7 @@ UICollectionViewDataSource
     [super viewDidLoad];
     self.fd_prefersNavigationBarHidden = YES;
     [self sendRequest];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendRequest) name:@"reloadYP" object:nil];
     __weak __typeof(self)weakSelf = self;
     self.errorViewClickBlock = ^{
         __strong __typeof(weakSelf)strongSelf = weakSelf;
@@ -188,6 +191,7 @@ UICollectionViewDataSource
                 NSLog(@"%@", result);
                 [self hideLoading];
                 if (![result[@"resultCode"] integerValue]) {
+                    [self.hts removeAllObjects];
                     for (NSDictionary *dic in result[@"movie"][@"related_topic"]) {
                         GPTopicModel *ht = [GPTopicModel yy_modelWithJSON:dic];
                         if (ht) {
@@ -214,7 +218,64 @@ UICollectionViewDataSource
 }
 
 - (void)handlePostEvent {
+    if (![GODUserTool isLogin]) {
+        FFFLoginViewController *vc = [FFFLoginViewController new];
+        [self presentViewController:vc animated:YES completion:nil];
+        return;
+    }
     
+    __weak typeof(self)weaSlef = self;
+    GPPostController *vc = [GPPostController new];
+    [self.navigationController pushViewController:vc animated:YES];
+    vc.block = ^(NSString *text, NSArray<UIImage *> *images) {
+        [weaSlef joinWithContent:text imag:images];
+    };
+}
+
+- (void)joinWithContent:(NSString *)text imag:(NSArray *)images {
+    if (!text.length) {
+        [MFHUDManager showError:@"影评内容不能为空"];
+        return;
+    }
+    [MFHUDManager showLoading:@"发布中..."];
+    [MFNETWROK upload:@"http://120.78.124.36:10020/WP/FilmReview/Creat"
+               params:@{
+                        @"userId": [GODUserTool shared].user.user_id,
+                        @"content": text,
+                        @"title": text,
+                        @"targetMovie" : self.movie.id
+                        }
+                 name:@"pictures"
+               images:images
+           imageScale:0.1
+            imageType:MFImageTypePNG
+             progress:nil
+              success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                  NSLog(@"%@", result);
+                  if ([result[@"resultCode"] isEqualToString:@"0"]) {
+                      dispatch_async(dispatch_get_main_queue(), ^{
+                          [MFHUDManager dismiss];
+                          [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadYP" object:nil];
+                      });
+                      
+                  }else {
+                      dispatch_async(dispatch_get_main_queue(), ^{
+                          [MFHUDManager showError:@"发布失败！"];
+                      });
+                      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                          [MFHUDManager dismiss];
+                      });
+                  }
+              }
+              failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                  NSLog(@"%@", error.userInfo);
+                  dispatch_async(dispatch_get_main_queue(), ^{
+                      [MFHUDManager showError:@"发布失败！"];
+                  });
+                  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                      [MFHUDManager dismiss];
+                  });
+              }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

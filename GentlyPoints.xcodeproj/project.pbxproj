@@ -167,6 +167,12 @@
 		4A223B5122658112006EB2CB /* FFFYP2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B5022658112006EB2CB /* FFFYP2TableViewCell.m */; };
 		4A223B5522658741006EB2CB /* ZTWVerticallyAlignedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B5422658741006EB2CB /* ZTWVerticallyAlignedLabel.m */; };
 		4A223B582265890E006EB2CB /* FFFYP0TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B572265890E006EB2CB /* FFFYP0TableViewCell.m */; };
+		4A223B5E22659DB1006EB2CB /* YMHLCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B5C22659DB0006EB2CB /* YMHLCommentTableViewCell.m */; };
+		4A223B5F22659DB1006EB2CB /* YMHLSubcommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B5D22659DB1006EB2CB /* YMHLSubcommentTableViewCell.m */; };
+		4A223B6322659E08006EB2CB /* FFFCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B6222659E08006EB2CB /* FFFCommentViewController.m */; };
+		4A223B6722659F3F006EB2CB /* ZDDCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B6522659F3E006EB2CB /* ZDDCommentModel.m */; };
+		4A223B6A22659F53006EB2CB /* YMHLSubCommentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B6922659F53006EB2CB /* YMHLSubCommentsModel.m */; };
+		4A223B6D2265A582006EB2CB /* FFFErrorFuckTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B6C2265A582006EB2CB /* FFFErrorFuckTableViewCell.m */; };
 		4A23A511225F158100192A2D /* FFFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A510225F158100192A2D /* FFFBaseViewController.m */; };
 		4A23A515225F22F200192A2D /* FFFMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A514225F22F200192A2D /* FFFMovieViewController.m */; };
 		4A23A519225F27D200192A2D /* FFFMovieContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A518225F27D200192A2D /* FFFMovieContainerViewController.m */; };
@@ -534,6 +540,18 @@
 		4A223B5422658741006EB2CB /* ZTWVerticallyAlignedLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTWVerticallyAlignedLabel.m; sourceTree = "<group>"; };
 		4A223B562265890E006EB2CB /* FFFYP0TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFYP0TableViewCell.h; sourceTree = "<group>"; };
 		4A223B572265890E006EB2CB /* FFFYP0TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFYP0TableViewCell.m; sourceTree = "<group>"; };
+		4A223B5A22659DB0006EB2CB /* YMHLSubcommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLSubcommentTableViewCell.h; sourceTree = "<group>"; };
+		4A223B5B22659DB0006EB2CB /* YMHLCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLCommentTableViewCell.h; sourceTree = "<group>"; };
+		4A223B5C22659DB0006EB2CB /* YMHLCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLCommentTableViewCell.m; sourceTree = "<group>"; };
+		4A223B5D22659DB1006EB2CB /* YMHLSubcommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLSubcommentTableViewCell.m; sourceTree = "<group>"; };
+		4A223B6122659E08006EB2CB /* FFFCommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFCommentViewController.h; sourceTree = "<group>"; };
+		4A223B6222659E08006EB2CB /* FFFCommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFCommentViewController.m; sourceTree = "<group>"; };
+		4A223B6522659F3E006EB2CB /* ZDDCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentModel.m; sourceTree = "<group>"; };
+		4A223B6622659F3F006EB2CB /* ZDDCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDCommentModel.h; sourceTree = "<group>"; };
+		4A223B6822659F53006EB2CB /* YMHLSubCommentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLSubCommentsModel.h; sourceTree = "<group>"; };
+		4A223B6922659F53006EB2CB /* YMHLSubCommentsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLSubCommentsModel.m; sourceTree = "<group>"; };
+		4A223B6B2265A582006EB2CB /* FFFErrorFuckTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFErrorFuckTableViewCell.h; sourceTree = "<group>"; };
+		4A223B6C2265A582006EB2CB /* FFFErrorFuckTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFErrorFuckTableViewCell.m; sourceTree = "<group>"; };
 		4A23A50F225F158100192A2D /* FFFBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFBaseViewController.h; sourceTree = "<group>"; };
 		4A23A510225F158100192A2D /* FFFBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFBaseViewController.m; sourceTree = "<group>"; };
 		4A23A513225F22F200192A2D /* FFFMovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMovieViewController.h; sourceTree = "<group>"; };
@@ -1263,6 +1281,7 @@
 		4A223B3A22656DB1006EB2CB /* 影评 */ = {
 			isa = PBXGroup;
 			children = (
+				4A223B5922659CFA006EB2CB /* Detail */,
 				4A223B522265872A006EB2CB /* VertialLabel */,
 				4A223B4B226580AE006EB2CB /* Cell */,
 				4A223B3F2265709A006EB2CB /* Container */,
@@ -1309,6 +1328,41 @@
 				4A223B5422658741006EB2CB /* ZTWVerticallyAlignedLabel.m */,
 			);
 			path = VertialLabel;
+			sourceTree = "<group>";
+		};
+		4A223B5922659CFA006EB2CB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				4A223B6422659F38006EB2CB /* Model */,
+				4A223B6022659DCC006EB2CB /* Cell */,
+				4A223B6122659E08006EB2CB /* FFFCommentViewController.h */,
+				4A223B6222659E08006EB2CB /* FFFCommentViewController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		4A223B6022659DCC006EB2CB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4A223B5B22659DB0006EB2CB /* YMHLCommentTableViewCell.h */,
+				4A223B5C22659DB0006EB2CB /* YMHLCommentTableViewCell.m */,
+				4A223B5A22659DB0006EB2CB /* YMHLSubcommentTableViewCell.h */,
+				4A223B5D22659DB1006EB2CB /* YMHLSubcommentTableViewCell.m */,
+				4A223B6B2265A582006EB2CB /* FFFErrorFuckTableViewCell.h */,
+				4A223B6C2265A582006EB2CB /* FFFErrorFuckTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4A223B6422659F38006EB2CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A223B6822659F53006EB2CB /* YMHLSubCommentsModel.h */,
+				4A223B6922659F53006EB2CB /* YMHLSubCommentsModel.m */,
+				4A223B6622659F3F006EB2CB /* ZDDCommentModel.h */,
+				4A223B6522659F3E006EB2CB /* ZDDCommentModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4A23A50E225F156D00192A2D /* Base */ = {
@@ -1650,17 +1704,20 @@
 				379547992259A3AA0050CB02 /* POPAnimatableProperty.mm in Sources */,
 				379547D12259A3AA0050CB02 /* HXPhotoSubViewCell.m in Sources */,
 				3704C91122634C000088C23D /* GPSettingController.m in Sources */,
+				4A223B6A22659F53006EB2CB /* YMHLSubCommentsModel.m in Sources */,
 				371DD8142260796200F1335D /* FFFMovieDetailStillTableViewCell.m in Sources */,
 				379547CB2259A3AA0050CB02 /* HXCustomCameraController.m in Sources */,
 				37067D022261F15000C929B9 /* GPMineController.m in Sources */,
 				379547AE2259A3AA0050CB02 /* HXDownloadProgressView.m in Sources */,
 				7592AE302262CF2400A69907 /* FFFYDModel.m in Sources */,
 				379547C22259A3AA0050CB02 /* HXPhotoModel.m in Sources */,
+				4A223B6D2265A582006EB2CB /* FFFErrorFuckTableViewCell.m in Sources */,
 				4A223B5122658112006EB2CB /* FFFYP2TableViewCell.m in Sources */,
 				379547BA2259A3AA0050CB02 /* UIFont+HXExtension.m in Sources */,
 				7592AE332263277800A69907 /* FFFPLTableViewCell.m in Sources */,
 				379547E12259A3AA0050CB02 /* XJItemSelView.m in Sources */,
 				379547BC2259A3AA0050CB02 /* UIImage+HXExtension.m in Sources */,
+				4A223B6722659F3F006EB2CB /* ZDDCommentModel.m in Sources */,
 				379547962259A3AA0050CB02 /* POPBasicAnimation.mm in Sources */,
 				379547EF2259A3AA0050CB02 /* TEMPKeyConfiguration.m in Sources */,
 				3795468D2259A3950050CB02 /* ZDDRetryView.m in Sources */,
@@ -1671,6 +1728,7 @@
 				4A23A525225F2D8A00192A2D /* FFFMovieModel.m in Sources */,
 				379547C02259A3AA0050CB02 /* UILabel+HXExtension.m in Sources */,
 				4A23A519225F27D200192A2D /* FFFMovieContainerViewController.m in Sources */,
+				4A223B6322659E08006EB2CB /* FFFCommentViewController.m in Sources */,
 				4A23A529225F2F6B00192A2D /* FFFActorModel.m in Sources */,
 				379547B52259A3AA0050CB02 /* NSString+HXExtension.m in Sources */,
 				379547B82259A3AA0050CB02 /* NSBundle+HXPhotoPicker.m in Sources */,
@@ -1709,6 +1767,7 @@
 				3731E0C6226570C900BC75F8 /* GPPostController.m in Sources */,
 				3795479A2259A3AA0050CB02 /* POPAnimationRuntime.mm in Sources */,
 				379547A92259A3AA0050CB02 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				4A223B5E22659DB1006EB2CB /* YMHLCommentTableViewCell.m in Sources */,
 				379547BF2259A3AA0050CB02 /* UIButton+HXExtension.m in Sources */,
 				379547982259A3AA0050CB02 /* POPAnimator.mm in Sources */,
 				379547D82259A3AA0050CB02 /* HXDatePhotoToolManager.m in Sources */,
@@ -1773,6 +1832,7 @@
 				371DD8282260850600F1335D /* FFFYDListViewController.m in Sources */,
 				379547D72259A3AA0050CB02 /* HXPhotoEditViewController.m in Sources */,
 				379547BE2259A3AA0050CB02 /* NSTimer+HXExtension.m in Sources */,
+				4A223B5F22659DB1006EB2CB /* YMHLSubcommentTableViewCell.m in Sources */,
 				37763ED2225F2A0800F364CC /* GPTopicListController.m in Sources */,
 				4A23A521225F298A00192A2D /* UIFont+ZTWFont.m in Sources */,
 				379547EA2259A3AA0050CB02 /* UIColor+ZDDColor.m in Sources */,
