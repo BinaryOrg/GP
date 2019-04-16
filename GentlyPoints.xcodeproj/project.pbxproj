@@ -30,6 +30,7 @@
 		371DD82B2260865100F1335D /* GGGMovieDetailHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DD82A2260865100F1335D /* GGGMovieDetailHeaderTableViewCell.m */; };
 		373141BA226207CC005CDB2C /* GPMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 373141B9226207CC005CDB2C /* GPMineHeaderView.m */; };
 		3731E0C6226570C900BC75F8 /* GPPostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3731E0C5226570C900BC75F8 /* GPPostController.m */; };
+		3731E0C92265AFE800BC75F8 /* GPJoinedTpickController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3731E0C82265AFE800BC75F8 /* GPJoinedTpickController.m */; };
 		37763ED2225F2A0800F364CC /* GPTopicListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763ED1225F2A0800F364CC /* GPTopicListController.m */; };
 		37763ED5225F335300F364CC /* GPTopicListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763ED4225F335300F364CC /* GPTopicListCellNode.m */; };
 		37763ED8225F34D600F364CC /* GPTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37763ED7225F34D600F364CC /* GPTopicModel.m */; };
@@ -256,6 +257,8 @@
 		373141B9226207CC005CDB2C /* GPMineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPMineHeaderView.m; sourceTree = "<group>"; };
 		3731E0C4226570C900BC75F8 /* GPPostController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPPostController.h; sourceTree = "<group>"; };
 		3731E0C5226570C900BC75F8 /* GPPostController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPPostController.m; sourceTree = "<group>"; };
+		3731E0C72265AFE800BC75F8 /* GPJoinedTpickController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPJoinedTpickController.h; sourceTree = "<group>"; };
+		3731E0C82265AFE800BC75F8 /* GPJoinedTpickController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPJoinedTpickController.m; sourceTree = "<group>"; };
 		37763ED0225F2A0800F364CC /* GPTopicListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopicListController.h; sourceTree = "<group>"; };
 		37763ED1225F2A0800F364CC /* GPTopicListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPTopicListController.m; sourceTree = "<group>"; };
 		37763ED3225F335300F364CC /* GPTopicListCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopicListCellNode.h; sourceTree = "<group>"; };
@@ -636,6 +639,8 @@
 				3704C91322634D470088C23D /* GPEditUserInfoController.m */,
 				37B0249D226494540078DA25 /* GPEditNameOrSingeController.h */,
 				37B0249E226494540078DA25 /* GPEditNameOrSingeController.m */,
+				3731E0C72265AFE800BC75F8 /* GPJoinedTpickController.h */,
+				3731E0C82265AFE800BC75F8 /* GPJoinedTpickController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1779,6 +1784,7 @@
 				7592AE3A22632A9300A69907 /* FFFPLModel.m in Sources */,
 				379547B62259A3AA0050CB02 /* UIViewController+HXExtension.m in Sources */,
 				379547952259A3AA0050CB02 /* POPGeometry.mm in Sources */,
+				3731E0C92265AFE800BC75F8 /* GPJoinedTpickController.m in Sources */,
 				379547AB2259A3AA0050CB02 /* HXCustomCameraViewController.m in Sources */,
 				379547C12259A3AA0050CB02 /* HXCollectionView.m in Sources */,
 				379547912259A3AA0050CB02 /* POPDecayAnimation.mm in Sources */,

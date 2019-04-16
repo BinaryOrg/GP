@@ -7,6 +7,8 @@
 //
 
 #import "GPSettingController.h"
+#import <YYImageCache.h>
+
 
 @interface GPSettingController ()
 <
@@ -58,9 +60,23 @@ UITableViewDataSource
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        
+        YYImageCache *cache = [YYWebImageManager sharedManager].cache;
+        float tmpSize =  cache.diskCache.totalCost / 1024 /1024;
+        NSString *clearCacheName = tmpSize >= 1 ? [NSString stringWithFormat:@"清理缓存(%.2f M)",tmpSize] : [NSString stringWithFormat:@"清理缓存(%.2f K)",tmpSize * 1024];
+        [MFHUDManager showSuccess:clearCacheName];
+        [cache.memoryCache removeAllObjects];
+        [cache.diskCache removeAllObjects];
     }else if (indexPath.row == 1) {
-        
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = @"Shmily_liuyy";
+        [MFHUDManager showSuccess:@"作者微信号已成功复制到剪切板！"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSURL * url = [NSURL URLWithString:@"weixin://"];
+            BOOL canOpen = [[UIApplication sharedApplication] canOpenURL:url];
+            if (canOpen) {
+                [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+            }
+        });
     }else {
         [[GODUserTool shared] clearUserInfo];
         [self.navigationController popToRootViewControllerAnimated:YES];

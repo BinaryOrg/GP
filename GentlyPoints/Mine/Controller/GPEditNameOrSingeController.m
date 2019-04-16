@@ -22,7 +22,7 @@
     UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
     nextButton.titleLabel.font = [UIFont systemFontOfSize:15.0f];
     [nextButton setTitleColor:[UIColor qmui_colorWithHexString:@"666666"] forState:UIControlStateNormal];
-    [nextButton setTitle:@"发布" forState:UIControlStateNormal];
+    [nextButton setTitle:@"确认修改" forState:UIControlStateNormal];
     [nextButton addTarget:self action:@selector(clickPostDyBtn) forControlEvents:UIControlEventTouchUpInside];
     [nextButton sizeToFit];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:nextButton];

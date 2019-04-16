@@ -11,6 +11,7 @@
 #import "GPEditUserInfoController.h"
 #import "GPSettingController.h"
 #import "FFFLoginViewController.h"
+#import "GPJoinedTpickController.h"
 
 @interface GPMineController ()
 <
@@ -53,6 +54,7 @@ GPMineHeaderViewDelegate
             GODUserModel *model = [GODUserModel yy_modelWithJSON:result[@"user"]];
             self.headerView.model = model;
             self.model = model;
+            [self.tableView reloadData];
         }
     } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
     }];
@@ -129,7 +131,8 @@ GPMineHeaderViewDelegate
     }
     
     if (indexPath.row == 0) {
-        
+        GPJoinedTpickController *vc = [GPJoinedTpickController new];
+        [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 1) {
         
     }else if (indexPath.section == 2) {
