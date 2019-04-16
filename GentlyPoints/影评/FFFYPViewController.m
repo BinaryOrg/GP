@@ -14,6 +14,7 @@
 #import "FFFYP2TableViewCell.h"
 
 #import <QMUIKit/QMUIKit.h>
+#import "FFFCommentViewController.h"
 
 @interface FFFYPViewController ()
 <
@@ -159,6 +160,8 @@ UITableViewDataSource
         }
         cell.titleLabel.text = yp.title;
         cell.contentLabel.text = yp.content;
+        [cell.avatar yy_setImageWithURL:[NSURL URLWithString:yp.user.avater] placeholder:[UIImage imageNamed:@"illustration_guoguo_142x163_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+        cell.name.text = yp.user.user_name;
         [cell.contentLabel setQmui_height:yp.content_height];
         return cell;
     }else if (count <= 2) {
@@ -166,6 +169,8 @@ UITableViewDataSource
         if (!cell) {
             cell = [[FFFYP1TableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"yp1_cell"];
         }
+        [cell.avatar yy_setImageWithURL:[NSURL URLWithString:yp.user.avater] placeholder:[UIImage imageNamed:@"illustration_guoguo_142x163_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+        cell.name.text = yp.user.user_name;
         [cell.leftImageView yy_setImageWithURL:[NSURL URLWithString:yp.picture.firstObject] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
         cell.titleLabel.text = yp.title;
         cell.contentLabel.text = yp.content;
@@ -175,6 +180,8 @@ UITableViewDataSource
         if (!cell) {
             cell = [[FFFYP2TableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"yp2_cell"];
         }
+        [cell.avatar yy_setImageWithURL:[NSURL URLWithString:yp.user.avater] placeholder:[UIImage imageNamed:@"illustration_guoguo_142x163_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+        cell.name.text = yp.user.user_name;
         [cell.leftImageView yy_setImageWithURL:[NSURL URLWithString:yp.picture.firstObject] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
         [cell.centerImageView yy_setImageWithURL:[NSURL URLWithString:yp.picture[1]] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
         [cell.rightImageView yy_setImageWithURL:[NSURL URLWithString:yp.picture[2]] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
@@ -194,20 +201,20 @@ UITableViewDataSource
     FFFPLModel *yp = self.pls[indexPath.row];
     NSInteger count = yp.picture.count;
     if (!count) {
-        return yp.content_height + 60;
+        return yp.content_height + 100;
     }else if (count <= 2) {
-        return 160;
+        return 200;
     }
-    return yp.content_height + 70 + (SCREENWIDTH - 80)/3;
+    return yp.content_height + 110 + (SCREENWIDTH - 80)/3;
 }
 
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    FFFMovieModel *movie = self.movies[indexPath.section];
-//    GGGMovieDetailViewController *detail = [GGGMovieDetailViewController new];
-//    detail.movie = movie;
-//    [self.naviController pushViewController:detail animated:YES];
+    FFFPLModel *yp = self.pls[indexPath.row];
+    FFFCommentViewController *detail = [FFFCommentViewController new];
+    detail.yp = yp;
+    [self.naviController pushViewController:detail animated:YES];
 }
 
 #pragma mark - JXCategoryListContentViewDelegate

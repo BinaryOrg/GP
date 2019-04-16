@@ -8,12 +8,12 @@
 
 #import "GPPostController.h"
 #import "HXPhotoPicker.h"
-
+#import <UITextView+Placeholder/UITextView+Placeholder.h>
 #define kPhotoViewMargin 12.0f
 
 @interface GPPostController ()
 
-@property (nonatomic, strong) UILabel *tipsLb;
+//@property (nonatomic, strong) UILabel *tipsLb;
 @property (nonatomic, strong) UITextView *contentTextView;
 @property (strong, nonatomic) HXPhotoManager *manager;
 @property (strong, nonatomic) HXPhotoView *photoView;
@@ -34,7 +34,7 @@
     self.contentTextView = [[UITextView alloc] init];
     self.contentTextView.font = [UIFont systemFontOfSize:18];
     self.contentTextView.frame = CGRectMake(kPhotoViewMargin, 20, ScreenWidth - kPhotoViewMargin * 2, 150);
-    self.contentTextView.text = @"总觉得应该说点什么~";
+    self.contentTextView.placeholder = @"总觉得应该说点什么~";
     
     [self.view addSubview:self.contentTextView];
     
@@ -58,11 +58,11 @@
     [scrollView addSubview:photoView];
     self.photoView = photoView;
     
-    [self.view addSubview:self.tipsLb];
-    [self.tipsLb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(20);
-        make.bottom.mas_equalTo(-SafeAreaBottomHeight - 30);
-    }];
+//    [self.view addSubview:self.tipsLb];
+//    [self.tipsLb mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(20);
+//        make.bottom.mas_equalTo(-SafeAreaBottomHeight - 30);
+//    }];
     
     UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
     nextButton.titleLabel.font = [UIFont systemFontOfSize:15.0f];
@@ -143,14 +143,14 @@
     return _manager;
 }
 
-- (UILabel *)tipsLb {
-    if (!_tipsLb) {
-        _tipsLb = [[UILabel alloc] init];
-        _tipsLb.font = [UIFont systemFontOfSize:15];
-        _tipsLb.textColor = GODColor(137, 137, 137);
-        _tipsLb.text = @"有趣的动态展示有趣的你~";
-    }
-    return _tipsLb;
-}
+//- (UILabel *)tipsLb {
+//    if (!_tipsLb) {
+//        _tipsLb = [[UILabel alloc] init];
+//        _tipsLb.font = [UIFont systemFontOfSize:15];
+//        _tipsLb.textColor = GODColor(137, 137, 137);
+//        _tipsLb.text = @"有趣的动态展示有趣的你~";
+//    }
+//    return _tipsLb;
+//}
 
 @end

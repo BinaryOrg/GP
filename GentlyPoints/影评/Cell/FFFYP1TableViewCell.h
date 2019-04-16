@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *pvLabel;
 @property (nonatomic, strong) UILabel *starLabel;
 @property (nonatomic, strong) UILabel *commentLabel;
+
+@property (nonatomic, strong) YYAnimatedImageView *avatar;
+@property (nonatomic, strong) UILabel *name;
 @end
 
 NS_ASSUME_NONNULL_END

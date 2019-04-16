@@ -20,7 +20,18 @@
         self.titleLabel.textColor = [UIColor ztw_colorWithRGB:51];
         [self.contentView addSubview:self.titleLabel];
         
-        self.contentLabel = [[ZTWVerticallyAlignedLabel alloc] initWithFrame:CGRectMake(20, MinY(self.titleLabel), SCREENWIDTH - 40, 0)];
+        self.avatar = [[YYAnimatedImageView alloc] initWithFrame:CGRectMake(20, MaxY(self.titleLabel) + 10, 30, 30)];
+        self.avatar.layer.cornerRadius = 15;
+        self.avatar.layer.masksToBounds = YES;
+        self.avatar.contentMode = UIViewContentModeScaleAspectFill;
+        [self.contentView addSubview:self.avatar];
+        
+        self.name = [[UILabel alloc] initWithFrame:CGRectMake(MaxX(self.avatar) + 10, MinY(self.avatar), 100, 30)];
+        self.name.textColor = [UIColor ztw_colorWithRGB:153];
+        self.name.font = [UIFont ztw_regularFontSize:13];
+        [self.contentView addSubview:self.name];
+        
+        self.contentLabel = [[ZTWVerticallyAlignedLabel alloc] initWithFrame:CGRectMake(20, MinY(self.avatar) + 10, SCREENWIDTH - 40, 0)];
         self.contentLabel.textColor = [UIColor ztw_colorWithRGB:120];
         self.contentLabel.numberOfLines = 0;
         self.contentLabel.font  = [UIFont ztw_regularFontSize:14];

@@ -40,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL is_star;
 @property (nonatomic, strong) GODUserModel *user;
 @property (nonatomic, assign) CGFloat content_height;
+@property (nonatomic, assign) CGFloat full_content_height;
 @end
 
 NS_ASSUME_NONNULL_END

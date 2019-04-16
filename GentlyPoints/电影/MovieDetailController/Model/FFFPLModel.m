@@ -13,6 +13,7 @@
     _content = content;
     CGFloat height = [content heightWithLabelFont:[UIFont ztw_regularFontSize:14] withLabelWidth:SCREENWIDTH - 40];
     self.content_height = height > 80 ? 80 : height;
+    self.full_content_height = height;
 }
 
 + (nullable NSDictionary<NSString *, id> *)modelContainerPropertyGenericClass {
