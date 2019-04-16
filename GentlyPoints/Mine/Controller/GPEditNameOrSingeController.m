@@ -40,6 +40,7 @@
     self.textView.layer.masksToBounds = YES;
     self.textView.layer.borderWidth = 1.0f;
     self.textView.layer.borderColor = [UIColor grayColor].CGColor;
+    self.textView.font = [UIFont systemFontOfSize:18];
     [self.textView becomeFirstResponder];
 
 }
@@ -49,8 +50,8 @@
         [MFHUDManager showError:@"请输入要修改的内容"];
         return;
     }
-    if (self.textView.text.length > 16) {
-        [MFHUDManager showError:@"长度不能大于16"];
+    if (self.textView.text.length > 30) {
+        [MFHUDManager showError:@"长度不能大于30"];
         return;
     }
     if (self.block) {

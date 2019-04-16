@@ -84,7 +84,7 @@ QMUIImagePickerViewControllerDelegate
 
 - (void)changeNamer:(NSString *)newName {
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK post:@"User/ChangeUserName" params:@{@"userId": [GODUserTool shared].user.user_name, @"userName" : newName} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK post:@"User/ChangeUserName" params:@{@"userId": [GODUserTool shared].user.user_id, @"userName" : newName} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         if (statusCode == 200) {
             [self.navigationController popViewControllerAnimated:YES];
         }else {
@@ -97,7 +97,7 @@ QMUIImagePickerViewControllerDelegate
 
 - (void)chaneSigne:(NSString *)newSigne {
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK post:@"User/ChangeUserSign" params:@{@"userId": [GODUserTool shared].user.user_name, @"sign" : newSigne} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK post:@"User/ChangeUserSign" params:@{@"userId": [GODUserTool shared].user.user_id, @"sign" : newSigne} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         if (statusCode == 200) {
             [self.navigationController popViewControllerAnimated:YES];
         }else {

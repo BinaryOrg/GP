@@ -42,11 +42,10 @@
 - (void)setModel:(GODUserModel *)model {
     _model = model;
     self.nameLb.text = model.user_name;
-    self.timeLb.text = [self formatFromTS:model.create_date];
+    self.timeLb.text =  model.sign;//[self formatFromTS:model.create_date];
     [self.iconIV yy_setImageWithURL:[NSURL URLWithString:model.avater] placeholder:[UIImage imageNamed:@"cover"]];
     [self.bgv yy_setImageWithURL:[NSURL URLWithString:model.avater] placeholder:[UIImage imageNamed:@"cover"]];
-    self.signLb.text = model.sign;
-    self.signLb.backgroundColor = [UIColor redColor];
+//    self.signLb.text = model.sign;
 }
 
 - (void)setIsLoged:(BOOL)isLoged {
@@ -99,20 +98,24 @@
     [self.whiteIV addSubview:self.nameLb];
     [self.nameLb mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(30);
+        make.right.mas_equalTo(-60);
         make.left.mas_equalTo(self.iconIV.mas_right).mas_equalTo(10);
     }];
     
     [self.whiteIV addSubview:self.timeLb];
     [self.timeLb mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.nameLb.mas_bottom).mas_equalTo((5));
+        make.right.mas_equalTo(-60);
         make.left.mas_equalTo(self.iconIV.mas_right).mas_equalTo(10);
     }];
+    
     
     [self.whiteIV addSubview:self.editBtn];
     [self.editBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(0);
         make.right.mas_equalTo(-20);
     }];
+    
 }
 
 - (UIImageView *)bgv {
@@ -161,7 +164,6 @@
     if (!_nameLb) {
         _nameLb = [[UILabel alloc] init];
         _nameLb.font = [UIFont fontWithName:@"PingFangSC-Medium" size:15];
-        _nameLb.textAlignment = NSTextAlignmentCenter;
     }
     return _nameLb;
 }
@@ -170,8 +172,8 @@
     if (!_timeLb) {
         _timeLb = [[UILabel alloc] init];
         _timeLb.font = [UIFont fontWithName:@"PingFangSC-Light" size:15];
-        _timeLb.textAlignment = NSTextAlignmentCenter;
         _timeLb.text = @"尚未登录，请登录";
+        _timeLb.numberOfLines = 0;
     }
     return _timeLb;
 }
