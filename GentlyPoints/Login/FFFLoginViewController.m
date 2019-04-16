@@ -28,7 +28,7 @@
     self.cancel = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.cancel setTitle:@"取消" forState:(UIControlStateNormal)];
     [self.cancel setTitleColor:[UIColor ztw_blueColor] forState:(UIControlStateNormal)];
-    self.cancel.frame = CGRectMake(20, 20, 50, 30);
+    self.cancel.frame = CGRectMake(20, 80, 50, 30);
     [self.view addSubview:self.cancel];
     [self.cancel addTarget:self action:@selector(handleCancelEvent) forControlEvents:UIControlEventTouchUpInside];
     UILabel *logo = [[UILabel alloc] initWithFrame:CGRectMake(40, 200, SCREENWIDTH - 80, 50)];

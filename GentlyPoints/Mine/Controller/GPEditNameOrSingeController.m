@@ -10,6 +10,9 @@
 
 @interface GPEditNameOrSingeController ()
 
+/** <#class#> */
+@property (nonatomic, strong) UITextView *textView;
+
 @end
 
 @implementation GPEditNameOrSingeController

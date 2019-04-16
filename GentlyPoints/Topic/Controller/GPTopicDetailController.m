@@ -9,6 +9,8 @@
 #import "GPTopicDetailController.h"
 
 #import "GPCommentDetailController.h"
+#import "GPPostController.h"
+#import "FFFLoginViewController.h"
 
 
 #import "GPTopicResponseModel.h"
@@ -129,6 +131,59 @@
 
 - (void)clickjoinBtn {
     
+    if (![GODUserTool isLogin]) {
+        FFFLoginViewController *vc = [FFFLoginViewController new];
+        [self presentViewController:vc animated:YES completion:nil];
+        return;
+    }
+    
+    __weak typeof(self)weaSlef = self;
+    GPPostController *vc = [GPPostController new];
+    [self.navigationController pushViewController:vc animated:YES];
+    vc.block = ^(NSString *text, NSArray<UIImage *> *images) {
+        [weaSlef joinWithContent:text imag:images];
+    };
+}
+
+- (void)joinWithContent:(NSString *)text imag:(NSArray *)images {
+    [MFHUDManager showLoading:@"参与中.."];
+    [MFNETWROK upload:@"Response/Creat"
+               params:@{
+                        @"userId": [GODUserTool shared].user.user_id,
+                        @"content": text.length ? text : @"",
+                        @"targetId" : self.model.id
+                        }
+                 name:@"pictures"
+               images:images
+           imageScale:0.1
+            imageType:MFImageTypePNG
+             progress:nil
+              success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                  NSLog(@"%@", result);
+                  if ([result[@"resultCode"] isEqualToString:@"0"]) {
+                      dispatch_async(dispatch_get_main_queue(), ^{
+                          [MFHUDManager dismiss];
+                          [[NSNotificationCenter defaultCenter] postNotificationName:@"shouldReloadDy" object:nil];
+                      });
+
+                  }else {
+                      dispatch_async(dispatch_get_main_queue(), ^{
+                          [MFHUDManager showError:@"发布失败！"];
+                      });
+                      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                          [MFHUDManager dismiss];
+                      });
+                  }
+              }
+              failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                  NSLog(@"%@", error.userInfo);
+                  dispatch_async(dispatch_get_main_queue(), ^{
+                      [MFHUDManager showError:@"发布失败！"];
+                  });
+                  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                      [MFHUDManager dismiss];
+                  });
+              }];
 }
 
 - (NSMutableArray <GPTopicResponseModel *>*)dataArr {
