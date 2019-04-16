@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <YYModel/YYModel.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GPTopicModel : NSObject

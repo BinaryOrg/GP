@@ -18,7 +18,10 @@
 #import "FFFHT1TableViewCell.h"
 #import "FFFCommonEmptyTableViewCell.h"
 
-#import "FFFHTModel.h"
+//#import "FFFHTModel.h"
+#import "GPTopicModel.h"
+#import "GPTopicDetailController.h"
+
 @interface GGGMovieDetailViewController ()
 <
 UITableViewDelegate,
@@ -31,7 +34,7 @@ UICollectionViewDataSource
 *picturesModalViewController;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *pictures;
-@property (nonatomic, strong) NSMutableArray<FFFHTModel *> *hts;
+@property (nonatomic, strong) NSMutableArray<GPTopicModel *> *hts;
 @end
 
 @implementation GGGMovieDetailViewController
@@ -186,7 +189,7 @@ UICollectionViewDataSource
                 [self hideLoading];
                 if (![result[@"resultCode"] integerValue]) {
                     for (NSDictionary *dic in result[@"movie"][@"related_topic"]) {
-                        FFFHTModel *ht = [FFFHTModel yy_modelWithJSON:dic];
+                        GPTopicModel *ht = [GPTopicModel yy_modelWithJSON:dic];
                         if (ht) {
                             [self.hts addObject:ht];
                         }
@@ -279,7 +282,9 @@ UICollectionViewDataSource
             cell.titleLabel.text = [NSString stringWithFormat:@"#%@#", self.hts[0].title];
             cell.contentLabel.text = self.hts[0].content;
             cell.collectionClick = ^(NSInteger index) {
-                
+                GPTopicDetailController *topic = [GPTopicDetailController new];
+                topic.model = self.hts[index];
+                [self.navigationController pushViewController:topic animated:YES];
             };
             return cell;
         }else {
@@ -294,7 +299,9 @@ UICollectionViewDataSource
             cell.titleLabel1.text = [NSString stringWithFormat:@"#%@#", self.hts[1].title];
             cell.contentLabel1.text = self.hts[1].content;
             cell.collectionClick = ^(NSInteger index) {
-                
+                GPTopicDetailController *topic = [GPTopicDetailController new];
+                topic.model = self.hts[index];
+                [self.navigationController pushViewController:topic animated:YES];
             };
             return cell;
         }
@@ -312,6 +319,8 @@ UICollectionViewDataSource
     }else if (indexPath.row == 3) {
         return (SCREENWIDTH - 100)*3/8 + 100;
     }else if (indexPath.row == 4) {
+        return 180;
+    }else if (indexPath.row == 5) {
         return 180;
     }
     return 0;
