@@ -18,11 +18,13 @@
 #import "FFFHT1TableViewCell.h"
 #import "FFFCommonEmptyTableViewCell.h"
 
-//#import "FFFHTModel.h"
+#import "FFFPLModel.h"
 #import "GPTopicModel.h"
 #import "GPTopicDetailController.h"
 #import "FFFLoginViewController.h"
 #import "GPPostController.h"
+#import "FFFPLTableViewCell.h"
+#import "FFFPL2TableViewCell.h"
 
 @interface GGGMovieDetailViewController ()
 <
@@ -37,6 +39,7 @@ UICollectionViewDataSource
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *pictures;
 @property (nonatomic, strong) NSMutableArray<GPTopicModel *> *hts;
+@property (nonatomic, strong) NSMutableArray<FFFPLModel *> *yps;
 @end
 
 @implementation GGGMovieDetailViewController
@@ -46,6 +49,13 @@ UICollectionViewDataSource
         _hts = @[].mutableCopy;
     }
     return _hts;
+}
+
+- (NSMutableArray<FFFPLModel *> *)yps {
+    if (!_yps) {
+        _yps = @[].mutableCopy;
+    }
+    return _yps;
 }
 
 - (NSMutableArray *)pictures {
@@ -198,6 +208,13 @@ UICollectionViewDataSource
                             [self.hts addObject:ht];
                         }
                     }
+                    
+                    for (NSDictionary *dic in result[@"movie"][@"related_film_review"]) {
+                        FFFPLModel *yp = [FFFPLModel yy_modelWithJSON:dic];
+                        if (yp) {
+                            [self.yps addObject:yp];
+                        }
+                    }
                     [self.view addSubview:self.tableView];
                     [self.tableView reloadData];
                     UIButton *post = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -342,7 +359,8 @@ UICollectionViewDataSource
     }else if (indexPath.row == 4) {
         
         if (!self.hts.count) {
-            return [[FFFCommonEmptyTableViewCell alloc] init];
+            FFFCommonEmptyTableViewCell *cell = [[FFFCommonEmptyTableViewCell alloc] initWithTitle:@"相关话题"];
+            return cell;
         }else if (self.hts.count == 1){
             FFFHTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ht_cell"];
             if (!cell) {
@@ -373,6 +391,32 @@ UICollectionViewDataSource
                 topic.model = self.hts[index];
                 [self.navigationController pushViewController:topic animated:YES];
             };
+            return cell;
+        }
+    }else if (indexPath.row == 4) {
+        if (!self.yps.count) {
+            FFFCommonEmptyTableViewCell *cell = [[FFFCommonEmptyTableViewCell alloc] initWithTitle:@"相关影评"];
+            return cell;
+        }else {
+            FFFPLModel *yp = self.yps.firstObject;
+            if (yp.picture.count) {
+                FFFPL2TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"yp2_cell"];
+                if (!cell) {
+                    cell = [[FFFPL2TableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"yp2_cell"];
+                }
+                [cell.avatar yy_setImageWithURL:[NSURL URLWithString:yp.user.avater] placeholder:[UIImage imageNamed:@"illustration_guoguo_142x163_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+                cell.title.text = [NSString stringWithFormat:@"%@", yp.title];
+                cell.content.text = yp.content;
+                [cell.avatar yy_setImageWithURL:[NSURL URLWithString:yp.picture.firstObject] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+                return cell;
+            }
+            FFFPLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"yp_cell"];
+            if (!cell) {
+                cell = [[FFFPLTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"yp_cell"];
+            }
+            [cell.avatar yy_setImageWithURL:[NSURL URLWithString:yp.user.avater] placeholder:[UIImage imageNamed:@"illustration_guoguo_142x163_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+            cell.title.text = [NSString stringWithFormat:@"%@", yp.title];
+            cell.content.text = yp.content;
             return cell;
         }
     }

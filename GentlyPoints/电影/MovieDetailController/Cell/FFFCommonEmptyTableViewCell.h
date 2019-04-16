@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FFFCommonEmptyTableViewCell : UITableViewCell
-
+- (instancetype)initWithTitle:(NSString *)title;
 @end
 
 NS_ASSUME_NONNULL_END
