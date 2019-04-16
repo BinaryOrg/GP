@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3704C90E226346110088C23D /* GPScrollHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3704C90C226346100088C23D /* GPScrollHeaderView.m */; };
+		3704C91122634C000088C23D /* GPSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3704C91022634C000088C23D /* GPSettingController.m */; };
+		3704C91422634D470088C23D /* GPEditUserInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3704C91322634D470088C23D /* GPEditUserInfoController.m */; };
 		37067CE922618FF600C929B9 /* ZDDResponseCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CE722618FF500C929B9 /* ZDDResponseCellNode.m */; };
 		37067CEC2261901100C929B9 /* GPTopicDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CEB2261901100C929B9 /* GPTopicDetailController.m */; };
 		37067CEF2261906E00C929B9 /* GPTopicResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37067CEE2261906E00C929B9 /* GPTopicResponseModel.m */; };
@@ -151,6 +154,7 @@
 		379547F02259A3AA0050CB02 /* ZDDPhotoBrowseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 379547832259A3A90050CB02 /* ZDDPhotoBrowseView.m */; };
 		379547F12259A3AA0050CB02 /* mook.json in Resources */ = {isa = PBXBuildFile; fileRef = 379547852259A3A90050CB02 /* mook.json */; };
 		379547F42259A3B80050CB02 /* TEMPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 379547F22259A3B80050CB02 /* TEMPAppDelegate.m */; };
+		37B0249F226494540078DA25 /* GPEditNameOrSingeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B0249E226494540078DA25 /* GPEditNameOrSingeController.m */; };
 		37E8260F2259A893004BE9CE /* GODUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E8260D2259A893004BE9CE /* GODUserModel.m */; };
 		37E826102259A893004BE9CE /* GODUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E8260E2259A893004BE9CE /* GODUserTool.m */; };
 		4A15E34D2260937F009525B2 /* ad.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4A15E34C2260937F009525B2 /* ad.jpeg */; };
@@ -184,6 +188,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3704C90C226346100088C23D /* GPScrollHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPScrollHeaderView.m; sourceTree = "<group>"; };
+		3704C90D226346100088C23D /* GPScrollHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPScrollHeaderView.h; sourceTree = "<group>"; };
+		3704C90F22634C000088C23D /* GPSettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPSettingController.h; sourceTree = "<group>"; };
+		3704C91022634C000088C23D /* GPSettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPSettingController.m; sourceTree = "<group>"; };
+		3704C91222634D470088C23D /* GPEditUserInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPEditUserInfoController.h; sourceTree = "<group>"; };
+		3704C91322634D470088C23D /* GPEditUserInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPEditUserInfoController.m; sourceTree = "<group>"; };
 		37067CE722618FF500C929B9 /* ZDDResponseCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDResponseCellNode.m; sourceTree = "<group>"; };
 		37067CE822618FF500C929B9 /* ZDDResponseCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDResponseCellNode.h; sourceTree = "<group>"; };
 		37067CEA2261901100C929B9 /* GPTopicDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPTopicDetailController.h; sourceTree = "<group>"; };
@@ -482,6 +492,8 @@
 		379547852259A3A90050CB02 /* mook.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mook.json; sourceTree = "<group>"; };
 		379547F22259A3B80050CB02 /* TEMPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMPAppDelegate.m; sourceTree = "<group>"; };
 		379547F32259A3B80050CB02 /* TEMPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMPAppDelegate.h; sourceTree = "<group>"; };
+		37B0249D226494540078DA25 /* GPEditNameOrSingeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPEditNameOrSingeController.h; sourceTree = "<group>"; };
+		37B0249E226494540078DA25 /* GPEditNameOrSingeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPEditNameOrSingeController.m; sourceTree = "<group>"; };
 		37E8260A2259A754004BE9CE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		37E8260B2259A892004BE9CE /* GODUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODUserTool.h; sourceTree = "<group>"; };
 		37E8260C2259A892004BE9CE /* GODUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODUserModel.h; sourceTree = "<group>"; };
@@ -552,6 +564,12 @@
 			children = (
 				37067D002261F15000C929B9 /* GPMineController.h */,
 				37067D012261F15000C929B9 /* GPMineController.m */,
+				3704C90F22634C000088C23D /* GPSettingController.h */,
+				3704C91022634C000088C23D /* GPSettingController.m */,
+				3704C91222634D470088C23D /* GPEditUserInfoController.h */,
+				3704C91322634D470088C23D /* GPEditUserInfoController.m */,
+				37B0249D226494540078DA25 /* GPEditNameOrSingeController.h */,
+				37B0249E226494540078DA25 /* GPEditNameOrSingeController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -566,6 +584,8 @@
 		37067CFF2261F0AA00C929B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3704C90D226346100088C23D /* GPScrollHeaderView.h */,
+				3704C90C226346100088C23D /* GPScrollHeaderView.m */,
 				373141B8226207CC005CDB2C /* GPMineHeaderView.h */,
 				373141B9226207CC005CDB2C /* GPMineHeaderView.m */,
 			);
@@ -1485,6 +1505,7 @@
 				3795468E2259A3950050CB02 /* ZDDNavController.m in Sources */,
 				379547992259A3AA0050CB02 /* POPAnimatableProperty.mm in Sources */,
 				379547D12259A3AA0050CB02 /* HXPhotoSubViewCell.m in Sources */,
+				3704C91122634C000088C23D /* GPSettingController.m in Sources */,
 				371DD8142260796200F1335D /* FFFMovieDetailStillTableViewCell.m in Sources */,
 				379547CB2259A3AA0050CB02 /* HXCustomCameraController.m in Sources */,
 				37067D022261F15000C929B9 /* GPMineController.m in Sources */,
@@ -1498,6 +1519,7 @@
 				379547EF2259A3AA0050CB02 /* TEMPKeyConfiguration.m in Sources */,
 				3795468D2259A3950050CB02 /* ZDDRetryView.m in Sources */,
 				379547CC2259A3AA0050CB02 /* HXCustomCollectionReusableView.m in Sources */,
+				37B0249F226494540078DA25 /* GPEditNameOrSingeController.m in Sources */,
 				379547D92259A3AA0050CB02 /* HXVideoEditViewController.m in Sources */,
 				4A23A525225F2D8A00192A2D /* FFFMovieModel.m in Sources */,
 				379547C02259A3AA0050CB02 /* UILabel+HXExtension.m in Sources */,
@@ -1511,6 +1533,7 @@
 				379547DF2259A3AA0050CB02 /* XJChatInputView.m in Sources */,
 				379547AC2259A3AA0050CB02 /* HXPhotoPreviewBottomView.m in Sources */,
 				379547E82259A3AA0050CB02 /* UIImage+Blur.m in Sources */,
+				3704C91422634D470088C23D /* GPEditUserInfoController.m in Sources */,
 				379547EE2259A3AA0050CB02 /* Foundation+Log.m in Sources */,
 				379547AA2259A3AA0050CB02 /* ZTWButton.m in Sources */,
 				379547B72259A3AA0050CB02 /* NSArray+HXExtension.m in Sources */,
@@ -1551,6 +1574,7 @@
 				379547A12259A3AA0050CB02 /* NSMutableAttributedString+Chain.m in Sources */,
 				379547ED2259A3AA0050CB02 /* NSSet+HYBUnicodeReadable.m in Sources */,
 				37763ED5225F335300F364CC /* GPTopicListCellNode.m in Sources */,
+				3704C90E226346110088C23D /* GPScrollHeaderView.m in Sources */,
 				3795478C2259A3AA0050CB02 /* POPSpringAnimation.mm in Sources */,
 				3795478D2259A3AA0050CB02 /* POPCustomAnimation.mm in Sources */,
 				373141BA226207CC005CDB2C /* GPMineHeaderView.m in Sources */,

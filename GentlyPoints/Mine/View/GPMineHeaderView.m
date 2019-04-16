@@ -32,7 +32,9 @@
 
 //点击编辑
 - (void)clickEditBtn {
-    
+    if ([self.delegate respondsToSelector:@selector(clickEditUserInfo)]) {
+        [self.delegate clickEditUserInfo];
+    }
     
 }
 
@@ -161,6 +163,10 @@
         [_editBtn addTarget:self action:@selector(clickEditBtn) forControlEvents:UIControlEventTouchUpInside];
     }
     return _editBtn;
+}
+
+- (void)dealloc {
+    self.delegate = nil;
 }
 
 @end

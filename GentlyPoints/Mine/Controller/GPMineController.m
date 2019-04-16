@@ -8,14 +8,17 @@
 
 #import "GPMineController.h"
 #import "GPMineHeaderView.h"
+#import "GPEditUserInfoController.h"
+#import "GPSettingController.h"
 
 @interface GPMineController ()
 <
 UITableViewDelegate,
-UITableViewDataSource
+UITableViewDataSource,
+GPMineHeaderViewDelegate
 >
 @property (nonatomic, strong) UITableView *tableView;
-/** <#class#> */
+@property (nonatomic, strong) GODUserModel *model;
 @property (nonatomic, strong) GPMineHeaderView *headerView;
 @end
 
@@ -38,16 +41,22 @@ UITableViewDataSource
     model.avater = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555222909107&di=b7c55a4d0f3b20ccf59b6bf64eb96314&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180810%2Fe59af0ebf1ce443abc083a2c3e9321d2.jpeg";
     self.tableView.tableHeaderView = self.headerView;
     self.headerView.model = model;
+    self.model = model;
+    
 }
 
 - (void)clickSetBtn {
-    
-    
+    GPSettingController *vc = [GPSettingController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)clickEditUserInfo {
+    GPEditUserInfoController *vc = [GPEditUserInfoController new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -59,14 +68,28 @@ UITableViewDataSource
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     switch (indexPath.row) {
         case 0:
-            cell.textLabel.text = @"我参与的话题";
-            cell.imageView.image = [UIImage imageNamed:@"like"];
+            if ([self.model.user_id isEqualToString:[GODUserTool shared].user.user_id]) {
+                cell.textLabel.text = @"我参与的话题";
+            }else {
+                cell.textLabel.text = @"Ta参与的话题";
+            }
+            cell.imageView.image = [UIImage imageNamed:@"mine_topic"];
             break;
         case 1:
-            cell.textLabel.text = @"我参与的话题";
-            cell.imageView.image = [UIImage imageNamed:@"like"];
+            if ([self.model.user_id isEqualToString:[GODUserTool shared].user.user_id]) {
+                cell.textLabel.text = @"我的影单";
+            }else {
+                cell.textLabel.text = @"Ta的影单";
+            }
+            cell.imageView.image = [UIImage imageNamed:@"mine_list"];
             break;
         default:
+            if ([self.model.user_id isEqualToString:[GODUserTool shared].user.user_id]) {
+                cell.textLabel.text = @"我发布的影评";
+            }else {
+                cell.textLabel.text = @"Ta发布的影评";
+            }
+            cell.imageView.image = [UIImage imageNamed:@"mine_point"];
             break;
     }
     return cell;
@@ -74,6 +97,16 @@ UITableViewDataSource
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 50;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        
+    }else if (indexPath.section == 1) {
+        
+    }else if (indexPath.section == 2) {
+        
+    }
 }
 
 - (UITableView *)tableView {
@@ -100,6 +133,7 @@ UITableViewDataSource
     if (!_headerView) {
         _headerView = [[GPMineHeaderView alloc] init];
         _headerView.frame = CGRectMake(0, 0, ScreenWidth, 250);
+        _headerView.delegate = self;
     }
     return _headerView;
 }
