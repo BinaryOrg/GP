@@ -160,6 +160,12 @@
 		37E826102259A893004BE9CE /* GODUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E8260E2259A893004BE9CE /* GODUserTool.m */; };
 		4A15E34D2260937F009525B2 /* ad.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4A15E34C2260937F009525B2 /* ad.jpeg */; };
 		4A223B3922655C0F006EB2CB /* FFFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B3822655C0F006EB2CB /* FFFLoginViewController.m */; };
+		4A223B3D22656DC7006EB2CB /* FFFYPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B3C22656DC7006EB2CB /* FFFYPViewController.m */; };
+		4A223B42226570A5006EB2CB /* FFFYPContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B41226570A5006EB2CB /* FFFYPContainerViewController.m */; };
+		4A223B4E2265810B006EB2CB /* FFFYP1TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B4D2265810B006EB2CB /* FFFYP1TableViewCell.m */; };
+		4A223B5122658112006EB2CB /* FFFYP2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B5022658112006EB2CB /* FFFYP2TableViewCell.m */; };
+		4A223B5522658741006EB2CB /* ZTWVerticallyAlignedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B5422658741006EB2CB /* ZTWVerticallyAlignedLabel.m */; };
+		4A223B582265890E006EB2CB /* FFFYP0TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B572265890E006EB2CB /* FFFYP0TableViewCell.m */; };
 		4A23A511225F158100192A2D /* FFFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A510225F158100192A2D /* FFFBaseViewController.m */; };
 		4A23A515225F22F200192A2D /* FFFMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A514225F22F200192A2D /* FFFMovieViewController.m */; };
 		4A23A519225F27D200192A2D /* FFFMovieContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A518225F27D200192A2D /* FFFMovieContainerViewController.m */; };
@@ -513,6 +519,18 @@
 		4A15E34C2260937F009525B2 /* ad.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad.jpeg; sourceTree = "<group>"; };
 		4A223B3722655C0F006EB2CB /* FFFLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFLoginViewController.h; sourceTree = "<group>"; };
 		4A223B3822655C0F006EB2CB /* FFFLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFLoginViewController.m; sourceTree = "<group>"; };
+		4A223B3B22656DC7006EB2CB /* FFFYPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFYPViewController.h; sourceTree = "<group>"; };
+		4A223B3C22656DC7006EB2CB /* FFFYPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFYPViewController.m; sourceTree = "<group>"; };
+		4A223B40226570A5006EB2CB /* FFFYPContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFYPContainerViewController.h; sourceTree = "<group>"; };
+		4A223B41226570A5006EB2CB /* FFFYPContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFYPContainerViewController.m; sourceTree = "<group>"; };
+		4A223B4C2265810B006EB2CB /* FFFYP1TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFYP1TableViewCell.h; sourceTree = "<group>"; };
+		4A223B4D2265810B006EB2CB /* FFFYP1TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFYP1TableViewCell.m; sourceTree = "<group>"; };
+		4A223B4F22658112006EB2CB /* FFFYP2TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFYP2TableViewCell.h; sourceTree = "<group>"; };
+		4A223B5022658112006EB2CB /* FFFYP2TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFYP2TableViewCell.m; sourceTree = "<group>"; };
+		4A223B5322658741006EB2CB /* ZTWVerticallyAlignedLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTWVerticallyAlignedLabel.h; sourceTree = "<group>"; };
+		4A223B5422658741006EB2CB /* ZTWVerticallyAlignedLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTWVerticallyAlignedLabel.m; sourceTree = "<group>"; };
+		4A223B562265890E006EB2CB /* FFFYP0TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFYP0TableViewCell.h; sourceTree = "<group>"; };
+		4A223B572265890E006EB2CB /* FFFYP0TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFYP0TableViewCell.m; sourceTree = "<group>"; };
 		4A23A50F225F158100192A2D /* FFFBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFBaseViewController.h; sourceTree = "<group>"; };
 		4A23A510225F158100192A2D /* FFFBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFBaseViewController.m; sourceTree = "<group>"; };
 		4A23A513225F22F200192A2D /* FFFMovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMovieViewController.h; sourceTree = "<group>"; };
@@ -784,6 +802,7 @@
 				379546952259A3A60050CB02 /* WebView */,
 				379546822259A3950050CB02 /* Base */,
 				75D91585225F7391003721F4 /* 电影 */,
+				4A223B3A22656DB1006EB2CB /* 影评 */,
 				4A223B3622655BDF006EB2CB /* Login */,
 				379546562259A3330050CB02 /* Main.storyboard */,
 				379546592259A3340050CB02 /* Assets.xcassets */,
@@ -1236,6 +1255,57 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		4A223B3A22656DB1006EB2CB /* 影评 */ = {
+			isa = PBXGroup;
+			children = (
+				4A223B522265872A006EB2CB /* VertialLabel */,
+				4A223B4B226580AE006EB2CB /* Cell */,
+				4A223B3F2265709A006EB2CB /* Container */,
+				4A223B3E22656F15006EB2CB /* Model */,
+				4A223B3B22656DC7006EB2CB /* FFFYPViewController.h */,
+				4A223B3C22656DC7006EB2CB /* FFFYPViewController.m */,
+			);
+			path = "影评";
+			sourceTree = "<group>";
+		};
+		4A223B3E22656F15006EB2CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4A223B3F2265709A006EB2CB /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				4A223B40226570A5006EB2CB /* FFFYPContainerViewController.h */,
+				4A223B41226570A5006EB2CB /* FFFYPContainerViewController.m */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		4A223B4B226580AE006EB2CB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4A223B562265890E006EB2CB /* FFFYP0TableViewCell.h */,
+				4A223B572265890E006EB2CB /* FFFYP0TableViewCell.m */,
+				4A223B4C2265810B006EB2CB /* FFFYP1TableViewCell.h */,
+				4A223B4D2265810B006EB2CB /* FFFYP1TableViewCell.m */,
+				4A223B4F22658112006EB2CB /* FFFYP2TableViewCell.h */,
+				4A223B5022658112006EB2CB /* FFFYP2TableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4A223B522265872A006EB2CB /* VertialLabel */ = {
+			isa = PBXGroup;
+			children = (
+				4A223B5322658741006EB2CB /* ZTWVerticallyAlignedLabel.h */,
+				4A223B5422658741006EB2CB /* ZTWVerticallyAlignedLabel.m */,
+			);
+			path = VertialLabel;
+			sourceTree = "<group>";
+		};
 		4A23A50E225F156D00192A2D /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -1581,6 +1651,7 @@
 				379547AE2259A3AA0050CB02 /* HXDownloadProgressView.m in Sources */,
 				7592AE302262CF2400A69907 /* FFFYDModel.m in Sources */,
 				379547C22259A3AA0050CB02 /* HXPhotoModel.m in Sources */,
+				4A223B5122658112006EB2CB /* FFFYP2TableViewCell.m in Sources */,
 				379547BA2259A3AA0050CB02 /* UIFont+HXExtension.m in Sources */,
 				7592AE332263277800A69907 /* FFFPLTableViewCell.m in Sources */,
 				379547E12259A3AA0050CB02 /* XJItemSelView.m in Sources */,
@@ -1589,6 +1660,7 @@
 				379547EF2259A3AA0050CB02 /* TEMPKeyConfiguration.m in Sources */,
 				3795468D2259A3950050CB02 /* ZDDRetryView.m in Sources */,
 				379547CC2259A3AA0050CB02 /* HXCustomCollectionReusableView.m in Sources */,
+				4A223B42226570A5006EB2CB /* FFFYPContainerViewController.m in Sources */,
 				37B0249F226494540078DA25 /* GPEditNameOrSingeController.m in Sources */,
 				379547D92259A3AA0050CB02 /* HXVideoEditViewController.m in Sources */,
 				4A23A525225F2D8A00192A2D /* FFFMovieModel.m in Sources */,
@@ -1608,6 +1680,7 @@
 				379547AA2259A3AA0050CB02 /* ZTWButton.m in Sources */,
 				379547B72259A3AA0050CB02 /* NSArray+HXExtension.m in Sources */,
 				379547942259A3AA0050CB02 /* POPAnimation.mm in Sources */,
+				4A223B3D22656DC7006EB2CB /* FFFYPViewController.m in Sources */,
 				371DD8272260850600F1335D /* FFFYDDetailViewController.m in Sources */,
 				379547CE2259A3AA0050CB02 /* HXPhotoView.m in Sources */,
 				37067CF82261D59400C929B9 /* GPCommentModel.m in Sources */,
@@ -1666,6 +1739,7 @@
 				379546602259A3340050CB02 /* main.m in Sources */,
 				379547932259A3AA0050CB02 /* POPPropertyAnimation.mm in Sources */,
 				379547F02259A3AA0050CB02 /* ZDDPhotoBrowseView.m in Sources */,
+				4A223B4E2265810B006EB2CB /* FFFYP1TableViewCell.m in Sources */,
 				379547C72259A3AA0050CB02 /* HXPhotoTools.m in Sources */,
 				3795479E2259A3AA0050CB02 /* ASButtonNode+LHExtension.m in Sources */,
 				3795478B2259A3AA0050CB02 /* POPMath.mm in Sources */,
@@ -1674,6 +1748,7 @@
 				379547D22259A3AA0050CB02 /* HXAlbumModel.m in Sources */,
 				371DD8112260796200F1335D /* FFFMovieDetailActorTableViewCell.m in Sources */,
 				379547EC2259A3AA0050CB02 /* NSDictionary+HYBUnicodeReadable.m in Sources */,
+				4A223B582265890E006EB2CB /* FFFYP0TableViewCell.m in Sources */,
 				379547D42259A3AA0050CB02 /* HXCustomPreviewView.m in Sources */,
 				37067CF22261C0C200C929B9 /* ASButtonNode+LHExtension.m in Sources */,
 				379547972259A3AA0050CB02 /* TransformationMatrix.mm in Sources */,
@@ -1701,6 +1776,7 @@
 				37067CE922618FF600C929B9 /* ZDDResponseCellNode.m in Sources */,
 				7592AE44226354F000A69907 /* FFFHT1TableViewCell.m in Sources */,
 				379547D62259A3AA0050CB02 /* HXCircleProgressView.m in Sources */,
+				4A223B5522658741006EB2CB /* ZTWVerticallyAlignedLabel.m in Sources */,
 				379547B22259A3AA0050CB02 /* HXPhotoViewPresentTransition.m in Sources */,
 				379547B92259A3AA0050CB02 /* UIImageView+HXExtension.m in Sources */,
 				37067CF52261D33A00C929B9 /* GPCommentDetailController.m in Sources */,
