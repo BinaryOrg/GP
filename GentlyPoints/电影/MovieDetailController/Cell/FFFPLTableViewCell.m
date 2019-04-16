@@ -1,15 +1,14 @@
 //
-//  FFFIntroTableViewCell.m
+//  FFFPLTableViewCell.m
 //  GentlyPoints
 //
-//  Created by 张冬冬 on 2019/4/12.
+//  Created by ZDD on 2019/4/14.
 //  Copyright © 2019 MakerYang.com. All rights reserved.
 //
 
-#import "FFFIntroTableViewCell.h"
+#import "FFFPLTableViewCell.h"
 
-@implementation FFFIntroTableViewCell
-
+@implementation FFFPLTableViewCell
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -21,14 +20,13 @@
         l.text = @"影片简介";
         [self.contentView addSubview:l];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.introLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 10 + MaxY(l), SCREENWIDTH - 80, 0)];
-        self.introLabel.textColor = [UIColor ztw_colorWithRGB:130];
-        self.introLabel.font = [UIFont ztw_regularFontSize:16];
-        [self.contentView addSubview:self.introLabel];
-        self.introLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-        self.introLabel.numberOfLines = 0;
+//        self.introLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 10 + MaxY(l), SCREENWIDTH - 80, 0)];
+//        self.introLabel.textColor = [UIColor ztw_colorWithRGB:130];
+//        self.introLabel.font = [UIFont ztw_regularFontSize:16];
+//        [self.contentView addSubview:self.introLabel];
+//        self.introLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+//        self.introLabel.numberOfLines = 0;
     }
     return self;
 }
-
 @end

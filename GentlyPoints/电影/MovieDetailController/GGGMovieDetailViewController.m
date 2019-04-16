@@ -14,7 +14,11 @@
 #import "FFFMovieDetailActorTableViewCell.h"
 #import "FFFMovieDetailStillTableViewCell.h"
 #import "FFFPictureCollectionViewCell.h"
+#import "FFFHTTableViewCell.h"
+#import "FFFHT1TableViewCell.h"
+#import "FFFCommonEmptyTableViewCell.h"
 
+#import "FFFHTModel.h"
 @interface GGGMovieDetailViewController ()
 <
 UITableViewDelegate,
@@ -27,9 +31,17 @@ UICollectionViewDataSource
 *picturesModalViewController;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *pictures;
+@property (nonatomic, strong) NSMutableArray<FFFHTModel *> *hts;
 @end
 
 @implementation GGGMovieDetailViewController
+
+- (NSMutableArray *)hts {
+    if (!_hts) {
+        _hts = @[].mutableCopy;
+    }
+    return _hts;
+}
 
 - (NSMutableArray *)pictures {
     if (!_pictures) {
@@ -141,7 +153,7 @@ UICollectionViewDataSource
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.bounces = NO;
+//        _tableView.bounces = NO;
         if (@available(iOS 11.0, *)) {
             _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         } else {
@@ -167,12 +179,19 @@ UICollectionViewDataSource
     [self removeErrorView];
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
     [MFNETWROK post:@"http://120.78.124.36:10020/WP/Movie/GetMovieDetailInfoByMovieId"
-             params:@{@"movieId": self.movie.id}
+             params:@{@"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"",
+                      @"movieId": self.movie.id}
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
                 NSLog(@"%@", result);
                 [self hideLoading];
                 if (![result[@"resultCode"] integerValue]) {
-                    
+                    for (NSDictionary *dic in result[@"movie"][@"related_topic"]) {
+                        FFFHTModel *ht = [FFFHTModel yy_modelWithJSON:dic];
+                        if (ht) {
+                            [self.hts addObject:ht];
+                        }
+                    }
+                    NSLog(@"--=-----=%@", @(self.hts.count));
                     [self.view addSubview:self.tableView];
                     [self.tableView reloadData];
                 }else {
@@ -187,7 +206,7 @@ UICollectionViewDataSource
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -199,7 +218,7 @@ UICollectionViewDataSource
         FFFMovieModel *movie = self.movie;
         [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:movie.poster] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
         [cell.posterImageView yy_setImageWithURL:[NSURL URLWithString:movie.poster] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
-        
+        [cell.pop addTarget:self action:@selector(pop) forControlEvents:(UIControlEventTouchUpInside)];
         cell.titleLabel.text = movie.name;
         cell.dateLabel.text = [movie.release_info substringToIndex:10];
         cell.typeLabel.text = [movie.type componentsJoinedByString:@" | "];
@@ -247,6 +266,38 @@ UICollectionViewDataSource
         [cell.actor4 yy_setImageWithURL:[NSURL URLWithString:self.movie.stills.count>=4?self.movie.stills[3]: nil] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
         [cell.moreButton addTarget:self action:@selector(handleStillMoreEvent) forControlEvents:UIControlEventTouchUpInside];
         return cell;
+    }else if (indexPath.row == 4) {
+        
+        if (!self.hts.count) {
+            return [[FFFCommonEmptyTableViewCell alloc] init];
+        }else if (self.hts.count == 1){
+            FFFHTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ht_cell"];
+            if (!cell) {
+                cell = [[FFFHTTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"ht_cell"];
+            }
+            [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:self.hts[0].picture] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+            cell.titleLabel.text = [NSString stringWithFormat:@"#%@#", self.hts[0].title];
+            cell.contentLabel.text = self.hts[0].content;
+            cell.collectionClick = ^(NSInteger index) {
+                
+            };
+            return cell;
+        }else {
+            FFFHT1TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ht2_cell"];
+            if (!cell) {
+                cell = [[FFFHT1TableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"ht2_cell"];
+            }
+            [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:self.hts[0].picture] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+            [cell.bgImageView1 yy_setImageWithURL:[NSURL URLWithString:self.hts[1].picture] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+            cell.titleLabel.text = [NSString stringWithFormat:@"#%@#", self.hts[0].title];
+            cell.contentLabel.text = self.hts[0].content;
+            cell.titleLabel1.text = [NSString stringWithFormat:@"#%@#", self.hts[1].title];
+            cell.contentLabel1.text = self.hts[1].content;
+            cell.collectionClick = ^(NSInteger index) {
+                
+            };
+            return cell;
+        }
     }
     return nil;
 }
@@ -260,8 +311,14 @@ UICollectionViewDataSource
         return (SCREENWIDTH - 100)*3/8 + 120;
     }else if (indexPath.row == 3) {
         return (SCREENWIDTH - 100)*3/8 + 100;
+    }else if (indexPath.row == 4) {
+        return 180;
     }
     return 0;
+}
+
+- (void)pop {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)handleActorMoreEvent {

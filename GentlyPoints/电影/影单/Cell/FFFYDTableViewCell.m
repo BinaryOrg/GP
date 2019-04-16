@@ -61,6 +61,7 @@ UICollectionViewDataSource
         UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
         UIVisualEffectView *vis = [[UIVisualEffectView alloc] initWithEffect:blur];
         vis.frame = self.bgImageView.bounds;
+        vis.alpha = 0.7;
         [self.contentView addSubview:vis];
         
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, SCREENWIDTH - 40, 30)];
@@ -69,6 +70,11 @@ UICollectionViewDataSource
         [self.contentView addSubview:self.titleLabel];
         self.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         
+        self.countLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREENWIDTH - 120 - 20, 10, 120, 30)];
+        self.countLabel.font = [UIFont ztw_mediumFontSize:18];
+        self.countLabel.textColor = [UIColor whiteColor];
+        [self.contentView addSubview:self.countLabel];
+        self.countLabel.textAlignment = NSTextAlignmentRight;
         [self addSubview:self.collectionView];
     }
     return self;

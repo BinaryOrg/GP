@@ -108,6 +108,7 @@ UITableViewDataSource
     [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:yd.picture] placeholder:[UIImage imageNamed:@"illustration_open_notification_210x80_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
     cell.titleLabel.text = yd.title;
     cell.yd = [yd.movie_list copy];
+    cell.countLabel.text = [NSString stringWithFormat:@"共%@部", @(yd.movie_list.count)];
     __weak __typeof(self)weakSelf = self;
     cell.collectionClick = ^(NSIndexPath *indexPath) {
         __strong __typeof(weakSelf)strongSelf = weakSelf;

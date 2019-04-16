@@ -116,6 +116,16 @@ UITableViewDataSource
     title.text = self.ydTitle;
     [bg addSubview:title];
     title.textAlignment = NSTextAlignmentCenter;
+    bg.userInteractionEnabled = YES;
+    UIButton *pop = [UIButton buttonWithType:UIButtonTypeCustom];
+    [pop setImage:[UIImage imageNamed:@"dailycard_cancel_32x32_"] forState:(UIControlStateNormal)];
+    pop.frame = CGRectMake(10, 20, 30, 30);
+    [pop addTarget:self action:@selector(pop) forControlEvents:(UIControlEventTouchUpInside)];
+    [bg addSubview:pop];
+}
+
+- (void)pop {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

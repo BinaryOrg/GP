@@ -22,6 +22,12 @@
         self.bgImageView.contentMode = UIViewContentModeScaleAspectFill;
         [self.contentView addSubview:self.bgImageView];
         self.bgImageView.layer.masksToBounds = YES;
+        self.bgImageView.userInteractionEnabled = YES;
+        
+        self.pop = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.pop setImage:[UIImage imageNamed:@"dailycard_cancel_32x32_"] forState:(UIControlStateNormal)];
+        self.pop.frame = CGRectMake(10, 20, 30, 30);
+        
         
 //        UIView *alphaView = [[UIView alloc] initWithFrame:self.bgImageView.bounds];
 //        alphaView.backgroundColor = [UIColor colorWithWhite:0. alpha:0.7];
@@ -31,7 +37,7 @@
         UIVisualEffectView *vis = [[UIVisualEffectView alloc] initWithEffect:blur];
         vis.frame = self.bgImageView.bounds;
         [self.bgImageView addSubview:vis];
-        
+        [self.bgImageView addSubview:self.pop];
         self.posterImageView = [[YYAnimatedImageView alloc] initWithFrame:CGRectMake((SCREENWIDTH - 100)/2, 40, 100, 150)];
         self.posterImageView.contentMode = UIViewContentModeScaleAspectFill;
         [self.contentView addSubview:self.posterImageView];

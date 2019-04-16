@@ -158,6 +158,7 @@
 		37E8260F2259A893004BE9CE /* GODUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E8260D2259A893004BE9CE /* GODUserModel.m */; };
 		37E826102259A893004BE9CE /* GODUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E8260E2259A893004BE9CE /* GODUserTool.m */; };
 		4A15E34D2260937F009525B2 /* ad.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4A15E34C2260937F009525B2 /* ad.jpeg */; };
+		4A223B3922655C0F006EB2CB /* FFFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B3822655C0F006EB2CB /* FFFLoginViewController.m */; };
 		4A23A511225F158100192A2D /* FFFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A510225F158100192A2D /* FFFBaseViewController.m */; };
 		4A23A515225F22F200192A2D /* FFFMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A514225F22F200192A2D /* FFFMovieViewController.m */; };
 		4A23A519225F27D200192A2D /* FFFMovieContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A518225F27D200192A2D /* FFFMovieContainerViewController.m */; };
@@ -167,6 +168,13 @@
 		4A23A529225F2F6B00192A2D /* FFFActorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A528225F2F6B00192A2D /* FFFActorModel.m */; };
 		4A23A52D225F32ED00192A2D /* FFFMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A52C225F32ED00192A2D /* FFFMovieTableViewCell.m */; };
 		7592AE302262CF2400A69907 /* FFFYDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7592AE2F2262CF2400A69907 /* FFFYDModel.m */; };
+		7592AE332263277800A69907 /* FFFPLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7592AE322263277800A69907 /* FFFPLTableViewCell.m */; };
+		7592AE37226328DE00A69907 /* FFFHTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7592AE36226328DE00A69907 /* FFFHTModel.m */; };
+		7592AE3A22632A9300A69907 /* FFFPLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7592AE3922632A9300A69907 /* FFFPLModel.m */; };
+		7592AE3D22632B4600A69907 /* FFFHTTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7592AE3C22632B4600A69907 /* FFFHTTableViewCell.m */; };
+		7592AE412263494100A69907 /* FFFSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7592AE402263494100A69907 /* FFFSearchViewController.m */; };
+		7592AE44226354F000A69907 /* FFFHT1TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7592AE43226354F000A69907 /* FFFHT1TableViewCell.m */; };
+		7592AE472263552600A69907 /* FFFCommonEmptyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7592AE462263552600A69907 /* FFFCommonEmptyTableViewCell.m */; };
 		E9DCC7170218A1960A5DFF0B /* libPods-GentlyPoints.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC9FC3732CB0F67647AB184 /* libPods-GentlyPoints.a */; };
 /* End PBXBuildFile section */
 
@@ -500,6 +508,8 @@
 		37E8260D2259A893004BE9CE /* GODUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODUserModel.m; sourceTree = "<group>"; };
 		37E8260E2259A893004BE9CE /* GODUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODUserTool.m; sourceTree = "<group>"; };
 		4A15E34C2260937F009525B2 /* ad.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad.jpeg; sourceTree = "<group>"; };
+		4A223B3722655C0F006EB2CB /* FFFLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFLoginViewController.h; sourceTree = "<group>"; };
+		4A223B3822655C0F006EB2CB /* FFFLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFLoginViewController.m; sourceTree = "<group>"; };
 		4A23A50F225F158100192A2D /* FFFBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFBaseViewController.h; sourceTree = "<group>"; };
 		4A23A510225F158100192A2D /* FFFBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFBaseViewController.m; sourceTree = "<group>"; };
 		4A23A513225F22F200192A2D /* FFFMovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMovieViewController.h; sourceTree = "<group>"; };
@@ -519,6 +529,20 @@
 		5327F10EE0FB86D5203105E0 /* Pods-GentlyPoints.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GentlyPoints.debug.xcconfig"; path = "Target Support Files/Pods-GentlyPoints/Pods-GentlyPoints.debug.xcconfig"; sourceTree = "<group>"; };
 		7592AE2E2262CF2400A69907 /* FFFYDModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFYDModel.h; sourceTree = "<group>"; };
 		7592AE2F2262CF2400A69907 /* FFFYDModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFYDModel.m; sourceTree = "<group>"; };
+		7592AE312263277800A69907 /* FFFPLTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFPLTableViewCell.h; sourceTree = "<group>"; };
+		7592AE322263277800A69907 /* FFFPLTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFPLTableViewCell.m; sourceTree = "<group>"; };
+		7592AE35226328DE00A69907 /* FFFHTModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFHTModel.h; sourceTree = "<group>"; };
+		7592AE36226328DE00A69907 /* FFFHTModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFHTModel.m; sourceTree = "<group>"; };
+		7592AE3822632A9300A69907 /* FFFPLModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFPLModel.h; sourceTree = "<group>"; };
+		7592AE3922632A9300A69907 /* FFFPLModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFPLModel.m; sourceTree = "<group>"; };
+		7592AE3B22632B4600A69907 /* FFFHTTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFHTTableViewCell.h; sourceTree = "<group>"; };
+		7592AE3C22632B4600A69907 /* FFFHTTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFHTTableViewCell.m; sourceTree = "<group>"; };
+		7592AE3F2263494100A69907 /* FFFSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFSearchViewController.h; sourceTree = "<group>"; };
+		7592AE402263494100A69907 /* FFFSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFSearchViewController.m; sourceTree = "<group>"; };
+		7592AE42226354F000A69907 /* FFFHT1TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFHT1TableViewCell.h; sourceTree = "<group>"; };
+		7592AE43226354F000A69907 /* FFFHT1TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFHT1TableViewCell.m; sourceTree = "<group>"; };
+		7592AE452263552600A69907 /* FFFCommonEmptyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFCommonEmptyTableViewCell.h; sourceTree = "<group>"; };
+		7592AE462263552600A69907 /* FFFCommonEmptyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFCommonEmptyTableViewCell.m; sourceTree = "<group>"; };
 		BCC9FC3732CB0F67647AB184 /* libPods-GentlyPoints.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GentlyPoints.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7361AF44B5A7CF52610E36D /* Pods-GentlyPoints.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GentlyPoints.release.xcconfig"; path = "Target Support Files/Pods-GentlyPoints/Pods-GentlyPoints.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -627,8 +651,8 @@
 		371DD8212260850600F1335D /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				371DD8222260850600F1335D /* FFFYDDetailViewController.m */,
 				371DD8232260850600F1335D /* FFFYDDetailViewController.h */,
+				371DD8222260850600F1335D /* FFFYDDetailViewController.m */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -689,6 +713,7 @@
 		37763EDF225F810500F364CC /* MovieDetailController */ = {
 			isa = PBXGroup;
 			children = (
+				7592AE34226328CF00A69907 /* Model */,
 				37763EE0225F810500F364CC /* GGGMovieDetailViewController.h */,
 				37763EE4225F810500F364CC /* GGGMovieDetailViewController.m */,
 				37763EE1225F810500F364CC /* Cell */,
@@ -707,6 +732,14 @@
 				371DD80D2260796100F1335D /* FFFMovieDetailStillTableViewCell.m */,
 				371DD80B2260796100F1335D /* FFFPictureCollectionViewCell.h */,
 				371DD80C2260796100F1335D /* FFFPictureCollectionViewCell.m */,
+				7592AE3B22632B4600A69907 /* FFFHTTableViewCell.h */,
+				7592AE3C22632B4600A69907 /* FFFHTTableViewCell.m */,
+				7592AE42226354F000A69907 /* FFFHT1TableViewCell.h */,
+				7592AE43226354F000A69907 /* FFFHT1TableViewCell.m */,
+				7592AE312263277800A69907 /* FFFPLTableViewCell.h */,
+				7592AE322263277800A69907 /* FFFPLTableViewCell.m */,
+				7592AE452263552600A69907 /* FFFCommonEmptyTableViewCell.h */,
+				7592AE462263552600A69907 /* FFFCommonEmptyTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -746,6 +779,7 @@
 				379546952259A3A60050CB02 /* WebView */,
 				379546822259A3950050CB02 /* Base */,
 				75D91585225F7391003721F4 /* 电影 */,
+				4A223B3622655BDF006EB2CB /* Login */,
 				379546562259A3330050CB02 /* Main.storyboard */,
 				379546592259A3340050CB02 /* Assets.xcassets */,
 				3795465B2259A3340050CB02 /* LaunchScreen.storyboard */,
@@ -1188,6 +1222,15 @@
 			path = ZDDPhotoBrowse;
 			sourceTree = "<group>";
 		};
+		4A223B3622655BDF006EB2CB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4A223B3722655C0F006EB2CB /* FFFLoginViewController.h */,
+				4A223B3822655C0F006EB2CB /* FFFLoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		4A23A50E225F156D00192A2D /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -1266,9 +1309,30 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7592AE34226328CF00A69907 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7592AE35226328DE00A69907 /* FFFHTModel.h */,
+				7592AE36226328DE00A69907 /* FFFHTModel.m */,
+				7592AE3822632A9300A69907 /* FFFPLModel.h */,
+				7592AE3922632A9300A69907 /* FFFPLModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7592AE3E226347A100A69907 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				7592AE3F2263494100A69907 /* FFFSearchViewController.h */,
+				7592AE402263494100A69907 /* FFFSearchViewController.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		75D91585225F7391003721F4 /* 电影 */ = {
 			isa = PBXGroup;
 			children = (
+				7592AE3E226347A100A69907 /* Search */,
 				371DD81A2260850600F1335D /* 影单 */,
 				371DD8162260845900F1335D /* Util */,
 				37763EDF225F810500F364CC /* MovieDetailController */,
@@ -1513,6 +1577,7 @@
 				7592AE302262CF2400A69907 /* FFFYDModel.m in Sources */,
 				379547C22259A3AA0050CB02 /* HXPhotoModel.m in Sources */,
 				379547BA2259A3AA0050CB02 /* UIFont+HXExtension.m in Sources */,
+				7592AE332263277800A69907 /* FFFPLTableViewCell.m in Sources */,
 				379547E12259A3AA0050CB02 /* XJItemSelView.m in Sources */,
 				379547BC2259A3AA0050CB02 /* UIImage+HXExtension.m in Sources */,
 				379547962259A3AA0050CB02 /* POPBasicAnimation.mm in Sources */,
@@ -1542,6 +1607,7 @@
 				379547CE2259A3AA0050CB02 /* HXPhotoView.m in Sources */,
 				37067CF82261D59400C929B9 /* GPCommentModel.m in Sources */,
 				379547A72259A3AA0050CB02 /* UIColor+CustomColors.m in Sources */,
+				7592AE3D22632B4600A69907 /* FFFHTTableViewCell.m in Sources */,
 				379547A02259A3AA0050CB02 /* NSMutableDictionary+Attributes.m in Sources */,
 				379547C82259A3AA0050CB02 /* HXPhotoViewController.m in Sources */,
 				379547AD2259A3AA0050CB02 /* HXPhotoConfiguration.m in Sources */,
@@ -1566,6 +1632,7 @@
 				379547C92259A3AA0050CB02 /* HXPhotoViewFlowLayout.m in Sources */,
 				379547C32259A3AA0050CB02 /* HXPhotoCommon.m in Sources */,
 				4A23A51D225F285A00192A2D /* UIColor+ZTWColor.m in Sources */,
+				7592AE3A22632A9300A69907 /* FFFPLModel.m in Sources */,
 				379547B62259A3AA0050CB02 /* UIViewController+HXExtension.m in Sources */,
 				379547952259A3AA0050CB02 /* POPGeometry.mm in Sources */,
 				379547AB2259A3AA0050CB02 /* HXCustomCameraViewController.m in Sources */,
@@ -1589,6 +1656,7 @@
 				379547882259A3AA0050CB02 /* GODWebViewController.m in Sources */,
 				379547E92259A3AA0050CB02 /* ZDDThemeConfiguration.m in Sources */,
 				379547E62259A3AA0050CB02 /* XJToolBarView.m in Sources */,
+				7592AE37226328DE00A69907 /* FFFHTModel.m in Sources */,
 				379546602259A3340050CB02 /* main.m in Sources */,
 				379547932259A3AA0050CB02 /* POPPropertyAnimation.mm in Sources */,
 				379547F02259A3AA0050CB02 /* ZDDPhotoBrowseView.m in Sources */,
@@ -1608,6 +1676,7 @@
 				379547E32259A3AA0050CB02 /* XJMulitFuctionView.m in Sources */,
 				3795479B2259A3AA0050CB02 /* POPAnimationEvent.mm in Sources */,
 				379547CD2259A3AA0050CB02 /* HXCustomAssetModel.m in Sources */,
+				7592AE412263494100A69907 /* FFFSearchViewController.m in Sources */,
 				379547D02259A3AA0050CB02 /* HXCustomNavigationController.m in Sources */,
 				37763EDE225F6FCD00F364CC /* GPCommentCellNode.m in Sources */,
 				379547BB2259A3AA0050CB02 /* UIView+HXExtension.m in Sources */,
@@ -1624,6 +1693,7 @@
 				379547DA2259A3AA0050CB02 /* XJEmojePreView.m in Sources */,
 				379547DE2259A3AA0050CB02 /* XJFaceInputHelper.m in Sources */,
 				37067CE922618FF600C929B9 /* ZDDResponseCellNode.m in Sources */,
+				7592AE44226354F000A69907 /* FFFHT1TableViewCell.m in Sources */,
 				379547D62259A3AA0050CB02 /* HXCircleProgressView.m in Sources */,
 				379547B22259A3AA0050CB02 /* HXPhotoViewPresentTransition.m in Sources */,
 				379547B92259A3AA0050CB02 /* UIImageView+HXExtension.m in Sources */,
@@ -1632,8 +1702,10 @@
 				37067CEC2261901100C929B9 /* GPTopicDetailController.m in Sources */,
 				379547862259A3AA0050CB02 /* TEMPSDKManager.m in Sources */,
 				379547B02259A3AA0050CB02 /* HXPhotoEditTransition.m in Sources */,
+				4A223B3922655C0F006EB2CB /* FFFLoginViewController.m in Sources */,
 				379547C62259A3AA0050CB02 /* HXPhotoPreviewViewController.m in Sources */,
 				371DD8122260796200F1335D /* FFFIntroTableViewCell.m in Sources */,
+				7592AE472263552600A69907 /* FFFCommonEmptyTableViewCell.m in Sources */,
 				3795468C2259A3950050CB02 /* ZDDTabBarController.m in Sources */,
 				379547E52259A3AA0050CB02 /* XJFaceEmojeView.m in Sources */,
 				37067CEF2261906E00C929B9 /* GPTopicResponseModel.m in Sources */,
