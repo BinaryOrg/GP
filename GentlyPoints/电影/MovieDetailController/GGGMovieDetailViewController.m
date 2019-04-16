@@ -25,6 +25,7 @@
 #import "GPPostController.h"
 #import "FFFPLTableViewCell.h"
 #import "FFFPL2TableViewCell.h"
+#import "FFFFuckEmptyTableViewCell.h"
 
 @interface GGGMovieDetailViewController ()
 <
@@ -359,7 +360,10 @@ UICollectionViewDataSource
     }else if (indexPath.row == 4) {
         
         if (!self.hts.count) {
-            FFFCommonEmptyTableViewCell *cell = [[FFFCommonEmptyTableViewCell alloc] initWithTitle:@"相关话题"];
+            FFFCommonEmptyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ht_emp_cell"];
+            if (!cell) {
+                cell = [[FFFCommonEmptyTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"ht_emp_cell"];
+            }
             return cell;
         }else if (self.hts.count == 1){
             FFFHTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ht_cell"];
@@ -395,7 +399,10 @@ UICollectionViewDataSource
         }
     }else if (indexPath.row == 5) {
         if (!self.yps.count) {
-            FFFCommonEmptyTableViewCell *cell = [[FFFCommonEmptyTableViewCell alloc] initWithTitle:@"相关影评"];
+            FFFFuckEmptyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"yp_emp_cell"];
+            if (!cell) {
+                cell = [[FFFFuckEmptyTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"yp_emp_cell"];
+            }
             return cell;
         }else {
             FFFPLModel *yp = self.yps.firstObject;
@@ -419,6 +426,7 @@ UICollectionViewDataSource
             cell.nameLabel.text = yp.user.user_name;
             cell.title.text = [NSString stringWithFormat:@"%@", yp.title];
             cell.content.text = yp.content;
+            [cell.content setQmui_height:yp.c1_height];
             return cell;
         }
     }

@@ -174,6 +174,7 @@
 		4A223B6A22659F53006EB2CB /* YMHLSubCommentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B6922659F53006EB2CB /* YMHLSubCommentsModel.m */; };
 		4A223B6D2265A582006EB2CB /* FFFErrorFuckTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B6C2265A582006EB2CB /* FFFErrorFuckTableViewCell.m */; };
 		4A223B702265B32D006EB2CB /* FFFPL2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B6F2265B32D006EB2CB /* FFFPL2TableViewCell.m */; };
+		4A223B732265CD26006EB2CB /* FFFFuckEmptyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223B722265CD26006EB2CB /* FFFFuckEmptyTableViewCell.m */; };
 		4A23A511225F158100192A2D /* FFFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A510225F158100192A2D /* FFFBaseViewController.m */; };
 		4A23A515225F22F200192A2D /* FFFMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A514225F22F200192A2D /* FFFMovieViewController.m */; };
 		4A23A519225F27D200192A2D /* FFFMovieContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23A518225F27D200192A2D /* FFFMovieContainerViewController.m */; };
@@ -555,6 +556,8 @@
 		4A223B6C2265A582006EB2CB /* FFFErrorFuckTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFErrorFuckTableViewCell.m; sourceTree = "<group>"; };
 		4A223B6E2265B32D006EB2CB /* FFFPL2TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFPL2TableViewCell.h; sourceTree = "<group>"; };
 		4A223B6F2265B32D006EB2CB /* FFFPL2TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFPL2TableViewCell.m; sourceTree = "<group>"; };
+		4A223B712265CD26006EB2CB /* FFFFuckEmptyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFFuckEmptyTableViewCell.h; sourceTree = "<group>"; };
+		4A223B722265CD26006EB2CB /* FFFFuckEmptyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFFuckEmptyTableViewCell.m; sourceTree = "<group>"; };
 		4A23A50F225F158100192A2D /* FFFBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFBaseViewController.h; sourceTree = "<group>"; };
 		4A23A510225F158100192A2D /* FFFBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFBaseViewController.m; sourceTree = "<group>"; };
 		4A23A513225F22F200192A2D /* FFFMovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMovieViewController.h; sourceTree = "<group>"; };
@@ -791,6 +794,8 @@
 				4A223B6F2265B32D006EB2CB /* FFFPL2TableViewCell.m */,
 				7592AE452263552600A69907 /* FFFCommonEmptyTableViewCell.h */,
 				7592AE462263552600A69907 /* FFFCommonEmptyTableViewCell.m */,
+				4A223B712265CD26006EB2CB /* FFFFuckEmptyTableViewCell.h */,
+				4A223B722265CD26006EB2CB /* FFFFuckEmptyTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1707,6 +1712,7 @@
 				379547872259A3AA0050CB02 /* TEMPLaunchManager.m in Sources */,
 				3795468E2259A3950050CB02 /* ZDDNavController.m in Sources */,
 				379547992259A3AA0050CB02 /* POPAnimatableProperty.mm in Sources */,
+				4A223B732265CD26006EB2CB /* FFFFuckEmptyTableViewCell.m in Sources */,
 				379547D12259A3AA0050CB02 /* HXPhotoSubViewCell.m in Sources */,
 				3704C91122634C000088C23D /* GPSettingController.m in Sources */,
 				4A223B6A22659F53006EB2CB /* YMHLSubCommentsModel.m in Sources */,
