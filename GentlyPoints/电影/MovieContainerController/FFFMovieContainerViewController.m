@@ -13,6 +13,7 @@
 #import "FFFMovieViewController.h"
 #import "FFFYDListViewController.h"
 #import "FFFSearchViewController.h"
+#import "FFFLoginViewController.h"
 
 @interface FFFMovieContainerViewController ()
 <
@@ -108,6 +109,8 @@ JXCategoryViewDelegate
 }
 
 - (void)search {
+//    FFFLoginViewController *login = [FFFLoginViewController new];
+//    [self presentViewController:login animated:YES completion:nil];
     FFFSearchViewController *search = [FFFSearchViewController new];
     [self.navigationController pushViewController:search animated:YES];
 }
