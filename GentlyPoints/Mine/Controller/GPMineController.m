@@ -12,6 +12,8 @@
 #import "GPSettingController.h"
 #import "FFFLoginViewController.h"
 #import "GPJoinedTpickController.h"
+#import "FFFYDListViewController.h"
+#import "FFFYPViewController.h"
 
 @interface GPMineController ()
 <
@@ -133,10 +135,12 @@ GPMineHeaderViewDelegate
     if (indexPath.row == 0) {
         GPJoinedTpickController *vc = [GPJoinedTpickController new];
         [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.section == 1) {
+    }else if (indexPath.row == 1) {
         
-    }else if (indexPath.section == 2) {
-        
+    }else if (indexPath.row == 2) {
+        FFFYPViewController *vc = [[FFFYPViewController alloc] init];
+        vc.isMineVCPush = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

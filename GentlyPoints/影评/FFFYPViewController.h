@@ -15,8 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
 <
 JXCategoryListContentViewDelegate
 >
+
 @property (nonatomic, strong) UINavigationController *naviController;
+
+/** <#class#> */
+@property (nonatomic, assign) BOOL isMineVCPush;
+
 - (instancetype)initWithType:(NSString *)type;
+
 @end
 
 NS_ASSUME_NONNULL_END

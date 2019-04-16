@@ -77,39 +77,43 @@
 
 - (void)clickPostDyBtn {
     
-    if (self.contentTextView.text.length == 0 &&  self.manager.afterSelectedArray.count == 0) {
+    if (self.contentTextView.text.length == 0 && self.manager.afterSelectedArray.count == 0) {
         [MFHUDManager showError:@"请输入内容"];
         return;
     }
-    
-    __weak typeof(self)weakSelf = self;
-    NSMutableArray *tempArr = [NSMutableArray array];
-    [self.manager.afterSelectedArray enumerateObjectsUsingBlock:^(HXPhotoModel *selectedModel, NSUInteger idx, BOOL * _Nonnull stop) {
-        __strong typeof(weakSelf)strongSelf = weakSelf;
-        if (selectedModel.asset) {
-            PHImageRequestOptions*options = [[PHImageRequestOptions alloc]init];
-            options.deliveryMode=PHImageRequestOptionsDeliveryModeHighQualityFormat;
-            [[PHImageManager defaultManager] requestImageDataForAsset:selectedModel.asset options:options resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (imageData) {
-                        [tempArr addObject:[UIImage imageWithData:imageData]];
-                        if (tempArr.count == strongSelf.manager.afterSelectedArray.count) {
-                            [strongSelf postWithImages:tempArr];
+    if (self.manager.afterSelectedArray.count) {
+        __weak typeof(self)weakSelf = self;
+        NSMutableArray *tempArr = [NSMutableArray array];
+        [self.manager.afterSelectedArray enumerateObjectsUsingBlock:^(HXPhotoModel *selectedModel, NSUInteger idx, BOOL * _Nonnull stop) {
+            __strong typeof(weakSelf)strongSelf = weakSelf;
+            if (selectedModel.asset) {
+                PHImageRequestOptions*options = [[PHImageRequestOptions alloc]init];
+                options.deliveryMode=PHImageRequestOptionsDeliveryModeHighQualityFormat;
+                [[PHImageManager defaultManager] requestImageDataForAsset:selectedModel.asset options:options resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (imageData) {
+                            [tempArr addObject:[UIImage imageWithData:imageData]];
+                            if (tempArr.count == strongSelf.manager.afterSelectedArray.count) {
+                                [strongSelf postWithImages:tempArr];
+                            }
                         }
-                    }
-                });
-            }];
-        }else {
-            if (selectedModel.previewPhoto) {
-                [tempArr addObject:selectedModel.previewPhoto];
+                    });
+                }];
             }else {
-                [tempArr addObject:selectedModel.thumbPhoto];
+                if (selectedModel.previewPhoto) {
+                    [tempArr addObject:selectedModel.previewPhoto];
+                }else {
+                    [tempArr addObject:selectedModel.thumbPhoto];
+                }
+                if (tempArr.count == self.manager.afterSelectedArray.count) {
+                    [strongSelf postWithImages:tempArr];
+                }
             }
-            if (tempArr.count == self.manager.afterSelectedArray.count) {
-                [strongSelf postWithImages:tempArr];
-            }
-        }
-    }];
+        }];
+    }else {
+        [self postWithImages:@[]];
+    }
+   
     
     
     
