@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.0.1</string>
+	<string>1.0.0.2	</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MOBAppKey</key>
@@ -33,6 +33,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>为了能使用app的发布功能，请允许使用</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>为了能使用app的发布定位功能，请允许使用</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>为了能使用app的发布定位功能，请允许使用</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>

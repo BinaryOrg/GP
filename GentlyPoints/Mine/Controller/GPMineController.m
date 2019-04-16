@@ -14,7 +14,7 @@
 #import "GPJoinedTpickController.h"
 #import "FFFYDListViewController.h"
 #import "FFFYPViewController.h"
-
+#import "FFFMyMovieContainerViewController.h"
 @interface GPMineController ()
 <
 UITableViewDelegate,
@@ -136,7 +136,13 @@ GPMineHeaderViewDelegate
         GPJoinedTpickController *vc = [GPJoinedTpickController new];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 1) {
-        
+        if (![GODUserTool isLogin]) {
+            FFFLoginViewController *vc = [FFFLoginViewController new];
+            [self presentViewController:vc animated:YES completion:nil];
+            return;
+        }
+        FFFMyMovieContainerViewController *m = [FFFMyMovieContainerViewController new];
+        [self.navigationController pushViewController:m animated:YES];
     }else if (indexPath.row == 2) {
         FFFYPViewController *vc = [[FFFYPViewController alloc] init];
         vc.isMineVCPush = YES;

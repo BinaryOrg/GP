@@ -191,6 +191,8 @@
 		7592AE412263494100A69907 /* FFFSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7592AE402263494100A69907 /* FFFSearchViewController.m */; };
 		7592AE44226354F000A69907 /* FFFHT1TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7592AE43226354F000A69907 /* FFFHT1TableViewCell.m */; };
 		7592AE472263552600A69907 /* FFFCommonEmptyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7592AE462263552600A69907 /* FFFCommonEmptyTableViewCell.m */; };
+		7592AE4B2266068E00A69907 /* FFFMyMovieContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7592AE4A2266068E00A69907 /* FFFMyMovieContainerViewController.m */; };
+		7592AE4E2266080500A69907 /* FFFMyMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7592AE4D2266080500A69907 /* FFFMyMovieViewController.m */; };
 		E9DCC7170218A1960A5DFF0B /* libPods-GentlyPoints.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC9FC3732CB0F67647AB184 /* libPods-GentlyPoints.a */; };
 /* End PBXBuildFile section */
 
@@ -591,6 +593,11 @@
 		7592AE43226354F000A69907 /* FFFHT1TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFHT1TableViewCell.m; sourceTree = "<group>"; };
 		7592AE452263552600A69907 /* FFFCommonEmptyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFCommonEmptyTableViewCell.h; sourceTree = "<group>"; };
 		7592AE462263552600A69907 /* FFFCommonEmptyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFCommonEmptyTableViewCell.m; sourceTree = "<group>"; };
+		7592AE492266068E00A69907 /* FFFMyMovieContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMyMovieContainerViewController.h; sourceTree = "<group>"; };
+		7592AE4A2266068E00A69907 /* FFFMyMovieContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFMyMovieContainerViewController.m; sourceTree = "<group>"; };
+		7592AE4C2266080500A69907 /* FFFMyMovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFMyMovieViewController.h; sourceTree = "<group>"; };
+		7592AE4D2266080500A69907 /* FFFMyMovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFMyMovieViewController.m; sourceTree = "<group>"; };
+		7592AE4F2266190F00A69907 /* GentlyPoints.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GentlyPoints.entitlements; sourceTree = "<group>"; };
 		BCC9FC3732CB0F67647AB184 /* libPods-GentlyPoints.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GentlyPoints.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7361AF44B5A7CF52610E36D /* Pods-GentlyPoints.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GentlyPoints.release.xcconfig"; path = "Target Support Files/Pods-GentlyPoints/Pods-GentlyPoints.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -624,6 +631,7 @@
 		37067CFC2261F0AA00C929B9 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				7592AE482266065700A69907 /* Detail */,
 				37067CFD2261F0AA00C929B9 /* Controller */,
 				37067CFE2261F0AA00C929B9 /* Model */,
 				37067CFF2261F0AA00C929B9 /* View */,
@@ -825,6 +833,7 @@
 		3795464F2259A3330050CB02 /* GentlyPoints */ = {
 			isa = PBXGroup;
 			children = (
+				7592AE4F2266190F00A69907 /* GentlyPoints.entitlements */,
 				379547F32259A3B80050CB02 /* TEMPAppDelegate.h */,
 				379547F22259A3B80050CB02 /* TEMPAppDelegate.m */,
 				37067CFC2261F0AA00C929B9 /* Mine */,
@@ -1473,6 +1482,17 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		7592AE482266065700A69907 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				7592AE492266068E00A69907 /* FFFMyMovieContainerViewController.h */,
+				7592AE4A2266068E00A69907 /* FFFMyMovieContainerViewController.m */,
+				7592AE4C2266080500A69907 /* FFFMyMovieViewController.h */,
+				7592AE4D2266080500A69907 /* FFFMyMovieViewController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		75D91585225F7391003721F4 /* 电影 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1573,6 +1593,14 @@
 				TargetAttributes = {
 					3795464C2259A3330050CB02 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					379546642259A3340050CB02 = {
 						CreatedOnToolsVersion = 10.1;
@@ -1725,6 +1753,7 @@
 				4A223B6D2265A582006EB2CB /* FFFErrorFuckTableViewCell.m in Sources */,
 				4A223B5122658112006EB2CB /* FFFYP2TableViewCell.m in Sources */,
 				379547BA2259A3AA0050CB02 /* UIFont+HXExtension.m in Sources */,
+				7592AE4E2266080500A69907 /* FFFMyMovieViewController.m in Sources */,
 				7592AE332263277800A69907 /* FFFPLTableViewCell.m in Sources */,
 				379547E12259A3AA0050CB02 /* XJItemSelView.m in Sources */,
 				379547BC2259A3AA0050CB02 /* UIImage+HXExtension.m in Sources */,
@@ -1857,6 +1886,7 @@
 				4A223B5522658741006EB2CB /* ZTWVerticallyAlignedLabel.m in Sources */,
 				379547B22259A3AA0050CB02 /* HXPhotoViewPresentTransition.m in Sources */,
 				379547B92259A3AA0050CB02 /* UIImageView+HXExtension.m in Sources */,
+				7592AE4B2266068E00A69907 /* FFFMyMovieContainerViewController.m in Sources */,
 				37067CF52261D33A00C929B9 /* GPCommentDetailController.m in Sources */,
 				3795478E2259A3AA0050CB02 /* POPAnimationTracer.mm in Sources */,
 				37067CEC2261901100C929B9 /* GPTopicDetailController.m in Sources */,
@@ -2047,6 +2077,7 @@
 			baseConfigurationReference = 5327F10EE0FB86D5203105E0 /* Pods-GentlyPoints.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GentlyPoints/GentlyPoints.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24V79B9824;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
@@ -2066,6 +2097,7 @@
 			baseConfigurationReference = C7361AF44B5A7CF52610E36D /* Pods-GentlyPoints.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GentlyPoints/GentlyPoints.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24V79B9824;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";

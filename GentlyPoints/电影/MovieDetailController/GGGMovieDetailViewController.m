@@ -202,7 +202,10 @@ UICollectionViewDataSource
                 NSLog(@"%@", result);
                 [self hideLoading];
                 if (![result[@"resultCode"] integerValue]) {
+                    
                     [self.hts removeAllObjects];
+                    [self.yps removeAllObjects];
+                    self.movie = [FFFMovieModel yy_modelWithJSON:result[@"movie"]];
                     for (NSDictionary *dic in result[@"movie"][@"related_topic"]) {
                         GPTopicModel *ht = [GPTopicModel yy_modelWithJSON:dic];
                         if (ht) {
@@ -315,6 +318,26 @@ UICollectionViewDataSource
         cell.typeLabel.text = [movie.type componentsJoinedByString:@" | "];
         cell.durationLabel.text = [NSString stringWithFormat:@"片长:%@", movie.duration];
         cell.scoreLabel.text = [movie.score isEqualToString:@"暂无评分"] || [movie.score isEqualToString:@"0"] ? @"暂无": movie.score;
+        if ([movie.is_like isEqualToString:@"Y"]) {
+            cell.like.backgroundColor = [UIColor ztw_colorWithRGB:180];
+        }else {
+            cell.like.backgroundColor = [UIColor ztw_yellowColor];
+        }
+        
+        if ([movie.is_want_see isEqualToString:@"Y"]) {
+            cell.want.backgroundColor = [UIColor ztw_colorWithRGB:180];
+        }else {
+            cell.want.backgroundColor = [UIColor ztw_yellowColor];
+        }
+        
+        if ([movie.is_have_seen isEqualToString:@"Y"]) {
+            cell.seen.backgroundColor = [UIColor ztw_colorWithRGB:180];
+        }else {
+            cell.seen.backgroundColor = [UIColor ztw_yellowColor];
+        }
+        [cell.like addTarget:self action:@selector(like) forControlEvents:(UIControlEventTouchUpInside)];
+        [cell.want addTarget:self action:@selector(want) forControlEvents:(UIControlEventTouchUpInside)];
+        [cell.seen addTarget:self action:@selector(seen) forControlEvents:(UIControlEventTouchUpInside)];
         return cell;
     }else if (indexPath.row == 1) {
         FFFIntroTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"intro_cell"];
@@ -433,9 +456,78 @@ UICollectionViewDataSource
     return nil;
 }
 
+- (void)like {
+    if (![GODUserTool isLogin]) {
+        FFFLoginViewController *vc = [FFFLoginViewController new];
+        [self presentViewController:vc animated:YES completion:nil];
+        return;
+    }
+    [MFHUDManager showLoading:@"Loading..."];
+    [MFNETWROK post:@"http://120.78.124.36:10020/WP/Feeling/Update" params:@{
+                                                                             @"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"",
+                                                                             @"targetId": self.movie.id,
+                                                                             @"like": [self.movie.is_like isEqualToString:@"Y"] ? @"N" : @"Y"
+                                                                             } success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MFHUDManager dismiss];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadYP" object:nil];
+        });
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MFHUDManager dismiss];
+        });
+    }];
+}
+
+
+- (void)want {
+    if (![GODUserTool isLogin]) {
+        FFFLoginViewController *vc = [FFFLoginViewController new];
+        [self presentViewController:vc animated:YES completion:nil];
+        return;
+    }
+    [MFHUDManager showLoading:@"Loading..."];
+    [MFNETWROK post:@"http://120.78.124.36:10020/WP/Feeling/Update" params:@{
+                                                                             @"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"",
+                                                                             @"targetId": self.movie.id,
+                                                                             @"wantSee": [self.movie.is_want_see isEqualToString:@"Y"] ? @"N" : @"Y"
+                                                                             } success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                                                                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                     [MFHUDManager dismiss];
+                                                                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadYP" object:nil];
+                                                                                 });
+                                                                             } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                                                                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                     [MFHUDManager dismiss];
+                                                                                 });
+                                                                             }];
+}
+
+- (void)seen {
+    if (![GODUserTool isLogin]) {
+        FFFLoginViewController *vc = [FFFLoginViewController new];
+        [self presentViewController:vc animated:YES completion:nil];
+        return;
+    }
+    [MFHUDManager showLoading:@"Loading..."];
+    [MFNETWROK post:@"http://120.78.124.36:10020/WP/Feeling/Update" params:@{
+                                                                             @"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"",
+                                                                             @"targetId": self.movie.id,
+                                                                             @"haveSeen": [self.movie.is_have_seen isEqualToString:@"Y"] ? @"N" : @"Y"
+                                                                             } success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                                                                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                     [MFHUDManager dismiss];
+                                                                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadYP" object:nil];
+                                                                                 });
+                                                                             } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                                                                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                     [MFHUDManager dismiss];
+                                                                                 });
+                                                                             }];
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!indexPath.row) {
-        return 350;
+        return 380;
     }else if (indexPath.row == 1) {
         return self.movie.content_height+60;
     }else if (indexPath.row == 2) {

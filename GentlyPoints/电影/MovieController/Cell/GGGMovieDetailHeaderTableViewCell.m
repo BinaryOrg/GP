@@ -89,6 +89,27 @@
         self.scoreLabel.font = [UIFont ztw_mediumFontSize:22];
         [scoreView addSubview:self.scoreLabel];
         
+        self.like = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        self.like.frame = CGRectMake((SCREENWIDTH - 180)/4, MaxY(scoreView) + 10, 60, 30);
+        [self.contentView addSubview:self.like];
+        self.like.layer.cornerRadius = 5;
+        self.like.layer.masksToBounds = YES;
+        [self.like setTitle:@"喜欢" forState:(UIControlStateNormal)];
+        
+        self.want = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        self.want.frame = CGRectMake((SCREENWIDTH - 180)*2/4 + 60, MaxY(scoreView) + 10, 60, 30);
+        [self.contentView addSubview:self.want];
+        self.want.layer.cornerRadius = 5;
+        self.want.layer.masksToBounds = YES;
+        [self.want setTitle:@"想看" forState:(UIControlStateNormal)];
+        
+        self.seen = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        self.seen.frame = CGRectMake((SCREENWIDTH - 180)*3/4 + 60*2, MaxY(scoreView) + 10, 60, 30);
+        [self.contentView addSubview:self.seen];
+        self.seen.layer.cornerRadius = 5;
+        self.seen.layer.masksToBounds = YES;
+        [self.seen setTitle:@"看过" forState:(UIControlStateNormal)];
+        
     }
     return self;
 }

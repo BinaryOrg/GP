@@ -24,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIButton *pop;
 
+@property (nonatomic, strong) UIButton *like;
+@property (nonatomic, strong) UIButton *want;
+@property (nonatomic, strong) UIButton *seen;
 @end
 
 NS_ASSUME_NONNULL_END
