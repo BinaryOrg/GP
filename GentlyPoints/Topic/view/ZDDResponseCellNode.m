@@ -9,6 +9,7 @@
 #import "ZDDResponseCellNode.h"
 #import <YYCGUtilities.h>
 #import "ASButtonNode+LHExtension.h"
+#import "ZDDPhotoBrowseView.h"
 
 @interface ZDDResponseCellNode ()
 
@@ -238,7 +239,32 @@
 #pragma mark - 点击事件
 - (void)onTouchPictureNode:(ASNetworkImageNode *)imgNode {
     
+    __block NSInteger currentIndex = 0;
     
+    NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:self.picturesNodes.count];
+    [self.picturesNodes enumerateObjectsUsingBlock:^(ASNetworkImageNode * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        LHPhotoGroupItem *item = [[LHPhotoGroupItem alloc]init];
+        YYAnimatedImageView * animatedIV = [[YYAnimatedImageView alloc] init];
+        animatedIV.image = obj.image;
+        item.thumbView = animatedIV;
+        item.largeImageURL = obj.URL;
+        [tempArr addObject:item];
+        if (obj == imgNode) {
+            currentIndex = idx;
+        }
+    }];
+    
+    UIView *fromView = [imgNode view];
+    
+    
+    ZDDPhotoBrowseView *photoGroupView = [[ZDDPhotoBrowseView alloc] initWithGroupItems:tempArr.copy];
+    [photoGroupView.pager removeFromSuperview];
+    photoGroupView.fromItemIndex = currentIndex;
+    photoGroupView.backtrack = YES;
+    [photoGroupView presentFromImageView:fromView
+                             toContainer:[UIApplication sharedApplication].keyWindow
+                                animated:YES
+                              completion:nil];
 }
 
 - (void)onTouchThumbNode {

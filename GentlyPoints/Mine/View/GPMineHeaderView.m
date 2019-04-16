@@ -46,6 +46,7 @@
     [self.iconIV yy_setImageWithURL:[NSURL URLWithString:model.avater] placeholder:[UIImage imageNamed:@"cover"]];
     [self.bgv yy_setImageWithURL:[NSURL URLWithString:model.avater] placeholder:[UIImage imageNamed:@"cover"]];
     self.signLb.text = model.sign;
+    self.signLb.backgroundColor = [UIColor redColor];
 }
 
 - (void)setIsLoged:(BOOL)isLoged {
