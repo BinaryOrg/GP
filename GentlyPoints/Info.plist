@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>微评</string>
+	<string>今日微评</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -32,13 +32,13 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>为了能使用app的完整功能，请允许使用</string>
+	<string>为了能使用app的发布功能，请允许使用</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>为了能使用app的完整功能，请允许使用</string>
+	<string>为了能使用app的发布定位功能，请允许使用</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>为了能使用app的完整功能，请允许使用</string>
+	<string>为了能使用app的发布功能，请允许使用</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>为了能使用app的完整功能，请允许使用</string>
+	<string>为了能使用app的发布功能，请允许使用</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
