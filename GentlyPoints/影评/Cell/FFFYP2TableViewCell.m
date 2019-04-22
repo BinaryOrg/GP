@@ -53,6 +53,11 @@
         self.rightImageView.contentMode = UIViewContentModeScaleAspectFill;
         self.rightImageView.layer.masksToBounds = YES;
         [self.contentView addSubview:self.rightImageView];
+        
+        self.dotButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.dotButton setImage:[UIImage imageNamed:@"fav_edit_22x22_"] forState:(UIControlStateNormal)];
+        self.dotButton.frame = CGRectMake(SCREENWIDTH - 20 - 40, MinY(self.avatar), 40, 40);
+        [self.contentView addSubview:self.dotButton];
     }
     return self;
 }

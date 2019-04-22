@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) YYAnimatedImageView *avatar;
 @property (nonatomic, strong) UILabel *name;
-
+@property (nonatomic, strong) UIButton *dotButton;
 @end
 
 NS_ASSUME_NONNULL_END
