@@ -7,7 +7,7 @@
 //
 
 #import "TEMPKeyConfiguration.h"
-ZDDKey const JPUSH_KEY = @"bf752cb7c1c0f7eeb6ef99fc";
+ZDDKey const JPUSH_KEY = @"5d4738ec20fcbd3e5465618d";
 ZDDKey const JPUSH_CHANNEL = @"App Store";
 @implementation TEMPKeyConfiguration
 
