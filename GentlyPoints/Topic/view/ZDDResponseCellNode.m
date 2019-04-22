@@ -21,6 +21,7 @@
 @property (nonatomic, strong) ASTextNode *timeNode;
 @property (nonatomic, strong) ASDisplayNode *bgvNode;
 
+@property (nonatomic, strong) ASButtonNode *reportNode;
 @property (nonatomic, strong) ASButtonNode *thumbNode;
 @property (nonatomic, strong) ASButtonNode *commentNode;
 
@@ -78,9 +79,14 @@
         [_commentNode setAttributedTitle:[NSMutableAttributedString lh_makeAttributedString:commentCount attributes:attributes] forState:UIControlStateNormal];
         [_commentNode setImage:[UIImage imageNamed:@"comment"] forState:UIControlStateNormal];
         
+        _reportNode = [[ASButtonNode alloc] init];
+        [_reportNode setImage:[UIImage imageNamed:@"fav_edit_22x22_"] forState:UIControlStateNormal];
+        [_reportNode addTarget:self action:@selector(onTouchReportBtn) forControlEvents:ASControlNodeEventTouchUpInside];
+
         [self addSubnode:_thumbNode];
         [self addSubnode:_commentNode];
-        
+        [self addSubnode:_reportNode];
+
         [model addObserver:self forKeyPath:@"star_num" options:NSKeyValueObservingOptionNew context:nil];
         [model addObserver:self forKeyPath:@"comment_num" options:NSKeyValueObservingOptionNew context:nil];
     }
@@ -115,7 +121,7 @@
     ASStackLayoutSpec *commentSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
     commentSpec.spacing = 12;
     commentSpec.alignItems = ASStackLayoutAlignItemsCenter;
-    commentSpec.children = @[self.commentNode, self.thumbNode];
+    commentSpec.children = @[self.reportNode, self.commentNode, self.thumbNode];
     
     ASStackLayoutSpec *topSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
     topSpec.spacing = 6;
@@ -159,7 +165,7 @@
 
 - (void)addNameNode {
     self.nameNode = [ASTextNode new];
-    self.nameNode.style.preferredSize = CGSizeMake(ScreenWidth - 35 - 40 - 24 - 100, 20);
+    self.nameNode.style.preferredSize = CGSizeMake(ScreenWidth - 35 - 64 - 24 - 100, 20);
     [self addSubnode:self.nameNode];
 }
 
@@ -288,6 +294,58 @@
     }];
 }
 
+- (void)onTouchReportBtn {
+    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+    UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"拉黑该用户" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MFHUDManager showLoading:@"loading"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MFHUDManager showSuccess:@"拉黑成功，正在审核"];
+            });
+        });
+    }];
+    
+    UIAlertAction *a2 = [UIAlertAction actionWithTitle:@"举报" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        [self showAlert];
+    }];
+    UIAlertAction *a3 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    
+    [sheet addAction:a1];
+    [sheet addAction:a2];
+    [sheet addAction:a3];
+    [self.closestViewController presentViewController:sheet animated:YES completion:nil];
+}
+
+- (void)showAlert {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"举报" preferredStyle:(UIAlertControllerStyleAlert)];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"填写举报内容";
+    }];
+    UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        if (!alert.textFields[0].text.length) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MFHUDManager showError:@"请填写举报内容"];
+                return;
+            });
+        }else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MFHUDManager showLoading:@"loading"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [MFHUDManager showSuccess:@"举报成功，正在审核"];
+                });
+            });
+        }
+    }];
+    
+    
+    UIAlertAction *a3 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    
+    [alert addAction:a1];
+    [alert addAction:a3];
+    [self.closestViewController presentViewController:alert animated:YES completion:nil];
+}
 
 #pragma mark - 懒加载
 
