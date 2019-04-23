@@ -94,10 +94,12 @@ UITableViewDataSource
                 NSLog(@"%@", result);
                 [self hideLoading];
                 if (![result[@"resultCode"] integerValue]) {
-                    
+                    NSString *blockUsers = [[NSUserDefaults standardUserDefaults] stringForKey:@"fuckU"];
+                    NSLog(@"%@", blockUsers);
+                    NSArray *userids = [blockUsers componentsSeparatedByString:@","];
                     for (NSDictionary *dic in result[@"data"]) {
                         FFFPLModel *yp = [FFFPLModel yy_modelWithJSON:dic];
-                        if (yp) {
+                        if (yp && ![userids containsObject:yp.user.user_id]) {
                             [self.pls addObject:yp];
                         }
                     }
@@ -132,7 +134,7 @@ UITableViewDataSource
         [cell.avatar yy_setImageWithURL:[NSURL URLWithString:yp.user.avater] placeholder:[UIImage imageNamed:@"illustration_guoguo_142x163_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
         cell.name.text = yp.user.user_name;
         [cell.contentLabel setQmui_height:yp.content_height];
-        [cell.dotButton addTarget:self action:@selector(dotClick) forControlEvents:(UIControlEventTouchUpInside)];
+        [cell.dotButton addTarget:self action:@selector(dot1Click:) forControlEvents:(UIControlEventTouchUpInside)];
         return cell;
     }else if (count <= 2) {
         FFFYP1TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"yp1_cell"];
@@ -144,7 +146,7 @@ UITableViewDataSource
         [cell.leftImageView yy_setImageWithURL:[NSURL URLWithString:yp.picture.firstObject] placeholder:[UIImage imageNamed:@""] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
         cell.titleLabel.text = yp.title;
         cell.contentLabel.text = yp.content;
-        [cell.dotButton addTarget:self action:@selector(dotClick) forControlEvents:(UIControlEventTouchUpInside)];
+        [cell.dotButton addTarget:self action:@selector(dot2Click:) forControlEvents:(UIControlEventTouchUpInside)];
         return cell;
     }else {
         FFFYP2TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"yp2_cell"];
@@ -163,7 +165,7 @@ UITableViewDataSource
         [cell.leftImageView setQmui_top:top];
         [cell.centerImageView setQmui_top:top];
         [cell.rightImageView setQmui_top:top];
-        [cell.dotButton addTarget:self action:@selector(dotClick) forControlEvents:(UIControlEventTouchUpInside)];
+        [cell.dotButton addTarget:self action:@selector(dot3Click:) forControlEvents:(UIControlEventTouchUpInside)];
         return cell;
     }
     return nil;
@@ -190,12 +192,146 @@ UITableViewDataSource
 }
 
 
-- (void)dotClick {
+- (void)dot1Click:(UIButton *)sender {
+    NSLog(@"%@", sender.superview.superview);
     UIAlertController *sheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
     UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"拉黑该用户" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [MFHUDManager showLoading:@"loading"];
+            FFFYP0TableViewCell *cell = (FFFYP0TableViewCell *)sender.superview.superview;
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+            FFFPLModel *pl = self.pls[indexPath.row];
+            NSString *blockUsers = [[NSUserDefaults standardUserDefaults] stringForKey:@"fuckU"];
+//            NSArray *userids = [blockUsers componentsSeparatedByString:@","];
+            NSMutableString *mstr = blockUsers.mutableCopy;
+            if (!blockUsers) {
+                mstr = @"".mutableCopy;
+            }
+            
+            if (blockUsers.length) {
+                [mstr appendString:[NSString stringWithFormat:@",%@", pl.user.user_id]];
+            }else {
+                [mstr appendString:[NSString stringWithFormat:@"%@", pl.user.user_id]];
+            }
+            [[NSUserDefaults standardUserDefaults] setObject:mstr forKey:@"fuckU"];
+            NSLog(@"==--%@", mstr);
+            NSArray *userids = [mstr componentsSeparatedByString:@","];
+            NSLog(@"%@", userids);
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                NSMutableArray *list = @[].mutableCopy;
+                for (FFFPLModel *pl in self.pls) {
+                    if ([userids containsObject:pl.user.user_id]) {
+                        continue;
+                    }
+                    [list addObject:pl];
+                }
+                
+                self.pls = list;
+                [self.tableView reloadData];
+                [MFHUDManager showSuccess:@"拉黑成功，正在审核"];
+            });
+        });
+    }];
+    
+    UIAlertAction *a2 = [UIAlertAction actionWithTitle:@"举报" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        [self showAlert];
+    }];
+    UIAlertAction *a3 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    
+    [sheet addAction:a1];
+    [sheet addAction:a2];
+    [sheet addAction:a3];
+    [self presentViewController:sheet animated:YES completion:nil];
+}
+
+- (void)dot2Click:(UIButton *)sender {
+    NSLog(@"%@", sender.superview.superview);
+    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+    UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"拉黑该用户" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MFHUDManager showLoading:@"loading"];
+            FFFYP1TableViewCell *cell = (FFFYP1TableViewCell *)sender.superview.superview;
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+            FFFPLModel *pl = self.pls[indexPath.row];
+            NSString *blockUsers = [[NSUserDefaults standardUserDefaults] stringForKey:@"fuckU"];
+            //            NSArray *userids = [blockUsers componentsSeparatedByString:@","];
+            NSMutableString *mstr = blockUsers.mutableCopy;
+            if (!blockUsers) {
+                mstr = @"".mutableCopy;
+            }
+            
+            if (blockUsers.length) {
+                [mstr appendString:[NSString stringWithFormat:@",%@", pl.user.user_id]];
+            }else {
+                [mstr appendString:[NSString stringWithFormat:@"%@", pl.user.user_id]];
+            }
+            [[NSUserDefaults standardUserDefaults] setObject:mstr forKey:@"fuckU"];
+            NSLog(@"==--%@", mstr);
+            NSArray *userids = [mstr componentsSeparatedByString:@","];
+            NSLog(@"%@", userids);
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                NSMutableArray *list = @[].mutableCopy;
+                for (FFFPLModel *pl in self.pls) {
+                    if ([userids containsObject:pl.user.user_id]) {
+                        continue;
+                    }
+                    [list addObject:pl];
+                }
+                
+                self.pls = list;
+                [self.tableView reloadData];
+                [MFHUDManager showSuccess:@"拉黑成功，正在审核"];
+            });
+        });
+    }];
+    
+    UIAlertAction *a2 = [UIAlertAction actionWithTitle:@"举报" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        [self showAlert];
+    }];
+    UIAlertAction *a3 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    
+    [sheet addAction:a1];
+    [sheet addAction:a2];
+    [sheet addAction:a3];
+    [self presentViewController:sheet animated:YES completion:nil];
+}
+
+- (void)dot3Click:(UIButton *)sender {
+    NSLog(@"%@", sender.superview.superview);
+    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+    UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"拉黑该用户" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MFHUDManager showLoading:@"loading"];
+            FFFYP2TableViewCell *cell = (FFFYP2TableViewCell *)sender.superview.superview;
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+            FFFPLModel *pl = self.pls[indexPath.row];
+            NSString *blockUsers = [[NSUserDefaults standardUserDefaults] stringForKey:@"fuckU"];
+            //            NSArray *userids = [blockUsers componentsSeparatedByString:@","];
+            NSMutableString *mstr = blockUsers.mutableCopy;
+            if (!blockUsers) {
+                mstr = @"".mutableCopy;
+            }
+            
+            if (blockUsers.length) {
+                [mstr appendString:[NSString stringWithFormat:@",%@", pl.user.user_id]];
+            }else {
+                [mstr appendString:[NSString stringWithFormat:@"%@", pl.user.user_id]];
+            }
+            [[NSUserDefaults standardUserDefaults] setObject:mstr forKey:@"fuckU"];
+            NSArray *userids = [mstr componentsSeparatedByString:@","];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                NSMutableArray *list = @[].mutableCopy;
+                for (FFFPLModel *pl in self.pls) {
+                    if ([userids containsObject:pl.user.user_id]) {
+                        continue;
+                    }
+                    [list addObject:pl];
+                }
+                
+                self.pls = list;
+                [self.tableView reloadData];
                 [MFHUDManager showSuccess:@"拉黑成功，正在审核"];
             });
         });
